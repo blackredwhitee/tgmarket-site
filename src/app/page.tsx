@@ -36,7 +36,7 @@ export default function Home() {
       <Niches />
       <Why />
       {SHOW_COMPARE && <Compare />}
-      <PricingTeaser />
+      <PricingTeaser spaced={!SHOW_COMPARE} />
       <Cases />
       <PartnersTeaser />
       <HomeFaq />

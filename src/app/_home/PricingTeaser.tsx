@@ -7,9 +7,10 @@ import s from "./PricingTeaser.module.css";
 /** Ступеньки шкалы (декоративные): высоты из макета, первая — жёлтая «3%». */
 const LADDER = ["92%", "78%", "64%", "50%", "38%"];
 
-export default function PricingTeaser() {
+/** spaced — отступ сверху, когда перед тизером нет блока «Сравнение» (в макете отступ даёт он). */
+export default function PricingTeaser({ spaced = false }: { spaced?: boolean }) {
   return (
-    <section className={s.section}>
+    <section className={`${s.section} ${spaced ? s.spaced : ""}`}>
       <div className="container">
         <PricingCard>
           <div className="bg-beams" aria-hidden="true" style={{ position: "absolute", inset: 0 }} />
