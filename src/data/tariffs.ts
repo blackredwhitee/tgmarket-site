@@ -35,5 +35,12 @@ export function calcFee(turnover: number, firstMonth: boolean) {
   return { rate, fee, net: turnover - fee };
 }
 
+/**
+ * Партнёрская программа: партнёр получает десятую часть комиссии селлера — от 0,5% до 1% его оборота
+ * (10% → 1%, 8% → 0,8%, 7% → 0,7%, 5% → 0,5%) в течение первого года.
+ */
+export const PARTNER_SHARE = 0.1;
+export const partnerRate = (turnover: number) => TIERS[tierIndex(turnover)].rate * PARTNER_SHARE;
+
 /** 4.5 → «4,5%» */
 export const rateLabel = (rate: number) => String(rate).replace(".", ",") + "%";

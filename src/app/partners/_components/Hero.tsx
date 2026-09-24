@@ -11,9 +11,9 @@ export default function Hero() {
         <div className={s.text}>
           <span data-intro="0" className={s.badge}>Партнёрская программа</span>
           <h1 data-intro="100" className={s.h1}>
-            Приводите селлеров — получайте <span className={s.hl}>1%</span> с их оборота
+            Приводите селлеров — получайте до <span className={s.hl}>1%</span> с их оборота
           </h1>
-          <p data-intro="250" className={s.sub}>Каждый месяц, пока ваш селлер продаёт. Без ограничения суммы.</p>
+          <p data-intro="250" className={s.sub}>От 0,5% до 1% с оборота каждого приведённого селлера в течение первого года. Ставка зависит от тарифа селлера.</p>
           <BotLink data-intro="400" param="site_partner" block="hero" className={s.cta}>
             <Icon d={ICON.send} size={20} sw={2.2} />
             Стать партнёром

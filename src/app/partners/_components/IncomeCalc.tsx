@@ -3,10 +3,10 @@ import { useRef, useState } from "react";
 import { useTweened } from "@/lib/motion";
 import { fmt, rub } from "@/lib/format";
 import { goal } from "@/lib/metrika";
+import { partnerRate, rateLabel } from "@/data/tariffs";
 import sh from "./shared.module.css";
 import s from "./IncomeCalc.module.css";
 
-const RATE = 0.01;
 
 type Slider = {
   id: string; label: string; val: number; min: number; max: number; step: number;
@@ -17,8 +17,9 @@ export default function IncomeCalc() {
   const [sellers, setSellers] = useState(10);
   const [avg, setAvg] = useState(150000);
   const used = useRef(false);
-  // X = селлеры × оборот × 1%, твин 300ms
-  const month = useTweened(sellers * avg * RATE, 300);
+  // X = селлеры × оборот × доля партнёра (10% от комиссии селлера: 0,5–1%), твин 300ms
+  const rate = partnerRate(avg);
+  const month = useTweened((sellers * avg * rate) / 100, 300);
 
   const change = (set: (v: number) => void) => (e: React.ChangeEvent<HTMLInputElement>) => {
     set(+e.target.value);
@@ -73,10 +74,10 @@ export default function IncomeCalc() {
               <b className={s.month}>{fmt(month)} ₽</b>
             </div>
             <div className={`${s.block} ${s.year}`}>
-              <span className={s.cap}>За год</span>
+              <span className={s.cap}>За первый год</span>
               <b className={s.yearVal}>{fmt(month * 12)} ₽</b>
             </div>
-            <span className={s.foot}>Пример расчёта. Фактический доход зависит от оборота селлеров.</span>
+            <span className={s.foot}>Ваша ставка при таком обороте — {rateLabel(Math.round(rate * 10) / 10)}. Пример расчёта: фактический доход зависит от оборота селлеров.</span>
           </div>
         </div>
       </div>

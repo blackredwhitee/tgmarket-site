@@ -61,7 +61,7 @@ export default function PartnersScheme() {
           <b className={s.nodeLabel}>{n.label}</b>
         </div>
       ))}
-      <div className={s.chip}>1% вам — каждый месяц</div>
+      <div className={s.chip}>до 1% вам — весь первый год</div>
     </div>
   );
 }

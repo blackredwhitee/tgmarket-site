@@ -31,9 +31,7 @@ export default function WhoFits() {
           <BotLink param="site_partner" block="who" className={s.cta}>Стать партнёром</BotLink>
           <span className={s.ask}>
             Есть вопросы?{" "}
-            {/* TODO: контакт партнёрского менеджера (ТЗ §9) */}
-            <a href="#" className={s.link}>Напишите нам</a>{" "}
-            <span className={`todo ${s.todo}`}>[УТОЧНИТЬ контакт]</span>
+            <a href="https://t.me/tgmarket_support" target="_blank" rel="noopener" className={s.link}>Напишите нам</a>
           </span>
         </div>
       </div>

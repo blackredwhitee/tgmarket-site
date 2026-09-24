@@ -10,9 +10,9 @@ type Step = {
 };
 
 const STEPS: Step[] = [
-  { n: 1, title: "Получите ссылку", text: "Персональная партнёрская ссылка — в боте.", note: "[УТОЧНИТЬ] Где именно", bg: "#F5F7FE", fg: "#0B1233", numBg: "#1D4FFA", numFg: "#fff", line: "#C9D4FF" },
+  { n: 1, title: "Получите ссылку", text: "Персональная ссылка — в боте: «Вывод средств» → «О реферальной программе».", bg: "#F5F7FE", fg: "#0B1233", numBg: "#1D4FFA", numFg: "#fff", line: "#C9D4FF" },
   { n: 2, title: "Рекомендуйте TG Market", text: "Клиентам, подписчикам, коллегам, которые продают в Telegram.", bg: "#EEF2FF", fg: "#0B1233", numBg: "#0B1233", numFg: "#fff", line: "#B9CAFF" },
-  { n: 3, title: "Получайте 1%", text: "С оборота каждого приведённого селлера, выплата раз в месяц, без потолка.", bg: "#1D4FFA", fg: "#fff", numBg: "#FFE14A", numFg: "#0B1233", line: "rgba(255,255,255,.4)" },
+  { n: 3, title: "Получайте до 1%", text: "От 0,5% до 1% с оборота каждого приведённого селлера в течение первого года.", bg: "#1D4FFA", fg: "#fff", numBg: "#FFE14A", numFg: "#0B1233", line: "rgba(255,255,255,.4)" },
 ];
 
 export default function HowSteps() {
