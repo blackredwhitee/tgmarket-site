@@ -196,7 +196,8 @@ export default function Phone(props: PhoneProps) {
 
   return (
     <div ref={rootRef} className={props.className} aria-hidden="true"
-      style={{ position: "relative", width: 300, height: 620, flex: "none", textAlign: "left", ...props.style }}>
+      // isolation: слои сцены (затемнение, шторка, toast) не должны перекрывать соседние плавающие карточки
+      style={{ position: "relative", isolation: "isolate", width: 300, height: 620, flex: "none", textAlign: "left", ...props.style }}>
       <div style={{ position: "absolute", inset: 0, borderRadius: 44, background: "#0B1233", padding: 9, boxShadow: "0 40px 80px -24px rgba(11,18,51,.35),0 12px 40px rgba(29,79,250,.10)" }}>
         <div style={{ position: "relative", width: "100%", height: "100%", borderRadius: 36, overflow: "hidden", background: "linear-gradient(165deg,#D6E0F2 0%,#E4EAF6 55%,#DCE6F3 100%)" }}>
           <div style={{ position: "absolute", top: 10, left: "50%", width: 86, height: 25, marginLeft: -43, borderRadius: 20, background: "#000", zIndex: 12 }} />
