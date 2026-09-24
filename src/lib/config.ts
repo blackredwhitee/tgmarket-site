@@ -19,8 +19,8 @@ export const UTM_SOURCE_CODES: Record<string, string> = {
 export const SHOW_TODO = process.env.NEXT_PUBLIC_HIDE_TODO !== "1";
 
 /**
- * Число селлеров для блоков доверия. draft: true — оценочная цифра для демо; в продакшн-сборке
- * вместо неё показывается факт «Подключение — 0 ₽». Заменить на реальные данные и снять draft.
+ * Число селлеров для блоков доверия (подтверждено 24.09.2026). draft: true — цифра не подтверждена:
+ * тогда в продакшн-сборке вместо неё показывается «Подключение — 0 ₽».
  */
-export const SELLERS = { value: 1000, label: "1 000+", draft: true };
+export const SELLERS = { value: 3000, label: "3 000+", draft: false };
 export const SHOW_SELLERS = !SELLERS.draft || SHOW_TODO;
