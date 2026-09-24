@@ -16,9 +16,14 @@ export type Case = {
   bg: string;
   fg: string;
   quoteFill: string;
+  /** Фон и цвет инициалов аватарки */
   avatar: string;
-  dash: string;
+  avatarFg: string;
 };
+
+/** Инициалы канала для аватарки в стиле Telegram: «Спокойная голова» → «СГ». */
+const initials = (name: string) =>
+  name.replace(/[«»"]/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0].toUpperCase()).join("");
 
 /** Горизонтальный scroll-snap слайдер; стрелки 56px — только desktop. Без автопрокрутки. */
 export default function CasesSlider({ cases }: { cases: Case[] }) {
@@ -46,9 +51,8 @@ export default function CasesSlider({ cases }: { cases: Case[] }) {
             <div key={i} className={s.card} style={{ background: c.bg, color: c.fg }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill={c.quoteFill} aria-hidden="true"><path d={P.quote} /></svg>
               <p className={s.quote}>{c.quote}</p>
-              {c.draft && <span className={`todo ${s.draftTag}`}>Черновик — заменить реальным отзывом</span>}
               <div className={s.author}>
-                <span className={s.avatar} style={{ background: c.avatar, borderColor: c.dash }} />
+                <span className={s.avatar} style={{ background: c.avatar, color: c.avatarFg }} aria-hidden="true">{initials(c.name)}</span>
                 <span className={s.who}>
                   <b className={s.name}>{c.href ? <a href={c.href} target="_blank" rel="noopener" style={{ color: "inherit" }}>{c.name}</a> : c.name}</b>
                   <span className={s.niche}>{c.niche}</span>
@@ -57,7 +61,6 @@ export default function CasesSlider({ cases }: { cases: Case[] }) {
             </div>
           ))}
         </div>
-        <span className={`todo ${s.hint}`}>Если на запуске меньше трёх согласованных кейсов, блок скрывается из CMS.</span>
       </div>
     </section>
   );

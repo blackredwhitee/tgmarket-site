@@ -394,7 +394,7 @@ export default function Phone(props: PhoneProps) {
               <span style={{ width: 72, height: 72, borderRadius: "50%", background: "#18A957", display: "flex", alignItems: "center", justifyContent: "center" }}><Svg d={CHECK} size={36} stroke="#fff" sw={2.6} /></span>
               <div style={{ fontSize: 20, fontWeight: 800, color: "#0B1233", marginTop: 8 }}>Оплата прошла</div>
               <div style={{ fontSize: 13, color: "#4A5372" }}>{priceText} · {title}</div>
-              <div className="todo" style={{ marginTop: 14, width: "100%", padding: 12, fontSize: 12, lineHeight: 1.4 }}>[УТОЧНИТЬ] Как покупатель получает товар, доступ или билет</div>
+              <div style={{ marginTop: 14, width: "100%", border: "1px solid #E3E7F2", borderRadius: 12, padding: 12, fontSize: 12.5, color: "#4A5372", lineHeight: 1.4 }}>Ссылка на материалы — в сообщении от бота</div>
               <div style={{ marginTop: "auto", width: "100%", height: 46, borderRadius: 12, background: "#EEF2FF", color: "#1D4FFA", fontSize: 14, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>Вернуться в канал</div>
             </div>
           )}

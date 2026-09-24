@@ -12,8 +12,7 @@ export default function Hero() {
         <div className={s.text}>
           <h1 data-intro="0" className={s.h1}>Платите, только когда продаёте</h1>
           <p data-intro="150" className={s.sub}>
-            Комиссия с оборота без скрытых платежей. Первым селлерам — 3% на 2 месяца.{" "}
-            <span className={`todo ${t.inline} ${s.subTodo}`}>[УТОЧНИТЬ]</span>
+            Подключение бесплатно, без абонентской платы — только комиссия с продаж. Первым селлерам — 3% на 2 месяца.
           </p>
           <BotLink data-intro="300" param="site_pricing" block="hero" className={`btn btn-yellow ${s.cta}`}>
             <Icon d={ICON.send} size={20} sw={2.2} />

@@ -93,10 +93,17 @@
   gap: 12px;
 }
 .avatar {
+  /* Аватарка канала в стиле Telegram: градиент + инициалы */
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 2px dashed;
+  background: linear-gradient(135deg, #7c95ff, #1d4ffa);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: none;
 }
 .who {

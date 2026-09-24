@@ -63,8 +63,7 @@ export default function Tiers({ active }: { active: number }) {
                 style={{ bottom: `calc(${v.h} + 16px)` }}
                 aria-hidden="true"
               >
-                Оборот {v.range} в месяц — комиссия {v.rate} со всего оборота{" "}
-                <span className={`todo ${t.inline}`}>[УТОЧНИТЬ]</span>
+                Оборот {v.range} в месяц — комиссия {v.rate}
               </div>
               <div data-bar="1" className={s.bar} style={{ height: v.h, background: v.bg, color: v.fg }}>
                 <span className={s.rate}>{v.rate}</span>

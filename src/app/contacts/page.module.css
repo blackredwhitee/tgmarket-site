@@ -216,3 +216,17 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.cardContact {
+  align-self: flex-start;
+  font-size: 18px;
+  font-weight: 800;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.cardContact:hover {
+  color: inherit;
+  opacity: 0.8;
+}

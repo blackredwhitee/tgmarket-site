@@ -25,10 +25,10 @@ export default function FaqPage() {
             <div className={s.helpText}>
               <b className={s.helpTitle}>Не нашли ответ?</b>
               <span className={s.helpSub}>
-                Напишите в поддержку — ответим в Telegram. <span className={s.helpTodo}>[УТОЧНИТЬ контакт]</span>
+                Напишите в поддержку — ответим в Telegram: @tgmarket_support
               </span>
             </div>
-            <Link href="/contacts/#support" className={s.helpBtn}>Написать в поддержку</Link>
+            <a href="https://t.me/tgmarket_support" target="_blank" rel="noopener" className={s.helpBtn}>Написать в поддержку</a>
           </div>
         }
       />

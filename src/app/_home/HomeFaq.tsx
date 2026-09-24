@@ -20,8 +20,7 @@ export default function HomeFaq() {
             <div className={s.bubOut}>Подходит — ИП и юрлица тоже продают</div>
             <b className={s.supTitle}>Не нашли ответ?</b>
             <span className={s.supText}>Напишите в поддержку — ответим в Telegram.</span>
-            {/* TODO: контакт поддержки [УТОЧНИТЬ] — пока ведёт на страницу контактов */}
-            <Link href="/contacts/#support" className={s.supBtn}>Написать в поддержку</Link>
+            <a href="https://t.me/tgmarket_support" target="_blank" rel="noopener" className={s.supBtn}>Написать в поддержку</a>
           </div>
         </div>
         <HomeFaqList items={HOME_FAQ} />

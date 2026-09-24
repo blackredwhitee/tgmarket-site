@@ -25,7 +25,6 @@ export default function SolutionsIndex() {
             <p data-intro="150" className={s.heroSub}>
               Выберите, что вы продаёте, — покажем, как это выглядит в канале и как подписчик платит по СБП.
             </p>
-            <span data-intro="250" className="todo">[УТОЧНИТЬ] Тексты страницы-индекса не заданы в ТЗ — утвердить у копирайтера</span>
           </div>
           <ul data-reveal="stagger" className={`${s.grid3} ${s.nicheGrid}`}>
             {SOLUTIONS.map((n) => (

@@ -24,17 +24,26 @@ type Card = {
   icon: string;
   title: string;
   text: string;
-  todo: string;
+  contact: { href: string; label: string };
   link?: { href: string; label: string };
 };
 
+const SUPPORT = { href: "https://t.me/tgmarket_support", label: "@tgmarket_support" };
+
 const CARDS: Card[] = [
-  { id: "support", tone: "blue", icon: I.message, title: "Поддержка селлеров", text: "Помощь с регистрацией в боте, карточками, оплатами и выплатами. Ответим в Telegram.", todo: "[УТОЧНИТЬ: бот/аккаунт поддержки]", link: { href: "/faq/", label: "Сначала загляните в FAQ" } },
-  { id: "partners", tone: "soft", icon: I.users, title: "Партнёрство и сотрудничество", text: "Партнёрская программа, интеграции и совместные проекты.", todo: "[УТОЧНИТЬ: e-mail]", link: { href: "/partners/", label: "Партнёрская программа" } },
-  { id: "press", tone: "dark", icon: I.file, title: "Пресса", text: "Запросы СМИ, комментарии и материалы о сервисе.", todo: "[УТОЧНИТЬ]" },
+  { id: "support", tone: "blue", icon: I.message, title: "Поддержка селлеров", text: "Помощь с регистрацией в боте, карточками, оплатами и выплатами. Ответим в Telegram.", contact: SUPPORT, link: { href: "/faq/", label: "Сначала загляните в FAQ" } },
+  { id: "partners", tone: "soft", icon: I.users, title: "Партнёрство и сотрудничество", text: "Партнёрская программа, интеграции и совместные проекты — напишите в Telegram, передадим команде.", contact: SUPPORT, link: { href: "/partners/", label: "Партнёрская программа" } },
+  { id: "press", tone: "dark", icon: I.file, title: "Пресса", text: "Запросы СМИ, комментарии и материалы о сервисе — напишите в Telegram, передадим команде.", contact: SUPPORT },
 ];
 
-const REQUISITES = ["Оператор сервиса", "ИНН", "ОГРН", "Юридический адрес"];
+const REQUISITES: [string, string][] = [
+  ["Оператор сервиса", "ООО «Открытые интеграционные сервисы» (ООО «ОИС»)"],
+  ["ИНН", "9709074908"],
+  ["ОГРН", "1217700471086"],
+  ["Адрес", "109028, г. Москва, Серебряническая наб., д. 29, этаж 8, пом. II, ком. 68"],
+  ["Телефон", "+7 985 368-03-25"],
+  ["E-mail", "finance@talkbank.io"],
+];
 
 const DOCS = [
   { href: "/legal/offer/", label: "Публичная оферта" },
@@ -63,7 +72,7 @@ export default function ContactsPage() {
                 <span className={s.icon} aria-hidden="true"><Icon d={c.icon} size={26} sw={2} /></span>
                 <h2 className={s.cardTitle}>{c.title}</h2>
                 <p className={s.cardText}>{c.text}</p>
-                <div className={`todo ${s.cardTodo}`}>{c.todo}</div>
+                <a href={c.contact.href} target="_blank" rel="noopener" className={s.cardContact}>{c.contact.label}</a>
                 {c.link && (
                   <Link href={c.link.href} className={s.cardLink}>
                     {c.link.label}<Icon d={ICON.arrowRight} size={18} sw={2.2} />
@@ -79,10 +88,10 @@ export default function ContactsPage() {
               <p className={s.reqSub}>TG Market — сервис компании-оператора. Данные для договоров и документов.</p>
             </div>
             <dl className={s.dl}>
-              {REQUISITES.map((r) => (
-                <div key={r} className={s.dlRow}>
-                  <dt>{r}</dt>
-                  <dd><span className="todo">[УТОЧНИТЬ]</span></dd>
+              {REQUISITES.map(([k, v]) => (
+                <div key={k} className={s.dlRow}>
+                  <dt>{k}</dt>
+                  <dd>{v}</dd>
                 </div>
               ))}
             </dl>
