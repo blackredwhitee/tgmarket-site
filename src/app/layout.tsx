@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Motion from "@/components/Motion";
@@ -8,9 +7,6 @@ import CookieBanner from "@/components/CookieBanner";
 import { SITE_URL, SHOW_TODO } from "@/lib/config";
 import { JsonLd, ORG_LD } from "@/lib/seo";
 import "./globals.css";
-
-// next/font скачивает Manrope при сборке и раздаёт woff2 с нашего домена (self-host, display: swap).
-const manrope = Manrope({ subsets: ["latin", "cyrillic"], weight: ["400", "500", "600", "700", "800"], display: "swap", variable: "--font-manrope" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -23,7 +19,7 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, view
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={manrope.variable} data-hide-todo={SHOW_TODO ? undefined : ""} suppressHydrationWarning>
+    <html lang="ru" data-hide-todo={SHOW_TODO ? undefined : ""} suppressHydrationWarning>
       <head>
         {/* Ставим класс до первой отрисовки, чтобы reveal-блоки не мигали */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />

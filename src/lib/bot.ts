@@ -1,7 +1,8 @@
-import { BOT, UTM_SOURCE_CODES } from "./config";
+import { BOT, REF_START, UTM_SOURCE_CODES } from "./config";
 
 /** Единая функция ссылки на бота (ТЗ §7.5). Без UTM — на сервере; суффикс источника добавляет клиент. */
 export function botLink(param: string, sourceCode?: string): string {
+  if (REF_START) return `https://t.me/${BOT}?start=${REF_START}`;
   let p = param;
   if (sourceCode) p += "_" + sourceCode;
   p = p.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);

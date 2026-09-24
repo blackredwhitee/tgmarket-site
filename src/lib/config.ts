@@ -2,6 +2,14 @@
 export const SITE_URL = "https://tgmarket.ai"; // TODO: финальный домен
 export const BOT = "TGMarketSellerBot";
 
+/**
+ * Реферальный start-параметр: если задан, все ссылки на бота ведут с ним (оффер 3% на 2 месяца
+ * для участников реферальной программы). Telegram передаёт в бот только один start-параметр,
+ * поэтому метка страницы и UTM в бот не уходят — источник клика виден в Метрике (цель bot_click).
+ * Пустая строка — вернуть метки страниц site_home, site_pricing… (ТЗ §7.5).
+ */
+export const REF_START = "ref_efdc6ada3070b5c3c449961a665b3eff";
+
 /** Яндекс Метрика. Пустой ID — счётчик не подключается. TODO: ID счётчика. */
 export const METRIKA_ID = "";
 

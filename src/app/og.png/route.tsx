@@ -1,14 +1,14 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { ImageResponse } from "next/og";
 
 // Брендированная OG-обложка 1200×630 (ТЗ §7.4). Генерируется при сборке.
 export const dynamic = "force-static";
 const size = { width: 1200, height: 630 };
 
-async function font(weight: number) {
-  // Без User-Agent Google Fonts отдаёт TTF — его понимает satori.
-  const css = await (await fetch(`https://fonts.googleapis.com/css2?family=Manrope:wght@${weight}&subset=cyrillic`)).text();
-  const url = css.match(/src: url\((.+?)\)/)?.[1];
-  return (await fetch(url!)).arrayBuffer();
+// TTF лежат в репозитории, чтобы сборка не зависела от Google Fonts (satori не читает woff2).
+async function font(weight: 500 | 800) {
+  return readFile(path.join(process.cwd(), "src/fonts", `manrope-${weight}.ttf`));
 }
 
 /** /og.png — общая OG/Twitter-обложка для всех страниц. */
