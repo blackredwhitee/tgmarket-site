@@ -1,0 +1,9 @@
+/* Инлайновая пометка [УТОЧНИТЬ] внутри текста: класс .todo (скрытие в продакшне) без рамки плашки */
+.inline:global(.todo) {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}

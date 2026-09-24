@@ -1,0 +1,127 @@
+.section {
+  padding: 0 0 clamp(72px, 8.9vw, 128px);
+}
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 3.3vw, 48px);
+}
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.h2 {
+  margin: 0;
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink-900);
+  max-width: 640px;
+}
+.arrows {
+  display: flex;
+  gap: 8px;
+}
+.prev,
+.next {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition:
+    background var(--dur-s),
+    color var(--dur-s);
+}
+.prev {
+  border: 2px solid var(--ink-900);
+  background: #fff;
+  color: var(--ink-900);
+}
+.prev:hover {
+  background: var(--ink-900);
+  color: #fff;
+}
+.next {
+  border: 0;
+  background: var(--brand-blue);
+  color: #fff;
+}
+.next:hover {
+  background: var(--brand-blue-hover);
+}
+.slider {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+.slider::-webkit-scrollbar {
+  display: none;
+}
+.card {
+  flex: 0 0 calc((100% - 32px) / 3);
+  scroll-snap-align: start;
+  border-radius: 28px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 320px;
+}
+.quote {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.55;
+  flex: 1;
+  opacity: 0.9;
+}
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px dashed;
+  flex: none;
+}
+.who {
+  display: flex;
+  flex-direction: column;
+}
+.name {
+  font-size: 15px;
+}
+.niche {
+  font-size: 13px;
+  opacity: 0.75;
+}
+.hint:global(.todo) {
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  font-size: 13px;
+  color: var(--ink-400);
+}
+@media (max-width: 767px) {
+  .arrows {
+    display: none;
+  }
+  .card {
+    flex-basis: 86%;
+  }
+}

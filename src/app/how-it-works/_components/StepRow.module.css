@@ -1,0 +1,37 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px 96px;
+}
+@media (min-width: 768px) {
+  .reverse {
+    flex-direction: row-reverse;
+  }
+}
+.text {
+  flex: 1 1 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.media {
+  flex: 1 1 360px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 640px;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .media {
+    height: 500px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :global(html.js) .rv:not(.in) {
+    opacity: 0;
+  }
+}

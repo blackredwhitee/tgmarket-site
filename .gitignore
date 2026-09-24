@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+.DS_Store
+.claude
+# Дизайн-хэндов и ТЗ — внутренние материалы, в публичный репозиторий не кладём
+design/

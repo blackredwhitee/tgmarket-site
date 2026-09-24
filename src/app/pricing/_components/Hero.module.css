@@ -1,0 +1,74 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--brand-blue);
+  color: #fff;
+  padding: clamp(48px, 6.7vw, 96px) 0;
+}
+.pattern {
+  position: absolute;
+  inset: 0;
+}
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 48px;
+}
+.text {
+  flex: 1 1 520px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.h1 {
+  margin: 0;
+  font-size: clamp(40px, 5.4vw, 80px);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  max-width: 720px;
+}
+.sub {
+  margin: 0;
+  font-size: clamp(18px, 1.39vw, 20px);
+  line-height: 1.5;
+  color: #e1e8ff;
+  max-width: 540px;
+}
+.subTodo {
+  opacity: 0.75;
+}
+.cta {
+  padding: 0 30px;
+  box-shadow: 0 6px 0 var(--ink-900);
+}
+.big {
+  flex: 0 1 auto;
+  position: relative;
+}
+.pct {
+  display: block;
+  font-size: clamp(160px, 22vw, 320px);
+  line-height: 0.78;
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  color: var(--accent-yellow);
+  font-variant-numeric: tabular-nums;
+}
+.sticker {
+  position: absolute;
+  right: 0;
+  top: -8px;
+  background: var(--ink-900);
+  color: #fff;
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transform: rotate(6deg);
+}

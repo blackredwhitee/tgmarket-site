@@ -1,0 +1,120 @@
+.section {
+  padding: clamp(72px, 8.9vw, 128px) 0;
+  --row-h: 76px;
+}
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4.4vw, 56px);
+}
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+.h2 {
+  margin: 0;
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink-900);
+}
+.flag:global(.todo) {
+  font-size: 13px;
+  line-height: normal;
+  color: var(--ink-400);
+  border: 1px dashed #c9cfe0;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+  align-items: stretch;
+}
+.left {
+  background: var(--grey-100);
+  border-radius: 28px 0 0 28px;
+  padding: clamp(16px, 2.2vw, 32px);
+  padding-right: clamp(24px, 3.3vw, 48px);
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0;
+}
+.leftHead {
+  font-size: clamp(13px, 1.1vw, 16px);
+  font-weight: 700;
+  color: var(--ink-400);
+  min-height: 48px;
+}
+.leftRow,
+.rightRow {
+  padding: 16px 0;
+  font-size: clamp(14px, 1.2vw, 17px);
+  line-height: 1.45;
+  min-height: var(--row-h);
+}
+.leftRow {
+  border-top: 1px solid #e1e4ec;
+  color: var(--ink-400);
+}
+.right {
+  background: #fff;
+  border: 2px solid var(--brand-blue);
+  border-radius: 28px;
+  padding: clamp(16px, 2.2vw, 32px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(29, 79, 250, 0.18);
+  margin-left: -16px;
+  position: relative;
+}
+.rightHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+}
+.logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--brand-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand {
+  font-size: clamp(15px, 1.3vw, 18px);
+  color: var(--ink-900);
+}
+.rightRow {
+  display: flex;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-900);
+  font-weight: 600;
+}
+.chk {
+  flex: none;
+  margin-top: 1px;
+}
+.note:global(.todo) {
+  display: block;
+  margin-top: 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: var(--ink-400);
+}
+@media (max-width: 767px) {
+  .section {
+    --row-h: 96px;
+  }
+}

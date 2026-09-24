@@ -1,0 +1,25 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 14px;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  color: var(--ink-900);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color var(--dur-s), color var(--dur-s);
+}
+.btn:hover {
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+}
+@media print {
+  .btn {
+    display: none;
+  }
+}

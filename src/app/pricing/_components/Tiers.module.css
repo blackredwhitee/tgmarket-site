@@ -1,0 +1,141 @@
+.section {
+  padding: clamp(72px, 8.9vw, 128px) 0;
+}
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4.4vw, 56px);
+}
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+.h2 {
+  margin: 0;
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink-900);
+}
+.note:global(.todo) {
+  font-size: 13px;
+  line-height: normal;
+  color: var(--ink-400);
+  border: 1px dashed #c9cfe0;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+.promo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--accent-yellow);
+  color: var(--ink-900);
+  border-radius: 20px;
+  padding: 18px 22px;
+  font-size: clamp(16px, 1.3vw, 18px);
+  font-weight: 700;
+}
+.promoTodo {
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+/* Столбцы (desktop) */
+.bars {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  align-items: end;
+  height: 420px;
+  border-bottom: 2px solid var(--ink-900);
+}
+.col {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: default;
+}
+.tip {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 6px);
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  background: var(--ink-900);
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.4;
+  width: 190px;
+  pointer-events: none;
+  z-index: 2;
+}
+.tipOn {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.bar {
+  border-radius: 20px 20px 0 0;
+  transform-origin: bottom;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background 0.2s;
+}
+.rate {
+  font-size: clamp(36px, 3.9vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.range {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+/* До появления столбцы «сложены», чтобы не было скачка перед scaleY-анимацией */
+@media (prefers-reduced-motion: no-preference) {
+  :global(html.js) .bars:not(.shown) .bar {
+    transform: scaleY(0);
+  }
+}
+
+/* Список (mobile) */
+.list {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 16px;
+  padding: 16px 20px;
+}
+.rowRange {
+  font-size: 15px;
+  font-weight: 600;
+}
+.rowRate {
+  font-size: 26px;
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 767px) {
+  .bars {
+    display: none;
+  }
+  .list {
+    display: flex;
+  }
+}

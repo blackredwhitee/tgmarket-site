@@ -1,0 +1,70 @@
+.tl {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin-top: clamp(32px, 4.4vw, 64px);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.track {
+  position: absolute;
+  left: 8.33%;
+  right: 8.33%;
+  top: 21px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.line {
+  position: absolute;
+  inset: 0;
+  background: #ffe14a;
+  transform-origin: left;
+}
+.item,
+.item:hover {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #fff;
+}
+.dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffe14a;
+  color: #0b1233;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 6px #0b1233;
+}
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #c3cae3;
+  max-width: 130px;
+  line-height: 1.35;
+}
+@media (max-width: 767px) {
+  .label {
+    display: none;
+  }
+}
+
+/* До запуска анимации (JS есть, анимации разрешены) — стартовый кадр, чтобы не мигало */
+@media (prefers-reduced-motion: no-preference) {
+  :global(html.js) .tl:not(.on) .line {
+    transform: scaleX(0);
+  }
+  :global(html.js) .tl:not(.on) .dot {
+    opacity: 0.2;
+    transform: scale(0.4);
+  }
+}

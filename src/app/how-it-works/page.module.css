@@ -1,0 +1,275 @@
+/* Hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: #0b1233;
+  color: #fff;
+  padding: clamp(56px, 7.2vw, 104px) 0 clamp(56px, 6.7vw, 96px);
+}
+.heroDots {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(115deg, transparent 28%, rgba(255, 255, 255, 0.09) 42%, transparent 56%),
+    linear-gradient(115deg, transparent 58%, rgba(255, 255, 255, 0.06) 66%, transparent 74%),
+    radial-gradient(45% 55% at 90% 8%, rgba(255, 255, 255, 0.16), transparent 70%);
+}
+.heroGlow {
+  position: absolute;
+  left: 50%;
+  top: -50%;
+  width: 1100px;
+  height: 900px;
+  margin-left: -550px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(29, 79, 250, 0.6), rgba(29, 79, 250, 0) 60%);
+  pointer-events: none;
+}
+.heroIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 17px;
+  background: rgba(255, 225, 74, 0.14);
+  color: #ffe14a;
+  font-size: 14px;
+  font-weight: 700;
+}
+.h1 {
+  margin: 0;
+  font-size: clamp(40px, 5.8vw, 84px);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  max-width: 900px;
+  text-wrap: balance;
+  color: #fff;
+}
+.yellow {
+  color: #ffe14a;
+}
+.lead {
+  margin: 0;
+  font-size: clamp(18px, 1.39vw, 20px);
+  line-height: 1.5;
+  color: #c3cae3;
+  max-width: 560px;
+}
+.heroBtn,
+.heroBtn:hover {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 62px;
+  padding: 0 30px;
+  border-radius: 14px;
+  background: #ffe14a;
+  color: #0b1233;
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform var(--dur-s);
+}
+.heroBtn:hover {
+  transform: translateY(-2px);
+}
+
+/* Шаги */
+.steps {
+  padding: clamp(72px, 8.9vw, 128px) 0;
+}
+.stepsIn {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(56px, 7.2vw, 104px);
+}
+.num {
+  font-size: clamp(88px, 10vw, 144px);
+  line-height: 0.8;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+.stepH2 {
+  margin: 0;
+  font-size: clamp(28px, 3.06vw, 44px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #0b1233;
+}
+.stepP {
+  margin: 0;
+  font-size: clamp(17px, 1.39vw, 20px);
+  line-height: 1.55;
+  max-width: 480px;
+}
+/* Плашка [УТОЧНИТЬ] по макету шага (поверх глобального .todo) */
+span.note {
+  align-self: flex-start;
+  font-size: 13px;
+  line-height: normal;
+  color: #8a92ad;
+  border: 1px dashed #c9cfe0;
+  border-radius: 8px;
+  padding: 7px 10px;
+}
+.blob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 460px;
+  height: 460px;
+  margin: -230px 0 0 -230px;
+}
+.phoneWrap {
+  position: relative;
+}
+
+/* Покупатель */
+.buyer {
+  position: relative;
+  overflow: hidden;
+  background: #1d4ffa;
+  color: #fff;
+  padding: clamp(72px, 8.9vw, 128px) 0;
+}
+.buyerDots {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(115deg, transparent 28%, rgba(255, 255, 255, 0.09) 42%, transparent 56%),
+    linear-gradient(115deg, transparent 58%, rgba(255, 255, 255, 0.06) 66%, transparent 74%),
+    radial-gradient(45% 55% at 90% 8%, rgba(255, 255, 255, 0.16), transparent 70%);
+}
+.buyerIn {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 4.4vw, 64px);
+}
+.h2,
+.h2Light {
+  margin: 0;
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #0b1233;
+}
+.h2Light {
+  color: #fff;
+}
+.buyerRow {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  padding: 0 0 8px;
+}
+.buyerRow::-webkit-scrollbar {
+  display: none;
+}
+.buyerItem {
+  flex: 1 0 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.buyerPhone {
+  height: 620px;
+  overflow: hidden;
+}
+.buyerCap {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  max-width: 300px;
+}
+.buyerNum {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffe14a;
+  color: #0b1233;
+  font-weight: 800;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.buyerText {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #fff;
+  font-weight: 500;
+  padding-top: 7px;
+}
+@media (max-width: 767px) {
+  .buyerPhone {
+    height: 520px;
+  }
+}
+
+/* Деньги и документы */
+.money {
+  padding: clamp(72px, 8.9vw, 128px) 0;
+}
+.moneyIn {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4.4vw, 56px);
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 16px;
+}
+.card {
+  border-radius: 28px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 280px;
+}
+.cardIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cardH3 {
+  margin: auto 0 0;
+  font-size: clamp(22px, 1.95vw, 28px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.cardP {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+.cardLink {
+  align-self: flex-start;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

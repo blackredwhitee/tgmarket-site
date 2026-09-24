@@ -1,0 +1,126 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: #f5f7fe;
+  padding: clamp(48px, 6.7vw, 96px) 0;
+}
+.bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(55% 60% at 12% 18%, rgba(185, 202, 255, 0.55), transparent 70%),
+    radial-gradient(35% 45% at 88% 88%, rgba(255, 225, 74, 0.22), transparent 70%),
+    radial-gradient(30% 35% at 70% 10%, rgba(214, 224, 255, 0.6), transparent 70%);
+}
+.bigNum {
+  position: absolute;
+  left: -2%;
+  bottom: -8%;
+  font-size: clamp(200px, 32vw, 460px);
+  line-height: 0.8;
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  color: #eef2ff;
+  pointer-events: none;
+  user-select: none;
+}
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 48px 80px;
+}
+.text {
+  flex: 1 1 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 18px;
+  background: #ffe14a;
+  color: #0b1233;
+  font-size: 14px;
+  font-weight: 700;
+}
+.h1 {
+  margin: 0;
+  font-size: clamp(40px, 5.4vw, 80px);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #0b1233;
+}
+.hl {
+  display: inline-block;
+  background: #1d4ffa;
+  color: #fff;
+  padding: 0 0.16em 0.04em;
+  border-radius: 0.2em;
+  transform: rotate(-2deg);
+}
+.lead {
+  margin: 0;
+  font-size: clamp(18px, 1.39vw, 20px);
+  line-height: 1.5;
+  max-width: 480px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.btnHome,
+.btnBot {
+  display: inline-flex;
+  align-items: center;
+  height: 60px;
+  border-radius: 14px;
+  font-size: 17px;
+  text-decoration: none;
+  transition: background var(--dur-s), color var(--dur-s), border-color var(--dur-s);
+}
+.btnHome {
+  padding: 0 26px;
+  border: 1.5px solid #e3e7f2;
+  background: #fff;
+  color: #0b1233;
+  font-weight: 700;
+}
+.btnHome:hover {
+  border-color: #1d4ffa;
+  color: #1d4ffa;
+}
+.btnBot {
+  gap: 10px;
+  padding: 0 28px;
+  background: #1d4ffa;
+  color: #fff;
+  font-weight: 800;
+  box-shadow: 0 12px 30px rgba(29, 79, 250, 0.3);
+}
+.btnBot:hover {
+  background: #1640d6;
+  color: #fff;
+}
+.hint {
+  font-size: 13px;
+  color: #8a92ad;
+}
+.phone {
+  flex: 1 1 340px;
+  display: flex;
+  justify-content: center;
+  height: 620px;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .phone {
+    height: 460px;
+  }
+}

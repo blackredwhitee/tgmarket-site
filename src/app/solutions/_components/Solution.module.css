@@ -1,0 +1,511 @@
+/* Шаблон нишевой страницы — порт design/design/Solution.dc.html (cqi → vw) */
+
+.h2 {
+  margin: 0;
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.ink {
+  color: var(--ink-900);
+}
+.blue {
+  color: var(--brand-blue);
+}
+.section {
+  padding: clamp(72px, 8.9vw, 128px) 0;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4.4vw, 56px);
+}
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 16px;
+}
+
+/* Плашка [УТОЧНИТЬ] внутри текста */
+.inlineTodo:global(.todo) {
+  display: inline;
+  padding: 0 0.25em;
+  border-width: 1px;
+  border-radius: 6px;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  opacity: 0.8;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--brand-blue-50);
+  padding: clamp(32px, 4.4vw, 56px) 0 0;
+}
+.circleBlue,
+.circleYellow {
+  position: absolute;
+  border-radius: 50%;
+}
+.circleBlue {
+  right: -160px;
+  top: 80px;
+  width: 620px;
+  height: 620px;
+  background: var(--brand-blue);
+}
+.circleYellow {
+  right: 280px;
+  top: 40px;
+  width: 140px;
+  height: 140px;
+  background: var(--accent-yellow);
+}
+.heroRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 32px 48px;
+}
+.heroText {
+  flex: 1 1 540px;
+  max-width: 660px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding-bottom: clamp(24px, 6vw, 96px);
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 18px;
+  background: var(--ink-900);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+.h1 {
+  margin: 0;
+  font-size: clamp(38px, 4.9vw, 72px);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--ink-900);
+  text-wrap: balance;
+}
+.heroSub {
+  margin: 0;
+  font-size: clamp(18px, 1.39vw, 20px);
+  line-height: 1.5;
+  max-width: 540px;
+  text-wrap: pretty;
+}
+.heroBtn:global(.btn) {
+  padding: 0 30px;
+  box-shadow: 0 6px 0 var(--ink-900);
+}
+.heroNote {
+  font-size: 14px;
+  font-weight: 600;
+}
+.heroPhone {
+  flex: 1 1 360px;
+  display: flex;
+  justify-content: center;
+  height: 640px;
+  overflow: hidden;
+}
+.heroPhoneInner {
+  padding-top: 8px;
+}
+
+/* ---------- Знакомо? ---------- */
+.dark {
+  background: var(--ink-900);
+  color: #fff;
+}
+.headRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+.draft:global(.todo) {
+  font-size: 13px;
+  line-height: normal;
+  color: #aeb7d6;
+  border: 1px dashed rgba(174, 183, 214, 0.6);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+.painCard {
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 220px;
+}
+.painNum {
+  font-size: 56px;
+  line-height: 0.8;
+  font-weight: 800;
+  color: var(--accent-yellow);
+  letter-spacing: -0.04em;
+}
+.painText {
+  margin: auto 0 0;
+  font-size: clamp(19px, 1.6vw, 23px);
+  line-height: 1.35;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ---------- Как это выглядит ---------- */
+.looksRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 48px 80px;
+}
+.looksPhone {
+  flex: 1 1 360px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 640px;
+  overflow: hidden;
+}
+.blob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 440px;
+  height: 440px;
+  margin: -220px 0 0 -220px;
+  border-radius: 38% 62% 55% 45%;
+  background: var(--accent-yellow);
+  transform: rotate(-10deg);
+}
+.looksPhoneInner {
+  position: relative;
+}
+.looksText {
+  flex: 1 1 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.lookList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.lookItem {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  border-radius: 20px;
+  background: var(--bg-alt);
+  padding: 20px 22px;
+}
+.lookNum {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--brand-blue);
+  color: #fff;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.lookBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.lookTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink-900);
+}
+.lookText {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* ---------- Что можно продавать ---------- */
+.soft {
+  background: var(--grey-100);
+}
+.exCard {
+  border-radius: 28px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transform: rotate(var(--rot));
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .exCard:hover {
+    transform: rotate(0deg) translateY(-4px);
+  }
+}
+.exInner {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.exCover {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.exMeta {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.exType {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--brand-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.exTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink-900);
+}
+.exBtn {
+  height: 46px;
+  border-radius: 12px;
+  background: var(--ink-900);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Преимущества ---------- */
+.adv {
+  border-radius: 28px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 220px;
+}
+.advBig {
+  font-size: clamp(40px, 4.4vw, 64px);
+  line-height: 0.9;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+.advTitle {
+  margin-top: auto;
+  font-size: 20px;
+  font-weight: 700;
+}
+.advText {
+  font-size: 15.5px;
+  line-height: 1.55;
+  opacity: 0.88;
+}
+
+/* ---------- FAQ ---------- */
+.faqSection {
+  padding: 0 0 clamp(72px, 8.9vw, 128px);
+}
+.faqRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 64px;
+}
+.faqH2 {
+  flex: 1 1 320px;
+}
+.faqList {
+  flex: 2 1 560px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.faqItem {
+  border-radius: 20px;
+  background: var(--bg-alt);
+  transition: background 0.25s;
+}
+.faqItem[data-open] {
+  background: var(--brand-blue-50);
+}
+.faqQ {
+  margin: 0;
+  font: inherit;
+}
+.faqBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px;
+  border: 0;
+  border-radius: 20px;
+  background: transparent;
+  font-family: inherit;
+  font-size: clamp(17px, 1.4vw, 20px);
+  font-weight: 700;
+  color: var(--ink-900);
+  text-align: left;
+  cursor: pointer;
+}
+.faqIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  transition:
+    transform 0.25s,
+    background 0.25s;
+}
+.faqItem[data-open] .faqIcon {
+  background: var(--brand-blue);
+  color: #fff;
+  transform: rotate(45deg);
+}
+.faqPanel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.faqItem[data-open] .faqPanel {
+  grid-template-rows: 1fr;
+}
+.faqPanelInner {
+  overflow: hidden;
+}
+.faqA {
+  margin: 0;
+  padding: 0 24px 22px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ---------- /solutions/ (список ниш) ---------- */
+.indexHero {
+  position: relative;
+  overflow: hidden;
+  background: var(--brand-blue-50);
+  padding: clamp(48px, 6vw, 88px) 0 clamp(72px, 8.9vw, 128px);
+}
+.indexHead {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 760px;
+}
+.nicheGrid {
+  position: relative;
+  margin: clamp(40px, 4.4vw, 56px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.nicheItem {
+  display: flex;
+}
+.nicheCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 220px;
+  padding: 28px;
+  border-radius: 28px;
+  background: #fff;
+  color: var(--ink-600);
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nicheCard:hover {
+  color: var(--ink-600);
+}
+.nicheIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--ink-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.nicheTitle {
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink-900);
+}
+.nicheSub {
+  font-size: 16px;
+  line-height: 1.55;
+}
+.nicheMore {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--brand-blue);
+}
+.nicheMore svg {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .nicheCard:hover {
+    transform: translateY(-4px);
+  }
+  .nicheCard:hover .nicheMore svg {
+    transform: translateX(4px);
+  }
+}
+
+/* ---------- Mobile (макет 360) ---------- */
+@media (max-width: 767px) {
+  .heroPhone,
+  .looksPhone {
+    height: 440px;
+  }
+}

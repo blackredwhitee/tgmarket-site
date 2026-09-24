@@ -1,0 +1,259 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  transition: height var(--dur-s);
+}
+.small {
+  height: 64px;
+}
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink-900);
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: -0.02em;
+  flex: none;
+}
+.logo:hover {
+  color: var(--ink-900);
+}
+.logoMark {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--brand-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+.link {
+  padding: 10px 12px;
+  white-space: nowrap;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-600);
+  text-decoration: none;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+.link:hover {
+  background: var(--bg-alt);
+  color: var(--ink-900);
+}
+.active {
+  color: var(--brand-blue);
+}
+.ddWrap {
+  position: relative;
+}
+.ddLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.chev {
+  transition: transform 0.25s;
+}
+.dd {
+  position: absolute;
+  top: 100%;
+  left: -12px;
+  padding-top: 10px;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition:
+    opacity 0.25s var(--ease-out),
+    transform 0.25s var(--ease-out);
+}
+.ddOpen {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.ddPanel {
+  width: 440px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 8px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+}
+.ddItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.ddItem:hover {
+  background: var(--bg-alt);
+}
+.ddIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--brand-blue-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.ddText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.ddTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-900);
+}
+.ddSub {
+  font-size: 13px;
+  color: var(--ink-400);
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 20px;
+  border-radius: 12px;
+  background: var(--brand-blue);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  flex: none;
+  transition: background 0.15s;
+}
+.cta:hover {
+  background: var(--brand-blue-hover);
+  color: #fff;
+}
+.burger {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--ink-900);
+}
+.mobileMenu {
+  /* backdrop-filter хедера делает его containing block для fixed — поэтому absolute + высота вьюпорта */
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 64px);
+  height: calc(100dvh - 64px);
+  overflow-y: auto;
+  background: #fff;
+  padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+}
+.mItem {
+  padding: 16px 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink-900);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+.mItem:hover {
+  color: var(--brand-blue);
+}
+.mTop {
+  border-bottom: 0;
+  border-top: 1px solid var(--line);
+}
+.mNiche {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 0;
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--ink-600);
+}
+.mCta {
+  margin-top: auto;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--brand-blue);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.mCta:hover {
+  color: #fff;
+}
+
+@media (max-width: 1023px) {
+  .header,
+  .small {
+    height: 64px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  .inner {
+    padding: 0 8px 0 16px;
+    justify-content: space-between;
+  }
+  .logo {
+    font-size: 17px;
+    gap: 9px;
+  }
+  .logoMark {
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+  }
+  .nav,
+  .cta {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+}

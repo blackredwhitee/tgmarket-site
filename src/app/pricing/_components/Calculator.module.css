@@ -1,0 +1,231 @@
+.section {
+  background: var(--ink-900);
+  color: #fff;
+  padding: clamp(72px, 8.9vw, 128px) 0;
+}
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4.4vw, 56px);
+}
+.h2 {
+  margin: 0;
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Левая карточка: ввод */
+.controls {
+  flex: 1.3 1 460px;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  padding: clamp(20px, 2.8vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #c3cae3;
+}
+.input {
+  width: 200px;
+  max-width: 100%;
+  height: 52px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 800;
+  padding: 0 16px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  outline: none;
+  transition: border-color var(--dur-s);
+}
+.input:focus-visible {
+  border-color: var(--accent-yellow);
+}
+
+/* Слайдер */
+.slider {
+  position: relative;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+}
+.fill {
+  height: 100%;
+  width: 100%;
+  background: var(--accent-yellow);
+  transform-origin: left;
+}
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  height: 32px;
+  cursor: pointer;
+}
+.range:focus {
+  outline: none;
+}
+.range::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 4px;
+  background: transparent;
+}
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-yellow);
+  border: 4px solid var(--ink-900);
+  margin-top: -12px;
+  cursor: grab;
+}
+.range::-moz-range-track {
+  height: 8px;
+  border-radius: 4px;
+  background: transparent;
+}
+.range::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent-yellow);
+  border: 4px solid var(--ink-900);
+  cursor: grab;
+}
+.range:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px #fff;
+}
+.range:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 3px #fff;
+}
+.limits {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--ink-400);
+  margin-top: -16px;
+}
+
+/* Сегмент «Первый месяц / Обычный тариф» */
+.seg {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 4px;
+}
+.segInd {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  border-radius: 10px;
+  background: #fff;
+  transition: transform 0.25s var(--ease-in-out);
+}
+.segBtn {
+  position: relative;
+  height: 48px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.25s;
+}
+
+/* Правая карточка: результат */
+.result {
+  flex: 1 1 340px;
+  min-width: 0;
+  background: var(--accent-yellow);
+  color: var(--ink-900);
+  border-radius: 28px;
+  padding: clamp(20px, 2.8vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.rateRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rateLabel {
+  font-size: 15px;
+  font-weight: 700;
+}
+.badge {
+  font-size: 20px;
+  font-weight: 800;
+  background: var(--ink-900);
+  color: var(--accent-yellow);
+  border-radius: 12px;
+  padding: 6px 14px;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.statFirst {
+  border-top: 2px solid rgba(11, 18, 51, 0.15);
+  padding-top: 20px;
+}
+.statLabel {
+  font-size: 15px;
+  font-weight: 600;
+}
+.statValue {
+  font-size: clamp(36px, 3.6vw, 52px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.foot {
+  margin-top: auto;
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.75;
+}

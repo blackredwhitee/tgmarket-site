@@ -1,0 +1,201 @@
+.section {
+  padding: clamp(72px, 8.9vw, 128px) 0;
+  background: #fff;
+}
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 48px 72px;
+}
+.left {
+  flex: 1 1 480px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(32px, 3.3vw, 48px);
+}
+.h2 {
+  margin: 0;
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink-900);
+}
+.blue {
+  color: var(--brand-blue);
+}
+.list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-self: stretch;
+}
+.step {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  cursor: pointer;
+  border-radius: 22px;
+  padding: 22px 24px;
+  background: var(--bg-alt);
+  color: var(--ink-900);
+  transition:
+    background 0.35s,
+    color 0.35s;
+}
+.step.on {
+  background: var(--brand-blue);
+  color: #fff;
+}
+.num {
+  font-size: clamp(40px, 3.9vw, 56px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: #c9cfe0;
+  flex: none;
+  width: 72px;
+  transition: color 0.35s;
+}
+.on .num {
+  color: var(--accent-yellow);
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 2px;
+  min-width: 0;
+}
+.h3 {
+  margin: 0;
+  font-size: clamp(20px, 1.67vw, 24px);
+  line-height: 1.3;
+  font-weight: 700;
+  color: inherit;
+}
+/* Кнопка на весь блок шага (кликабельна вся карточка) */
+.pick {
+  all: unset;
+  cursor: pointer;
+}
+.pick::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+}
+.pick:focus-visible::after {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 2px;
+}
+.p {
+  margin: 0;
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.55;
+  opacity: 0.7;
+}
+.on .p {
+  opacity: 0.92;
+}
+.bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background: var(--accent-yellow);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+.barRun {
+  animation: stepFill 4.5s linear forwards;
+}
+.barFull {
+  transform: scaleX(1);
+}
+@keyframes stepFill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--brand-blue);
+  text-decoration: none;
+}
+.more:hover {
+  color: var(--brand-blue-hover);
+}
+
+/* Телефон с кроссфейдом сцен */
+.visual {
+  flex: 1 1 380px;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 660px;
+  overflow: hidden;
+}
+.circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 440px;
+  height: 440px;
+  margin: -220px 0 0 -220px;
+  border-radius: 50%;
+  background: var(--brand-blue-50);
+}
+.sun {
+  position: absolute;
+  left: 50%;
+  top: 18%;
+  width: 120px;
+  height: 120px;
+  margin-left: 150px;
+  border-radius: 50%;
+  background: var(--accent-yellow);
+}
+.phones {
+  position: relative;
+  width: 300px;
+  height: 620px;
+  flex: none;
+}
+.phone {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.4s var(--ease-out),
+    transform 0.4s var(--ease-out);
+}
+.phoneOn {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 767px) {
+  .visual {
+    height: 480px;
+  }
+}
