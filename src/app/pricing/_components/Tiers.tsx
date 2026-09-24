@@ -6,8 +6,9 @@ import { TIERS, rateLabel } from "@/data/tariffs";
 import t from "./todo.module.css";
 import s from "./Tiers.module.css";
 
-const HEIGHTS = ["100%", "86%", "72%", "60%", "50%"];
-const BG = ["#0B1233", "#233070", "#3B4AA0", "#6A7FE0", "#B9CAFF"];
+// Высоты и цвета столбцов по числу ступеней (4): от тёмного к светло-синему, как в макете
+const HEIGHTS = ["100%", "82%", "66%", "50%"];
+const BG = ["#0B1233", "#3B4AA0", "#6A7FE0", "#B9CAFF"];
 const ZAP = "M13 2 3 14h9l-1 8 10-12h-9z";
 
 export default function Tiers({ active }: { active: number }) {
@@ -46,12 +47,11 @@ export default function Tiers({ active }: { active: number }) {
       <div className={`container ${s.inner}`}>
         <div className={s.head}>
           <h2 className={s.h2}>Ступенчатая комиссия</h2>
-          <span className={`todo ${s.note}`}>Ступени и ставки — пример для макета · [УТОЧНИТЬ]</span>
+          <span className={s.note}>Ставка меняется автоматически при переходе границы оборота</span>
         </div>
         <div className={s.promo}>
           <Icon d={ZAP} size={24} sw={2.2} style={{ flex: "none" }} />
-          Первый месяц для новых селлеров — 3% на весь оборот{" "}
-          <span className={`todo ${t.inline} ${s.promoTodo}`}>[УТОЧНИТЬ условия]</span>
+          Первые 2 месяца для первых селлеров — 3% на весь оборот
         </div>
 
         {/* desktop: «лестница» из столбцов */}

@@ -125,3 +125,13 @@
     flex-basis: 86%;
   }
 }
+
+.draftTag:global(.todo) {
+  align-self: flex-start;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border-color: currentColor;
+  color: inherit;
+  opacity: 0.6;
+}

@@ -12,7 +12,7 @@ export default function Hero() {
         <div className={s.text}>
           <h1 data-intro="0" className={s.h1}>Платите, только когда продаёте</h1>
           <p data-intro="150" className={s.sub}>
-            Комиссия с оборота без скрытых платежей. Новым селлерам — 3% в первый месяц.{" "}
+            Комиссия с оборота без скрытых платежей. Первым селлерам — 3% на 2 месяца.{" "}
             <span className={`todo ${t.inline} ${s.subTodo}`}>[УТОЧНИТЬ]</span>
           </p>
           <BotLink data-intro="300" param="site_pricing" block="hero" className={`btn btn-yellow ${s.cta}`}>
@@ -22,7 +22,7 @@ export default function Hero() {
         </div>
         <div data-intro="200" data-y="40" className={s.big}>
           <HeroCounter className={s.pct} />
-          <span className={s.sticker}>первый месяц</span>
+          <span className={s.sticker}>на 2 месяца</span>
         </div>
       </div>
     </section>

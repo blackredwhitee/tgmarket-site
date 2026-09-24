@@ -18,11 +18,10 @@ export default function PricingTeaser({ spaced = false }: { spaced?: boolean }) 
             <h2 className={s.h2}>Платите, только когда продаёте</h2>
             <div className={s.accent}>
               <span className={s.pct} data-pct>3%</span>
-              <span className={s.pctNote}>комиссия в первый месяц для новых селлеров</span>
+              <span className={s.pctNote}>комиссия на 2 месяца для первых селлеров</span>
             </div>
             <p className={s.p}>
-              Дальше — ступенчатая шкала: чем больше оборот, тем ниже процент.{" "}
-              <span className={`todo ${s.inlineTodo}`}>[УТОЧНИТЬ]</span>
+              Дальше — ступенчатая шкала от 10% до 5%: чем больше оборот, тем ниже процент.
             </p>
             <Link href="/pricing/" className={s.btn}>
               Посмотреть тарифы<Icon d={P.arrowR} size={18} sw={2.2} />

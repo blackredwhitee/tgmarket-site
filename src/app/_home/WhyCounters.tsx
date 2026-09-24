@@ -2,9 +2,11 @@
 import { useEffect, useState } from "react";
 import { reducedMotion, tween, useSeen } from "@/lib/motion";
 import { fmt } from "@/lib/format";
+import { SELLERS, SHOW_SELLERS } from "@/lib/config";
 import s from "./Why.module.css";
 
-const TO = [1000, 3, 4];
+// Первая карточка: число селлеров (пока черновик) либо факт «0 ₽ за подключение»
+const TO = [SHOW_SELLERS ? SELLERS.value : 0, 3, 4];
 
 /** Карточки-счётчики: числа считаются от 0 за 800ms при появлении, «+» проявляется после счёта. */
 export default function WhyCounters() {
@@ -22,11 +24,13 @@ export default function WhyCounters() {
 
   const c = TO.map((v) => v * p);
   const items = [
-    { val: fmt(c[0]), suffix: "+", plusOp: done ? 1 : 0, label: "селлеров используют TG Market", bg: "#1D4FFA", fg: "#fff" },
-    { val: String(Math.round(c[1])), suffix: "%", plusOp: 1, label: "комиссия в первый месяц для новых селлеров", bg: "#FFE14A", fg: "#0B1233" },
+    SHOW_SELLERS
+      ? { val: fmt(c[0]), suffix: "+", plusOp: done ? 1 : 0, label: "селлеров используют TG Market", bg: "#1D4FFA", fg: "#fff" }
+      : { val: "0", suffix: " ₽", plusOp: 1, label: "за подключение и никакой абонентской платы", bg: "#1D4FFA", fg: "#fff" },
+    { val: String(Math.round(c[1])), suffix: "%", plusOp: 1, label: "комиссия на 2 месяца для первых селлеров", bg: "#FFE14A", fg: "#0B1233" },
     { val: String(Math.round(c[2])), suffix: "", plusOp: 1, label: "типа карточек: товар, услуга, билет, донат", bg: "#0B1233", fg: "#fff" },
   ];
-  const finals = ["1 000+", "3%", "4"];
+  const finals = [SHOW_SELLERS ? SELLERS.label : "0 ₽", "3%", "4"];
 
   return (
     <div ref={ref} className={s.counters}>

@@ -21,13 +21,10 @@
   letter-spacing: -0.03em;
   color: var(--ink-900);
 }
-.note:global(.todo) {
-  font-size: 13px;
-  line-height: normal;
+.note {
+  font-size: 14px;
+  line-height: 1.4;
   color: var(--ink-400);
-  border: 1px dashed #c9cfe0;
-  border-radius: 8px;
-  padding: 6px 10px;
 }
 .promo {
   display: flex;

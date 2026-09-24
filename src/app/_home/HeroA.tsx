@@ -1,3 +1,4 @@
+import { SELLERS, SHOW_SELLERS } from "@/lib/config";
 import Link from "next/link";
 import BotLink from "@/components/BotLink";
 import { Icon, ICON } from "@/components/icons";
@@ -16,7 +17,7 @@ export default function HeroA() {
       <div className={`container ${s.wrap}`}>
         <div className={s.text}>
           <span className={s.badge} data-intro="0" data-y="12" data-dur="400">
-            <Icon d={BOLT} size={16} sw={2.2} />Новым селлерам — 3% в первый месяц
+            <Icon d={BOLT} size={16} sw={2.2} />Первым селлерам — 3% на 2 месяца
           </span>
           <h1 className={s.h1}>
             <span className={s.line} data-intro="100">Продавайте прямо</span>
@@ -33,7 +34,7 @@ export default function HeroA() {
             <Link href="#how" className={`btn btn-secondary ${s.ctaSec}`} data-intro="630">Как это работает</Link>
           </div>
           <div className={s.trust} data-intro="700">
-            <span>1 000+ селлеров</span><span className={s.dot} aria-hidden="true" />
+            <span>{SHOW_SELLERS ? `${SELLERS.label} селлеров` : "Подключение — 0 ₽"}</span><span className={s.dot} aria-hidden="true" />
             <span>Оплата по СБП</span><span className={s.dot} aria-hidden="true" />
             <span>Для самозанятых, ИП и юрлиц</span>
           </div>

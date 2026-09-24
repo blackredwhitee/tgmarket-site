@@ -1,3 +1,4 @@
+import { SELLERS, SHOW_SELLERS } from "@/lib/config";
 import Link from "next/link";
 import BotLink from "@/components/BotLink";
 import { Icon, ICON } from "@/components/icons";
@@ -16,7 +17,7 @@ export default function HeroB() {
             <span className={s.last} data-intro="260">без сайта<span className={s.chip}>и кассы</span></span>
           </h1>
           <div className={s.side} data-intro="400">
-            <span className={s.badge}>Новым селлерам — 3% в первый месяц</span>
+            <span className={s.badge}>Первым селлерам — 3% на 2 месяца</span>
             <p className={s.sub}>Создайте карточку товара в боте, опубликуйте её в своём канале и принимайте оплату по СБП от подписчиков.</p>
             <div className={s.actions}>
               <BotLink param="site_home" block="hero_b" className={s.cta}>
@@ -24,7 +25,7 @@ export default function HeroB() {
               </BotLink>
               <Link href="#how" className={s.ctaSec}>Как это работает</Link>
             </div>
-            <span className={s.trust}>1 000+ селлеров · Оплата по СБП · Самозанятые, ИП, юрлица</span>
+            <span className={s.trust}>{SHOW_SELLERS ? `${SELLERS.label} селлеров` : "Подключение — 0 ₽"} · Оплата по СБП · Самозанятые, ИП, юрлица</span>
           </div>
         </div>
         <FlowCards />

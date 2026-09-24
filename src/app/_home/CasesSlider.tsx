@@ -6,6 +6,8 @@ import { P } from "./paths";
 import s from "./Cases.module.css";
 
 export type Case = {
+  /** Черновик: в продакшн-сборке не выводится */
+  draft?: boolean;
   niche: string;
   name: string;
   quote: string;
@@ -44,6 +46,7 @@ export default function CasesSlider({ cases }: { cases: Case[] }) {
             <div key={i} className={s.card} style={{ background: c.bg, color: c.fg }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill={c.quoteFill} aria-hidden="true"><path d={P.quote} /></svg>
               <p className={s.quote}>{c.quote}</p>
+              {c.draft && <span className={`todo ${s.draftTag}`}>Черновик — заменить реальным отзывом</span>}
               <div className={s.author}>
                 <span className={s.avatar} style={{ background: c.avatar, borderColor: c.dash }} />
                 <span className={s.who}>

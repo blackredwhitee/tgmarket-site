@@ -92,7 +92,7 @@ export default function Calculator({ turnover, first, onChange }: Props) {
                 className={s.segBtn} style={{ color: first ? "#0B1233" : "#fff" }}
                 onClick={() => update(turnover, true)}
               >
-                Первый месяц ({FIRST_MONTH_RATE}%)
+                Первые 2 месяца ({FIRST_MONTH_RATE}%)
               </button>
               <button
                 type="button" role="radio" aria-checked={!first}

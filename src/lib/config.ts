@@ -17,3 +17,10 @@ export const UTM_SOURCE_CODES: Record<string, string> = {
 
 /** Показывать плашки [УТОЧНИТЬ]. В продакшне выключить (NEXT_PUBLIC_HIDE_TODO=1). */
 export const SHOW_TODO = process.env.NEXT_PUBLIC_HIDE_TODO !== "1";
+
+/**
+ * Число селлеров для блоков доверия. draft: true — оценочная цифра для демо; в продакшн-сборке
+ * вместо неё показывается факт «Подключение — 0 ₽». Заменить на реальные данные и снять draft.
+ */
+export const SELLERS = { value: 1000, label: "1 000+", draft: true };
+export const SHOW_SELLERS = !SELLERS.draft || SHOW_TODO;

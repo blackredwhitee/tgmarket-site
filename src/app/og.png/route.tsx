@@ -31,7 +31,7 @@ export async function GET() {
           <div style={{ display: "flex" }}>без сайта и кассы</div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 20, fontSize: 28, fontWeight: 500, color: "#4A5372" }}>
-          <div style={{ display: "flex", background: "#FFE14A", color: "#0B1233", fontWeight: 800, borderRadius: 30, padding: "10px 22px" }}>3% в первый месяц</div>
+          <div style={{ display: "flex", background: "#FFE14A", color: "#0B1233", fontWeight: 800, borderRadius: 30, padding: "10px 22px" }}>3% на 2 месяца</div>
           Оплата по СБП прямо из поста в канале
         </div>
       </div>
