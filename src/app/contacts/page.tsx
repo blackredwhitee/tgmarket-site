@@ -46,7 +46,8 @@ const REQUISITES: [string, string][] = [
 ];
 
 const DOCS = [
-  { href: "/legal/offer/", label: "Публичная оферта" },
+  { href: "/legal/offer/", label: "Оферта для продавцов" },
+  { href: "/legal/offer-buyers/", label: "Оферта для покупателей" },
   { href: "/legal/privacy/", label: "Политика обработки персональных данных" },
   { href: "/legal/cookies/", label: "Политика cookie" },
 ];

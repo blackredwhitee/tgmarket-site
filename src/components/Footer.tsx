@@ -39,7 +39,8 @@ export default function Footer() {
         <div className={s.bottom}>
           <span className={s.legal}>TG Market — сервис ООО «Открытые интеграционные сервисы» (ООО «ОИС»), ИНН 9709074908, ОГРН 1217700471086. 109028, г. Москва, Серебряническая наб., д. 29. © 2026 TG Market.</span>
           <span className={s.docs}>
-            <Link href="/legal/offer/">Оферта</Link>
+            <Link href="/legal/offer/">Оферта для продавцов</Link>
+            <Link href="/legal/offer-buyers/">Оферта для покупателей</Link>
             <Link href="/legal/privacy/">Политика обработки персональных данных</Link>
             <Link href="/legal/cookies/">Политика cookie</Link>
           </span>

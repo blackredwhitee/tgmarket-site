@@ -198,3 +198,16 @@
     color: #000;
   }
 }
+
+.subtitle {
+  margin: 0;
+  max-width: 720px;
+  font-size: clamp(16px, 1.25vw, 18px);
+  line-height: 1.5;
+  color: var(--ink-600);
+}
+.intro {
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--line);
+}

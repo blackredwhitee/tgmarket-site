@@ -46,11 +46,13 @@ export default async function LegalPage({ params }: Params) {
             ))}
           </nav>
           <h1 className={s.h1} data-intro="100">{doc.title}</h1>
+          <p className={s.subtitle} data-intro="150">{doc.subtitle}</p>
           <div className={s.metaRow} data-intro="200">
-            <p className={s.date}>
-              Редакция от{" "}
-              {doc.updated ? <time dateTime={doc.updated}>{fmtDate(doc.updated)}</time> : <span className="todo">[УТОЧНИТЬ: дата редакции]</span>}
-            </p>
+            {doc.updated && (
+              <p className={s.date}>
+                Редакция от <time dateTime={doc.updated}>{fmtDate(doc.updated)}</time>
+              </p>
+            )}
             <PrintButton />
           </div>
         </div>
@@ -61,10 +63,10 @@ export default async function LegalPage({ params }: Params) {
           <nav className={s.toc} aria-labelledby="toc-title">
             <p id="toc-title" className={s.tocTitle}>Содержание</p>
             <ol className={s.tocList}>
-              {doc.sections.map((sec, i) => (
+              {doc.sections.map((sec) => (
                 <li key={sec.id}>
                   <a href={`#${sec.id}`} className={s.tocLink}>
-                    <span className={s.tocNum}>{i + 1}.</span>{sec.title}
+                    {sec.num && <span className={s.tocNum}>{sec.num}.</span>}{sec.title}
                   </a>
                 </li>
               ))}
@@ -73,12 +75,15 @@ export default async function LegalPage({ params }: Params) {
         </aside>
 
         <article className={s.article}>
-          {doc.sections.map((sec, i) => (
+          {doc.intro.length > 0 && (
+            <div className={s.intro}>
+              {doc.intro.map((p, k) => <p key={k} className={s.p}>{p}</p>)}
+            </div>
+          )}
+          {doc.sections.map((sec) => (
             <section key={sec.id} id={sec.id} className={s.sec} aria-labelledby={`${sec.id}-h`}>
-              <h2 id={`${sec.id}-h`} className={s.h2}>{i + 1}. {sec.title}</h2>
-              {sec.paras?.length
-                ? sec.paras.map((p, k) => <p key={k} className={s.p}>{p}</p>)
-                : <p className={`todo ${s.todo}`}>[УТОЧНИТЬ: текст от юриста]</p>}
+              <h2 id={`${sec.id}-h`} className={s.h2}>{sec.num && `${sec.num}. `}{sec.title}</h2>
+              {sec.paras.map((p, k) => <p key={k} className={s.p}>{p}</p>)}
             </section>
           ))}
         </article>
