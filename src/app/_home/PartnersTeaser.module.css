@@ -92,7 +92,7 @@
   position: absolute;
   left: 50%;
   top: 84%;
-  transform: translate(-50%, -50%) rotate(-3deg);
+  transform: translate(-50%, -50%);
   background: var(--ink-900);
   color: var(--sky);
   font-weight: 800;

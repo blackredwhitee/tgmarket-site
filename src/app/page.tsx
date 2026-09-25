@@ -76,8 +76,8 @@ export default function Home() {
           <PhoneStage
             phone={{ scene: "paid" }}
             cards={[
-              { icon: RECEIPT, iconBg: "#FB7E5E", label: "Чек отправлен", value: "в ОФД", pos: { left: -8, top: 120 }, rot: -4 },
-              { icon: CLOCK, iconBg: "#0B1233", label: "Выплата", value: "до 3 дней", pos: { right: -8, top: 360 }, rot: 3 },
+              { icon: RECEIPT, iconBg: "#FB7E5E", label: "Чек отправлен", value: "в ОФД", pos: { left: -8, top: 150 }, rot: 0 },
+              { icon: CLOCK, iconBg: "#0B1233", label: "Выплата", value: "до 3 дней", pos: { right: -8, top: 360 }, rot: 0 },
             ]}
           />
         }
@@ -115,16 +115,16 @@ export default function Home() {
             phone={{
               scene: "chat",
               msgs: [
-                { text: "Кому отправить рассылку?", buttons: ["Все покупатели · 1 248", "Купили консультацию · 312"] },
+                { text: "Кому отправить рассылку?", buttons: ["Все покупатели · 1 248", "Купили консультацию · 312"] },
                 { me: true, text: "Все покупатели" },
                 { text: "Текст рассылки:\n«Открыла запись на ноябрь. Постоянным клиентам — скидка 10% до пятницы»", buttons: ["Записаться"] },
                 { me: true, text: "Отправить" },
-                { text: "Готово! Рассылка доставлена 1 248 покупателям" },
+                { text: "Готово! Рассылка доставлена 1 248 покупателям" },
               ],
             }}
             cards={[
-              { icon: MAIL, iconBg: "#0B1233", label: "Рассылка", value: "1 248 получателей", pos: { left: -24, top: 90 }, rot: -4 },
-              { icon: ICON.check, iconBg: "#18A957", label: "Повторная покупка", value: "+3 500 ₽", pos: { right: -16, top: 380 }, rot: 4 },
+              { icon: MAIL, iconBg: "#0B1233", label: "Рассылка", value: "1 248 получателей", pos: { left: -24, top: 150 }, rot: 0 },
+              { icon: ICON.check, iconBg: "#18A957", label: "Повторная покупка", value: "+3 500 ₽", pos: { right: -16, top: 380 }, rot: 0 },
             ]}
           />
         }

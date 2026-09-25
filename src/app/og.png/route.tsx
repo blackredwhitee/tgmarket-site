@@ -26,7 +26,7 @@ export async function GET() {
         <div style={{ display: "flex", flexDirection: "column", fontSize: 84, fontWeight: 800, lineHeight: 1.02, letterSpacing: "-0.04em" }}>
           <div style={{ display: "flex" }}>Продавайте прямо</div>
           <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-            <div style={{ display: "flex", background: "#FB7E5E", color: "#fff", padding: "0 16px 4px", borderRadius: 18, transform: "rotate(-2deg)" }}>в Telegram</div>
+            <div style={{ display: "flex", background: "#FB7E5E", color: "#fff", padding: "0 16px 4px", borderRadius: 18 }}>в Telegram</div>
           </div>
           <div style={{ display: "flex" }}>без сайта и кассы</div>
         </div>

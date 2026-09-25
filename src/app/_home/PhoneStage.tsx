@@ -22,7 +22,7 @@ export default function PhoneStage({ phone, cards }: { phone: PhoneProps; cards:
       </div>
       {cards.map((c, i) => (
         <div key={c.label} ref={(el) => { refs.current[i] = el; }} className={s.floatCard} style={c.pos}>
-          <span style={{ display: "flex", alignItems: "center", gap: 12, transform: `rotate(${c.rot}deg)` }}>
+          <span style={{ display: "flex", alignItems: "center", gap: 12 }}>
             <span className={s.floatIcon} style={{ background: c.iconBg }}><Icon d={c.icon} size={18} stroke="#fff" sw={2.6} /></span>
             <span>{c.label}<b>{c.value}</b></span>
           </span>

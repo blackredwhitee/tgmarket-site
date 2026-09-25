@@ -147,7 +147,7 @@ button {
   color: #fff;
   padding: 0 0.16em 0.04em;
   border-radius: 0.2em;
-  transform: rotate(-2deg);
+  transform: none;
   box-shadow: 0 12px 30px rgba(251, 126, 94, 0.3);
 }
 

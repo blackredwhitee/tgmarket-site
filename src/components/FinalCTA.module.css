@@ -178,7 +178,7 @@
 }
 .phone {
   position: relative;
-  transform: rotate(4deg);
+  transform: none;
   transform-origin: bottom center;
   margin-top: 24px;
 }
@@ -202,7 +202,7 @@
   align-items: center;
   gap: 12px;
   box-shadow: 0 16px 40px rgba(11, 18, 51, 0.25);
-  transform: rotate(-5deg);
+  transform: none;
 }
 .paidIcon {
   width: 38px;
@@ -236,7 +236,7 @@
   flex-direction: column;
   gap: 2px;
   box-shadow: 0 16px 40px rgba(11, 18, 51, 0.3);
-  transform: rotate(6deg);
+  transform: none;
 }
 .todayCard span {
   font-size: 12px;

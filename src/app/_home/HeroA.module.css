@@ -65,7 +65,7 @@
   color: #fff;
   padding: 0 0.18em 0.04em;
   border-radius: 0.22em;
-  transform: rotate(-2deg);
+  transform: none;
   box-shadow: 0 12px 30px rgba(251, 126, 94, 0.3);
 }
 .sub {
@@ -152,7 +152,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transform: rotate(-12deg);
+  transform: none;
   box-shadow: 0 16px 40px rgba(11, 18, 51, 0.25);
 }
 .sticker b {
@@ -173,7 +173,7 @@
   align-items: center;
   gap: 12px;
   box-shadow: var(--shadow-float);
-  transform: rotate(-3deg);
+  transform: none;
   white-space: nowrap;
 }
 .sbp {
@@ -208,7 +208,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  transform: rotate(2deg);
+  transform: none;
 }
 .revLabel {
   font-size: 12px;
