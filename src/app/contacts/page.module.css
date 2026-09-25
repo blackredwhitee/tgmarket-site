@@ -11,7 +11,7 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: var(--accent-yellow);
+  background: var(--sky);
   opacity: 0.9;
 }
 .heroInner {
@@ -30,7 +30,7 @@
 }
 .hl {
   display: inline-block;
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
   padding: 0 0.16em 0.04em;
   border-radius: 0.2em;
@@ -64,11 +64,11 @@
   scroll-margin-top: 96px;
 }
 .blue {
-  background: var(--brand-blue);
-  color: #e1e8ff;
+  background: var(--brand);
+  color: #fff1ec;
 }
 .soft {
-  background: var(--brand-blue-50);
+  background: var(--sky-50);
   color: var(--ink-600);
 }
 .dark {
@@ -89,11 +89,11 @@
   color: #fff;
 }
 .soft .icon {
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
 }
 .dark .icon {
-  background: var(--accent-yellow);
+  background: var(--sky);
   color: var(--ink-900);
 }
 .cardTitle {
@@ -128,13 +128,13 @@
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
-  color: var(--brand-blue);
+  color: var(--brand);
 }
 .blue .cardLink {
   color: #fff;
 }
 .blue .cardLink:hover {
-  color: var(--accent-yellow);
+  color: var(--ink-900);
 }
 .blue .cardLink:focus-visible {
   outline-color: #fff;

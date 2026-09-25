@@ -45,7 +45,7 @@
   height: 62px;
   padding: 0 30px;
   border-radius: 14px;
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
   font-size: 17px;
   font-weight: 800;
@@ -53,7 +53,7 @@
   transition: background var(--dur-s);
 }
 .cta:hover {
-  background: var(--brand-blue-hover);
+  background: var(--brand-hover);
   color: #fff;
 }
 .ask {

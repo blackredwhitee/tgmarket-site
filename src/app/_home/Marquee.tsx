@@ -15,7 +15,7 @@ export default function Marquee() {
         {[...ITEMS, ...ITEMS].map((m, i) => (
           <span key={i} className={s.mItem}>
             {m}
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFE14A"><path d={STAR} /></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#7BD0FF"><path d={STAR} /></svg>
           </span>
         ))}
       </div>

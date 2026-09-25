@@ -28,7 +28,7 @@
   transition: background 0.25s;
 }
 .item.open {
-  background: var(--brand-blue-50);
+  background: var(--sky-50);
 }
 .q {
   width: 100%;
@@ -60,7 +60,7 @@
   transition: transform 0.25s, background 0.25s;
 }
 .open .icon {
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
   transform: rotate(45deg);
 }

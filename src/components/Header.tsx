@@ -68,7 +68,7 @@ export default function Header() {
                   <div className={s.ddPanel}>
                     {NICHES.map((x) => (
                       <Link key={x.slug} href={`/solutions/${x.slug}/`} className={s.ddItem} onClick={() => setDd(false)}>
-                        <span className={s.ddIcon}><Icon d={x.icon} size={20} stroke="#1D4FFA" sw={1.8} /></span>
+                        <span className={s.ddIcon}><Icon d={x.icon} size={20} stroke="#FB7E5E" sw={1.8} /></span>
                         <span className={s.ddText}><span className={s.ddTitle}>{x.title}</span><span className={s.ddSub}>{x.sub}</span></span>
                       </Link>
                     ))}
@@ -93,7 +93,7 @@ export default function Header() {
           <div data-mi className={s.mItem} style={{ borderBottom: 0, paddingBottom: 8 }}>Решения</div>
           {NICHES.map((x) => (
             <Link data-mi key={x.slug} href={`/solutions/${x.slug}/`} className={s.mNiche}>
-              <Icon d={x.icon} size={20} stroke="#1D4FFA" sw={1.8} />{x.title}
+              <Icon d={x.icon} size={20} stroke="#FB7E5E" sw={1.8} />{x.title}
             </Link>
           ))}
           <Link data-mi href="/pricing/" className={`${s.mItem} ${s.mTop}`} style={{ marginTop: 8 }}>Тарифы</Link>

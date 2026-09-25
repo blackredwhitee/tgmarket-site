@@ -39,7 +39,7 @@
   width: 34px;
   height: 34px;
   border-radius: 10px;
-  background: var(--brand-blue);
+  background: var(--brand);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +67,7 @@
   color: var(--ink-900);
 }
 .active {
-  color: var(--brand-blue);
+  color: var(--brand);
 }
 .ddWrap {
   position: relative;
@@ -123,7 +123,7 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: var(--brand-blue-50);
+  background: var(--sky-50);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,7 +150,7 @@
   height: 48px;
   padding: 0 20px;
   border-radius: 12px;
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
   font-size: 15px;
   font-weight: 600;
@@ -159,7 +159,7 @@
   transition: background 0.15s;
 }
 .cta:hover {
-  background: var(--brand-blue-hover);
+  background: var(--brand-hover);
   color: #fff;
 }
 .burger {
@@ -196,7 +196,7 @@
   border-bottom: 1px solid var(--line);
 }
 .mItem:hover {
-  color: var(--brand-blue);
+  color: var(--brand);
 }
 .mTop {
   border-bottom: 0;
@@ -220,7 +220,7 @@
   gap: 10px;
   height: 56px;
   border-radius: 12px;
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
   font-size: 16px;
   font-weight: 600;

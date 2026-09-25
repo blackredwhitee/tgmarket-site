@@ -26,7 +26,7 @@ const STEPS: Step[] = [
   { title: "Опубликуйте в канале", text: "Карточку с кнопкой оплаты можно опубликовать в канале, в группе или отправить покупателю в личные сообщения.", scene: "post" },
   { title: "Принимайте оплату", text: "Подписчики оплачивают по СБП, а бот сообщает о каждой продаже.", scene: "paid" },
 ];
-const BLOBS = ["#EEF2FF", "#FFE14A", "#EEF2FF", "#1D4FFA", "#FFE14A", "#0B1233"];
+const BLOBS = ["#E6F6FF", "#7BD0FF", "#E6F6FF", "#FB7E5E", "#7BD0FF", "#0B1233"];
 
 const BUYER: { n: number; scene: PhoneScene; text: string }[] = [
   { n: 1, scene: "post", text: "Видит пост с карточкой в канале и нажимает «Оплатить»." },
@@ -35,9 +35,9 @@ const BUYER: { n: number; scene: PhoneScene; text: string }[] = [
 ];
 
 const MONEY = [
-  { title: "Когда приходят деньги", text: "До 3 рабочих дней: по СБП на номер телефона или на расчётный счёт. Минимальная сумма вывода — 1 000 ₽.", icon: "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 6v6l4 2", bg: "#F2F3F7", fg: "#0B1233", iconBg: "#0B1233", iconFg: "#FFE14A" },
-  { title: "Комиссия", text: "Удерживается с оборота по тарифу.", icon: "M19 5 5 19M6.5 9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM17.5 20a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z", bg: "#1D4FFA", fg: "#fff", iconBg: "#FFE14A", iconFg: "#0B1233", link: true },
-  { title: "Чеки и налоги", text: "Касса наша: для ИП и юрлиц чеки формируются автоматически и уходят в ОФД. Самозанятые выдают чеки в «Мой налог» сами.", icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8", bg: "#FFE14A", fg: "#0B1233", iconBg: "#0B1233", iconFg: "#fff" },
+  { title: "Когда приходят деньги", text: "До 3 рабочих дней: по СБП на номер телефона или на расчётный счёт. Минимальная сумма вывода — 1 000 ₽.", icon: "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 6v6l4 2", bg: "#F2F3F7", fg: "#0B1233", iconBg: "#0B1233", iconFg: "#7BD0FF" },
+  { title: "Комиссия", text: "Удерживается с оборота по тарифу.", icon: "M19 5 5 19M6.5 9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM17.5 20a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z", bg: "#FB7E5E", fg: "#fff", iconBg: "#7BD0FF", iconFg: "#0B1233", link: true },
+  { title: "Чеки и налоги", text: "Касса наша: для ИП и юрлиц чеки формируются автоматически и уходят в ОФД. Самозанятые выдают чеки в «Мой налог» сами.", icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8", bg: "#7BD0FF", fg: "#0B1233", iconBg: "#0B1233", iconFg: "#fff" },
 ];
 
 const BLOB_R = ["50%", "38% 62% 55% 45%", "120px"];
@@ -72,7 +72,7 @@ export default function HowItWorksPage() {
                 reverse={odd}
                 text={
                   <>
-                    <span className={s.num} style={odd ? { color: "transparent", WebkitTextStroke: "2px #1D4FFA" } : { color: "#1D4FFA" }} aria-hidden="true">0{i + 1}</span>
+                    <span className={s.num} style={odd ? { color: "transparent", WebkitTextStroke: "2px #FB7E5E" } : { color: "#FB7E5E" }} aria-hidden="true">0{i + 1}</span>
                     <h2 className={s.stepH2}><span className="sr-only">Шаг {i + 1}. </span>{st.title}</h2>
                     <p className={s.stepP}>{st.text}</p>
                     {st.note && <span className={`todo ${s.note}`}>{st.note}</span>}

@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  background: var(--accent-yellow);
+  background: var(--sky);
   color: var(--ink-900);
   border-radius: 20px;
   padding: 18px 22px;

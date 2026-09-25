@@ -5,10 +5,10 @@ import s from "./Niches.module.css";
 
 /** Оформление карточек бенто (Home.dc.html, nicheSrc) — по порядку NICHES. */
 const LOOK: Record<string, { sub: string; bg: string; fg: string; iconBg: string; iconFg: string; arrowBg: string; arrowFg: string; basis: string }> = {
-  psychologists: { sub: "Продажа сессий и пакетов консультаций", bg: "#1D4FFA", fg: "#fff", iconBg: "rgba(255,255,255,.16)", iconFg: "#fff", arrowBg: "#FFE14A", arrowFg: "#0B1233", basis: "420px" },
-  experts: { sub: "Разборы, менторство, консультации", bg: "#0B1233", fg: "#fff", iconBg: "rgba(255,255,255,.1)", iconFg: "#FFE14A", arrowBg: "#fff", arrowFg: "#0B1233", basis: "340px" },
-  infoproducts: { sub: "Гайды, чек-листы, курсы", bg: "#FFE14A", fg: "#0B1233", iconBg: "#0B1233", iconFg: "#FFE14A", arrowBg: "#0B1233", arrowFg: "#fff", basis: "300px" },
-  events: { sub: "Билеты на онлайн- и офлайн-события", bg: "#EEF2FF", fg: "#0B1233", iconBg: "#1D4FFA", iconFg: "#fff", arrowBg: "#1D4FFA", arrowFg: "#fff", basis: "340px" },
+  psychologists: { sub: "Продажа сессий и пакетов консультаций", bg: "#FB7E5E", fg: "#fff", iconBg: "rgba(255,255,255,.16)", iconFg: "#fff", arrowBg: "#7BD0FF", arrowFg: "#0B1233", basis: "420px" },
+  experts: { sub: "Разборы, менторство, консультации", bg: "#0B1233", fg: "#fff", iconBg: "rgba(255,255,255,.1)", iconFg: "#7BD0FF", arrowBg: "#fff", arrowFg: "#0B1233", basis: "340px" },
+  infoproducts: { sub: "Гайды, чек-листы, курсы", bg: "#7BD0FF", fg: "#0B1233", iconBg: "#0B1233", iconFg: "#7BD0FF", arrowBg: "#0B1233", arrowFg: "#fff", basis: "300px" },
+  events: { sub: "Билеты на онлайн- и офлайн-события", bg: "#E6F6FF", fg: "#0B1233", iconBg: "#FB7E5E", iconFg: "#fff", arrowBg: "#FB7E5E", arrowFg: "#fff", basis: "340px" },
   donations: { sub: "Донаты от подписчиков", bg: "#F2F3F7", fg: "#0B1233", iconBg: "#0B1233", iconFg: "#fff", arrowBg: "#0B1233", arrowFg: "#fff", basis: "420px" },
 };
 

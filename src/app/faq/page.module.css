@@ -1,7 +1,7 @@
 /* Плашка в H1 — как в макете FAQ (без тени, в отличие от глобального .hl) */
 .hl {
   display: inline-block;
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
   padding: 0 0.16em 0.04em;
   border-radius: 0.2em;
@@ -55,9 +55,9 @@
   transition: background var(--dur-s);
 }
 .helpBtn:hover {
-  background: var(--accent-yellow);
+  background: var(--sky);
   color: var(--ink-900);
 }
 .helpBtn:focus-visible {
-  outline-color: var(--accent-yellow);
+  outline-color: var(--sky);
 }

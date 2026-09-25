@@ -4,10 +4,10 @@ import sh from "./shared.module.css";
 import s from "./WhoFits.module.css";
 
 const WHO = [
-  { text: "Агентствам и продюсерам экспертов", icon: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75", bg: "#F5F7FE", iconBg: "#1D4FFA", iconFg: "#fff" },
-  { text: "SMM-специалистам и администраторам каналов", icon: "M7.9 20A9 9 0 1 0 4 16.1L2 22z", bg: "#FFF6CC", iconBg: "#0B1233", iconFg: "#FFE14A" },
-  { text: "Блогерам с аудиторией предпринимателей", icon: "M22 7 13.5 15.5 8.5 10.5 2 17M16 7h6v6", bg: "#EEF2FF", iconBg: "#fff", iconFg: "#1D4FFA" },
-  { text: "Селлерам TG Market, которые рекомендуют сервис коллегам", icon: ICON.heart, bg: "#F5F7FE", iconBg: "#FFE14A", iconFg: "#0B1233" },
+  { text: "Агентствам и продюсерам экспертов", icon: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75", bg: "#F5F7FE", iconBg: "#FB7E5E", iconFg: "#fff" },
+  { text: "SMM-специалистам и администраторам каналов", icon: "M7.9 20A9 9 0 1 0 4 16.1L2 22z", bg: "#FFF6CC", iconBg: "#0B1233", iconFg: "#7BD0FF" },
+  { text: "Блогерам с аудиторией предпринимателей", icon: "M22 7 13.5 15.5 8.5 10.5 2 17M16 7h6v6", bg: "#E6F6FF", iconBg: "#fff", iconFg: "#FB7E5E" },
+  { text: "Селлерам TG Market, которые рекомендуют сервис коллегам", icon: ICON.heart, bg: "#F5F7FE", iconBg: "#7BD0FF", iconFg: "#0B1233" },
 ];
 
 export default function WhoFits() {

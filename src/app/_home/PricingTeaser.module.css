@@ -7,7 +7,7 @@
 .card {
   position: relative;
   overflow: hidden;
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
   border-radius: 36px;
   padding: clamp(28px, 4.4vw, 64px);
@@ -44,7 +44,7 @@
   line-height: 0.8;
   font-weight: 800;
   letter-spacing: -0.06em;
-  color: var(--accent-yellow);
+  color: #fff;
   font-variant-numeric: tabular-nums;
 }
 .pctNote {
@@ -58,7 +58,7 @@
   margin: 0;
   font-size: clamp(16px, 1.3vw, 18px);
   line-height: 1.55;
-  color: #e1e8ff;
+  color: #fff1ec;
   max-width: 520px;
 }
 .inlineTodo:global(.todo) {
@@ -90,7 +90,7 @@
   transition: background var(--dur-s);
 }
 .btn:hover {
-  background: var(--accent-yellow);
+  background: var(--sky);
 }
 .bars {
   position: relative;

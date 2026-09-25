@@ -4,11 +4,11 @@ import type { Solution } from "@/data/solutions";
 import s from "./Solution.module.css";
 
 const COVERS = [
-  "linear-gradient(135deg,#EEF2FF,#B9CAFF)",
-  "linear-gradient(135deg,#FFE14A,#FFC933)",
-  "linear-gradient(135deg,#FFE7A8,#FFD166)",
+  "linear-gradient(135deg,#E6F6FF,#BDE7FF)",
+  "linear-gradient(135deg,#7BD0FF,#4FBDF2)",
+  "linear-gradient(135deg,#CDEEFF,#9ADBFF)",
 ];
-const FRAMES = ["#1D4FFA", "#0B1233", "#FFE14A"];
+const FRAMES = ["#FB7E5E", "#0B1233", "#7BD0FF"];
 
 /** «Что можно продавать» — примеры карточек с наклоном ±1.5°. */
 export default function Examples({ n }: { n: Solution }) {

@@ -6,10 +6,10 @@
   position: relative;
   overflow: hidden;
   border-radius: clamp(28px, 2.8vw, 40px);
-  background: linear-gradient(135deg, #3a68ff 0%, #1d4ffa 45%, #1640d6 100%);
+  background: linear-gradient(135deg, #ff9c80 0%, #fb7e5e 45%, #ec6a4a 100%);
   color: #fff;
   padding: clamp(28px, 4.4vw, 64px) clamp(20px, 4.4vw, 64px) 0;
-  box-shadow: 0 30px 80px -20px rgba(29, 79, 250, 0.45);
+  box-shadow: 0 30px 80px -20px rgba(251, 126, 94, 0.45);
 }
 .beams {
   position: absolute;
@@ -42,7 +42,7 @@
   bottom: -260px;
   width: 520px;
   height: 520px;
-  background: radial-gradient(circle, rgba(143, 176, 255, 0.55), rgba(143, 176, 255, 0) 65%);
+  background: radial-gradient(circle, rgba(123, 208, 255, 0.55), rgba(123, 208, 255, 0) 65%);
 }
 .wrap {
   position: relative;
@@ -67,7 +67,7 @@
   height: 36px;
   padding: 0 16px;
   border-radius: 18px;
-  background: var(--accent-yellow);
+  background: var(--sky);
   color: var(--ink-900);
   font-size: 14px;
   font-weight: 800;
@@ -85,7 +85,7 @@
   margin: 0;
   font-size: clamp(17px, 1.39vw, 20px);
   line-height: 1.5;
-  color: #e1e8ff;
+  color: #fff1ec;
   max-width: 520px;
 }
 .checks {
@@ -130,7 +130,7 @@
   padding: 0 30px;
   border-radius: 16px;
   background: #fff;
-  color: var(--brand-blue);
+  color: var(--brand);
   font-size: 17px;
   font-weight: 800;
   text-decoration: none;
@@ -140,7 +140,7 @@
   max-width: 320px;
 }
 .btn:hover {
-  color: var(--brand-blue);
+  color: var(--brand);
   transform: translateY(-2px);
 }
 .qr {
@@ -174,7 +174,7 @@
   height: 260px;
   margin-left: -40px;
   border-radius: 50%;
-  background: var(--accent-yellow);
+  background: var(--sky);
 }
 .phone {
   position: relative;

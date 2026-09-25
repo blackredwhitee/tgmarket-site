@@ -30,7 +30,7 @@
   display: block;
 }
 .blue {
-  color: var(--brand-blue);
+  color: var(--brand);
 }
 .last {
   display: flex;
@@ -45,7 +45,7 @@
   height: 0.8em;
   padding: 0 0.3em;
   border-radius: 0.4em;
-  background: var(--accent-yellow);
+  background: var(--sky);
   font-size: 0.55em;
   letter-spacing: -0.02em;
 }
@@ -65,8 +65,8 @@
   height: 34px;
   padding: 0 14px;
   border-radius: 17px;
-  background: var(--brand-blue-50);
-  color: var(--brand-blue);
+  background: var(--sky-50);
+  color: var(--brand);
   font-size: 14px;
   font-weight: 700;
 }
@@ -98,11 +98,11 @@
 .cta {
   gap: 10px;
   padding: 0 24px;
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
 }
 .cta:hover {
-  background: var(--brand-blue-hover);
+  background: var(--brand-hover);
   color: #fff;
 }
 .ctaSec {
@@ -142,18 +142,18 @@
 }
 .on {
   transform: translateY(-8px);
-  box-shadow: 0 24px 50px rgba(29, 79, 250, 0.22);
+  box-shadow: 0 24px 50px rgba(251, 126, 94, 0.22);
 }
 .cBlue {
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
 }
 .cLight {
-  background: var(--brand-blue-50);
+  background: var(--sky-50);
   color: var(--ink-900);
 }
 .cYellow {
-  background: var(--accent-yellow);
+  background: var(--sky);
   color: var(--ink-900);
 }
 .cardHead {
@@ -207,7 +207,7 @@
   width: 52px;
   height: 52px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #eef2ff, #b9caff);
+  background: linear-gradient(135deg, #e6f6ff, #bde7ff);
   flex: none;
 }
 .postText {
@@ -226,7 +226,7 @@
 .payBtn {
   height: 40px;
   border-radius: 11px;
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
   font-size: 14px;
   font-weight: 700;

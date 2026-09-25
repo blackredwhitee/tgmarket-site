@@ -30,7 +30,7 @@ export default function PricingTeaser({ spaced = false }: { spaced?: boolean }) 
           <div className={s.bars} aria-hidden="true">
             {LADDER.map((h, i) => (
               <div key={h} data-bar className={s.bar}
-                style={{ height: h, background: i === 0 ? "#FFE14A" : `rgba(255,255,255,${(0.32 - i * 0.05).toFixed(2)})` }}>
+                style={{ height: h, background: i === 0 ? "#7BD0FF" : `rgba(255,255,255,${(0.32 - i * 0.05).toFixed(2)})` }}>
                 {i === 0 ? "3%" : ""}
               </div>
             ))}

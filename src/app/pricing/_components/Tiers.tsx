@@ -8,7 +8,7 @@ import s from "./Tiers.module.css";
 
 // Высоты и цвета столбцов по числу ступеней (4): от тёмного к светло-синему, как в макете
 const HEIGHTS = ["100%", "82%", "66%", "50%"];
-const BG = ["#0B1233", "#3B4AA0", "#6A7FE0", "#B9CAFF"];
+const BG = ["#0B1233", "#FB7E5E", "#FDB29E", "#BDE7FF"];
 const ZAP = "M13 2 3 14h9l-1 8 10-12h-9z";
 
 export default function Tiers({ active }: { active: number }) {
@@ -37,7 +37,7 @@ export default function Tiers({ active }: { active: number }) {
       rate: rateLabel(tier.rate),
       range: tier.range,
       h: HEIGHTS[i] ?? "50%",
-      bg: hl ? "#1D4FFA" : BG[i] ?? BG[BG.length - 1],
+      bg: hl ? "#FB7E5E" : BG[i] ?? BG[BG.length - 1],
       fg: i === TIERS.length - 1 && !hl ? "#0B1233" : "#fff",
     };
   });

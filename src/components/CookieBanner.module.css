@@ -21,7 +21,7 @@
   color: #dce1f0;
 }
 .text a {
-  color: var(--accent-yellow);
+  color: var(--sky);
 }
 .opts {
   display: flex;
@@ -36,7 +36,7 @@
   gap: 8px;
 }
 .opt input {
-  accent-color: var(--accent-yellow);
+  accent-color: var(--sky);
   width: 18px;
   height: 18px;
 }
@@ -54,7 +54,7 @@
 }
 .accept {
   border: 0;
-  background: var(--accent-yellow);
+  background: var(--sky);
   color: var(--ink-900);
   font-weight: 800;
 }

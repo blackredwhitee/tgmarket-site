@@ -8,13 +8,13 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 2px dashed rgba(29, 79, 250, 0.35);
+  border: 2px dashed rgba(251, 126, 94, 0.35);
 }
 .inner {
   position: absolute;
   inset: 22%;
   border-radius: 50%;
-  background: rgba(29, 79, 250, 0.06);
+  background: rgba(251, 126, 94, 0.06);
 }
 .orbit {
   position: absolute;
@@ -30,7 +30,7 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  box-shadow: 0 8px 20px rgba(29, 79, 250, 0.18);
+  box-shadow: 0 8px 20px rgba(251, 126, 94, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +50,7 @@
   height: 26px;
   margin: -13px 0 0 -13px;
   border-radius: 50%;
-  background: var(--accent-yellow);
+  background: var(--sky);
   color: var(--ink-900);
   font: 800 13px var(--font);
   display: flex;
@@ -85,7 +85,7 @@
   font-size: 28px;
   letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
-  color: var(--accent-yellow);
+  color: var(--sky);
 }
 .note {
   font-size: 12px;

@@ -63,12 +63,12 @@
 }
 .right {
   background: #fff;
-  border: 2px solid var(--brand-blue);
+  border: 2px solid var(--brand);
   border-radius: 28px;
   padding: clamp(16px, 2.2vw, 32px);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 24px 60px rgba(29, 79, 250, 0.18);
+  box-shadow: 0 24px 60px rgba(251, 126, 94, 0.18);
   margin-left: -16px;
   position: relative;
 }
@@ -82,7 +82,7 @@
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: var(--brand-blue);
+  background: var(--brand);
   display: flex;
   align-items: center;
   justify-content: center;

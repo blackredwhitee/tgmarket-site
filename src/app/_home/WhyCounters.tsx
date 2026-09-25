@@ -25,9 +25,9 @@ export default function WhyCounters() {
   const c = TO.map((v) => v * p);
   const items = [
     SHOW_SELLERS
-      ? { val: fmt(c[0]), suffix: "+", plusOp: done ? 1 : 0, label: "селлеров используют TG Market", bg: "#1D4FFA", fg: "#fff" }
-      : { val: "0", suffix: " ₽", plusOp: 1, label: "за подключение и никакой абонентской платы", bg: "#1D4FFA", fg: "#fff" },
-    { val: String(Math.round(c[1])), suffix: "%", plusOp: 1, label: "комиссия на 2 месяца для первых селлеров", bg: "#FFE14A", fg: "#0B1233" },
+      ? { val: fmt(c[0]), suffix: "+", plusOp: done ? 1 : 0, label: "селлеров используют TG Market", bg: "#FB7E5E", fg: "#fff" }
+      : { val: "0", suffix: " ₽", plusOp: 1, label: "за подключение и никакой абонентской платы", bg: "#FB7E5E", fg: "#fff" },
+    { val: String(Math.round(c[1])), suffix: "%", plusOp: 1, label: "комиссия на 2 месяца для первых селлеров", bg: "#7BD0FF", fg: "#0B1233" },
     { val: String(Math.round(c[2])), suffix: "", plusOp: 1, label: "типа карточек: товар, услуга, билет, донат", bg: "#0B1233", fg: "#fff" },
   ];
   const finals = [SHOW_SELLERS ? SELLERS.label : "0 ₽", "3%", "4"];

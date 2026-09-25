@@ -6,7 +6,7 @@ import { P } from "./paths";
 import s from "./PartnersTeaser.module.css";
 
 const NODES = [
-  { label: "Вы", icon: P.user, x: "13.5%", y: "30%", bg: "#1D4FFA", fg: "#fff" },
+  { label: "Вы", icon: P.user, x: "13.5%", y: "30%", bg: "#FB7E5E", fg: "#fff" },
   { label: "Селлер", icon: P.users, x: "50%", y: "30%", bg: "#fff", fg: "#0B1233" },
   { label: "Продажи", icon: P.trend, x: "86.5%", y: "30%", bg: "#fff", fg: "#0B1233" },
 ];
@@ -45,7 +45,7 @@ export default function PartnersScheme() {
         <path id="tgm-coin-path" data-line d="M450 110 C450 280 70 280 70 110" stroke="#0B1233" strokeWidth="3" fill="none" strokeDasharray="8 8" />
         {/* До старта монетка скрыта (в прототипе она висела в точке 0,0 svg) */}
         <g style={{ visibility: coinOn ? "visible" : "hidden" }}>
-          <circle r="14" fill="#1D4FFA" stroke="#0B1233" strokeWidth="3" />
+          <circle r="14" fill="#FB7E5E" stroke="#0B1233" strokeWidth="3" />
           <text y="5" textAnchor="middle" fontSize="13" fontWeight="800" fill="#fff" fontFamily="inherit">₽</text>
           <animateMotion ref={coin} dur="1.6s" begin="indefinite" fill="freeze" keyPoints="0;1" keyTimes="0;1"
             calcMode="spline" keySplines="0.22 1 0.36 1">

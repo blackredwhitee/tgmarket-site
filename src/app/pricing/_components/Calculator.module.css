@@ -63,7 +63,7 @@
   transition: border-color var(--dur-s);
 }
 .input:focus-visible {
-  border-color: var(--accent-yellow);
+  border-color: var(--sky);
 }
 
 /* Слайдер */
@@ -85,7 +85,7 @@
 .fill {
   height: 100%;
   width: 100%;
-  background: var(--accent-yellow);
+  background: var(--sky);
   transform-origin: left;
 }
 .range {
@@ -111,7 +111,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--accent-yellow);
+  background: var(--sky);
   border: 4px solid var(--ink-900);
   margin-top: -12px;
   cursor: grab;
@@ -125,7 +125,7 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--accent-yellow);
+  background: var(--sky);
   border: 4px solid var(--ink-900);
   cursor: grab;
 }
@@ -179,7 +179,7 @@
 .result {
   flex: 1 1 340px;
   min-width: 0;
-  background: var(--accent-yellow);
+  background: var(--sky);
   color: var(--ink-900);
   border-radius: 28px;
   padding: clamp(20px, 2.8vw, 40px);
@@ -200,7 +200,7 @@
   font-size: 20px;
   font-weight: 800;
   background: var(--ink-900);
-  color: var(--accent-yellow);
+  color: var(--sky);
   border-radius: 12px;
   padding: 6px 14px;
 }

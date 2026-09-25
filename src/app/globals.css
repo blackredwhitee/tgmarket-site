@@ -33,9 +33,12 @@
 }
 
 :root {
-  --brand-blue: #1d4ffa;
-  --brand-blue-hover: #1640d6;
-  --brand-blue-50: #eef2ff;
+  /* Бренд TG Market: коралловый — действия и акценты (текст на нём белый), голубой — вторичный акцент (текст тёмный) */
+  --brand: #fb7e5e;
+  --brand-hover: #ec6a4a;
+  --sky: #7bd0ff;
+  --sky-600: #4fbdf2;
+  --sky-50: #e6f6ff;
   --bg-soft: #f5f7fe;
   --bg-alt: #f7f9fe;
   --grey-100: #f2f3f7;
@@ -44,9 +47,6 @@
   --ink-600: #4a5372;
   --ink-400: #8a92ad;
   --line: #e3e7f2;
-  --accent-yellow: #ffe14a;
-  --accent-yellow-soft: #fff3c4;
-  --accent-yellow-2: #ffc933;
   --success: #18a957;
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -55,8 +55,8 @@
   --dur-m: 250ms;
   --dur-l: 500ms;
 
-  --shadow-soft: 0 12px 40px rgba(29, 79, 250, 0.1);
-  --shadow-cta: 0 12px 30px rgba(29, 79, 250, 0.3);
+  --shadow-soft: 0 12px 40px rgba(251, 126, 94, 0.1);
+  --shadow-cta: 0 12px 30px rgba(251, 126, 94, 0.3);
   --shadow-float: 0 16px 40px rgba(11, 18, 51, 0.22);
 
   --font: "Manrope", system-ui, sans-serif;
@@ -91,10 +91,10 @@ body {
 }
 
 a {
-  color: var(--brand-blue);
+  color: var(--brand);
 }
 a:hover {
-  color: var(--brand-blue-hover);
+  color: var(--brand-hover);
 }
 
 button {
@@ -102,7 +102,7 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--brand-blue);
+  outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
 
@@ -129,9 +129,9 @@ button {
 /* Фоны секций (v2): мягкие пятна для светлых, световые лучи для синих/тёмных */
 .bg-mesh-light {
   background-image:
-    radial-gradient(55% 60% at 12% 18%, rgba(185, 202, 255, 0.55), transparent 70%),
-    radial-gradient(35% 45% at 88% 88%, rgba(255, 225, 74, 0.22), transparent 70%),
-    radial-gradient(30% 35% at 70% 10%, rgba(214, 224, 255, 0.6), transparent 70%);
+    radial-gradient(55% 60% at 12% 18%, rgba(123, 208, 255, 0.55), transparent 70%),
+    radial-gradient(35% 45% at 88% 88%, rgba(123, 208, 255, 0.22), transparent 70%),
+    radial-gradient(30% 35% at 70% 10%, rgba(251, 126, 94, 0.14), transparent 70%);
 }
 .bg-beams {
   background-image:
@@ -143,12 +143,12 @@ button {
 /* Плашка-выделение в заголовках */
 .hl {
   display: inline-block;
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
   padding: 0 0.16em 0.04em;
   border-radius: 0.2em;
   transform: rotate(-2deg);
-  box-shadow: 0 12px 30px rgba(29, 79, 250, 0.3);
+  box-shadow: 0 12px 30px rgba(251, 126, 94, 0.3);
 }
 
 /* Кнопки */
@@ -173,12 +173,12 @@ button {
     transform var(--dur-s);
 }
 .btn-primary {
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
   box-shadow: var(--shadow-cta);
 }
 .btn-primary:hover {
-  background: var(--brand-blue-hover);
+  background: var(--brand-hover);
   color: #fff;
   transform: translateY(-2px);
 }
@@ -189,11 +189,11 @@ button {
   font-weight: 700;
 }
 .btn-secondary:hover {
-  border-color: var(--brand-blue);
-  color: var(--brand-blue);
+  border-color: var(--brand);
+  color: var(--brand);
 }
 .btn-yellow {
-  background: var(--accent-yellow);
+  background: var(--sky);
   color: var(--ink-900);
 }
 .btn-yellow:hover {

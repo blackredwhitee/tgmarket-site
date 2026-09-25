@@ -5,12 +5,12 @@ import { rub } from "@/lib/format";
 import s from "./PartnerOrbit.module.css";
 
 const AVATARS: [string, string, string][] = [
-  ["ПС", "#1D4FFA", "#fff"],
+  ["ПС", "#FB7E5E", "#fff"],
   ["КХ", "#fff", "#0B1233"],
-  ["ДП", "#FFE14A", "#0B1233"],
-  ["ВО", "#fff", "#1D4FFA"],
+  ["ДП", "#7BD0FF", "#0B1233"],
+  ["ВО", "#fff", "#FB7E5E"],
   ["ЗН", "#0B1233", "#fff"],
-  ["МК", "#EEF2FF", "#1D4FFA"],
+  ["МК", "#E6F6FF", "#FB7E5E"],
 ];
 const SELLERS = AVATARS.map(([i, bg, fg], k) => {
   const r = (k * 60 * Math.PI) / 180;

@@ -8,9 +8,9 @@
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(55% 60% at 12% 18%, rgba(185, 202, 255, 0.55), transparent 70%),
-    radial-gradient(35% 45% at 88% 88%, rgba(255, 225, 74, 0.22), transparent 70%),
-    radial-gradient(30% 35% at 70% 10%, rgba(214, 224, 255, 0.6), transparent 70%);
+    radial-gradient(55% 60% at 12% 18%, rgba(123, 208, 255, 0.55), transparent 70%),
+    radial-gradient(35% 45% at 88% 88%, rgba(123, 208, 255, 0.22), transparent 70%),
+    radial-gradient(30% 35% at 70% 10%, rgba(251, 126, 94, 0.14), transparent 70%);
 }
 .bigNum {
   position: absolute;
@@ -20,7 +20,7 @@
   line-height: 0.8;
   font-weight: 800;
   letter-spacing: -0.07em;
-  color: #eef2ff;
+  color: #e6f6ff;
   pointer-events: none;
   user-select: none;
 }
@@ -43,7 +43,7 @@
   height: 36px;
   padding: 0 14px;
   border-radius: 18px;
-  background: #ffe14a;
+  background: #7bd0ff;
   color: #0b1233;
   font-size: 14px;
   font-weight: 700;
@@ -58,7 +58,7 @@
 }
 .hl {
   display: inline-block;
-  background: #1d4ffa;
+  background: #fb7e5e;
   color: #fff;
   padding: 0 0.16em 0.04em;
   border-radius: 0.2em;
@@ -93,19 +93,19 @@
   font-weight: 700;
 }
 .btnHome:hover {
-  border-color: #1d4ffa;
-  color: #1d4ffa;
+  border-color: #fb7e5e;
+  color: #fb7e5e;
 }
 .btnBot {
   gap: 10px;
   padding: 0 28px;
-  background: #1d4ffa;
+  background: #fb7e5e;
   color: #fff;
   font-weight: 800;
-  box-shadow: 0 12px 30px rgba(29, 79, 250, 0.3);
+  box-shadow: 0 12px 30px rgba(251, 126, 94, 0.3);
 }
 .btnBot:hover {
-  background: #1640d6;
+  background: #ec6a4a;
   color: #fff;
 }
 .hint {

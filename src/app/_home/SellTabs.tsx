@@ -6,17 +6,17 @@ import s from "./Sell.module.css";
 
 const TABS = [
   {
-    label: "Товары", icon: "M21 8 12 3 3 8v8l9 5 9-5zM3 8l9 5 9-5M12 13v8", cover: "linear-gradient(135deg,#FFE14A,#FFC933)",
+    label: "Товары", icon: "M21 8 12 3 3 8v8l9 5 9-5zM3 8l9 5 9-5M12 13v8", cover: "linear-gradient(135deg,#7BD0FF,#4FBDF2)",
     lead: "Гайды, чек-листы, шаблоны, физические товары", exTitle: "Гайд по планированию бюджета", exPrice: "990 ₽", btn: "Купить · 990 ₽",
     who: ["Авторам гайдов и чек-листов", "Создателям шаблонов", "Продавцам физических товаров"],
   },
   {
-    label: "Услуги", icon: "M7.9 20A9 9 0 1 0 4 16.1L2 22z", cover: "linear-gradient(135deg,#EEF2FF,#B9CAFF)",
+    label: "Услуги", icon: "M7.9 20A9 9 0 1 0 4 16.1L2 22z", cover: "linear-gradient(135deg,#E6F6FF,#BDE7FF)",
     lead: "Консультации, разборы, сессии, наставничество", exTitle: "Карьерная консультация, 60 мин", exPrice: "4 000 ₽", btn: "Оплатить · 4 000 ₽",
     who: ["Психологам и коучам", "Карьерным консультантам", "Наставникам и менторам"],
   },
   {
-    label: "Билеты", icon: ICON.ticket, cover: "linear-gradient(135deg,#FFE7A8,#FFD166)",
+    label: "Билеты", icon: ICON.ticket, cover: "linear-gradient(135deg,#CDEEFF,#9ADBFF)",
     lead: "Вебинары, мастер-классы, офлайн-встречи", exTitle: "Билет на воркшоп 12 октября", exPrice: "2 500 ₽", btn: "Купить билет · 2 500 ₽",
     who: ["Организаторам вебинаров", "Ведущим мастер-классов", "Организаторам офлайн-встреч"],
   },

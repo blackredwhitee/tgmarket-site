@@ -25,7 +25,7 @@
   color: var(--ink-900);
 }
 .blue {
-  color: var(--brand-blue);
+  color: var(--brand);
 }
 .list {
   position: relative;
@@ -53,7 +53,7 @@
     color 0.35s;
 }
 .step.on {
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
 }
 .num {
@@ -67,7 +67,7 @@
   transition: color 0.35s;
 }
 .on .num {
-  color: var(--accent-yellow);
+  color: #fff;
 }
 .body {
   display: flex;
@@ -95,7 +95,7 @@
   border-radius: 22px;
 }
 .pick:focus-visible::after {
-  outline: 2px solid var(--brand-blue);
+  outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
 .p {
@@ -113,7 +113,7 @@
   bottom: 0;
   height: 4px;
   width: 100%;
-  background: var(--accent-yellow);
+  background: var(--sky);
   transform-origin: left;
   transform: scaleX(0);
 }
@@ -137,11 +137,11 @@
   gap: 8px;
   font-size: 16px;
   font-weight: 700;
-  color: var(--brand-blue);
+  color: var(--brand);
   text-decoration: none;
 }
 .more:hover {
-  color: var(--brand-blue-hover);
+  color: var(--brand-hover);
 }
 
 /* Телефон с кроссфейдом сцен */
@@ -162,7 +162,7 @@
   height: 440px;
   margin: -220px 0 0 -220px;
   border-radius: 50%;
-  background: var(--brand-blue-50);
+  background: var(--sky-50);
 }
 .sun {
   position: absolute;
@@ -172,7 +172,7 @@
   height: 120px;
   margin-left: 150px;
   border-radius: 50%;
-  background: var(--accent-yellow);
+  background: var(--sky);
 }
 .phones {
   position: relative;

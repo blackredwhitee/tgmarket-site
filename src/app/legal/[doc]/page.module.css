@@ -36,8 +36,8 @@
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 .chip:hover {
-  color: var(--brand-blue);
-  border-color: var(--brand-blue);
+  color: var(--brand);
+  border-color: var(--brand);
 }
 .chip[aria-current="page"] {
   background: var(--ink-900);
@@ -122,7 +122,7 @@
 }
 .tocLink:hover {
   background: #fff;
-  color: var(--brand-blue);
+  color: var(--brand);
 }
 .tocNum {
   flex: none;

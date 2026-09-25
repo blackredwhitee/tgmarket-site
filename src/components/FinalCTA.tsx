@@ -32,7 +32,7 @@ export default function FinalCTA({
               <p className={s.sub}>{sub}</p>
               <ul className={s.checks}>
                 {CHECKS.map((c) => (
-                  <li key={c}><span className={s.chk}><Icon d={ICON.check} size={13} stroke="#FFE14A" sw={3.2} /></span>{c}</li>
+                  <li key={c}><span className={s.chk}><Icon d={ICON.check} size={13} stroke="#fff" sw={3.2} /></span>{c}</li>
                 ))}
               </ul>
               <div className={s.actions}>

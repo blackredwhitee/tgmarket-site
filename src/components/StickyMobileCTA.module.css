@@ -25,7 +25,7 @@
 .btn {
   height: 48px;
   border-radius: 12px;
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
   font-size: 16px;
   font-weight: 700;

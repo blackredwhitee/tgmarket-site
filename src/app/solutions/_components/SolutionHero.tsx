@@ -13,7 +13,7 @@ export default function SolutionHero({ n }: { n: Solution }) {
         <div className={s.heroRow}>
           <div className={s.heroText}>
             <span data-intro="0" className={s.badge}>
-              <Icon d={n.icon} size={16} stroke="#FFE14A" />
+              <Icon d={n.icon} size={16} stroke="#7BD0FF" />
               {n.label}
             </span>
             <h1 data-intro="100" className={s.h1}>{n.h1}</h1>

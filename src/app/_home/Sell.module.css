@@ -1,7 +1,7 @@
 .section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #3a68ff 0%, #1d4ffa 50%, #1640d6 100%);
+  background: linear-gradient(135deg, #ff9c80 0%, #fb7e5e 50%, #ec6a4a 100%);
   color: #fff;
   padding: clamp(72px, 8.9vw, 128px) 0;
 }
@@ -12,7 +12,7 @@
   width: 700px;
   height: 700px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(143, 176, 255, 0.55), rgba(143, 176, 255, 0) 65%);
+  background: radial-gradient(circle, rgba(123, 208, 255, 0.55), rgba(123, 208, 255, 0) 65%);
   pointer-events: none;
 }
 .beams {
@@ -36,7 +36,7 @@
   text-wrap: balance;
 }
 .yellow {
-  color: var(--accent-yellow);
+  color: var(--ink-900);
 }
 .tabsWrap {
   display: flex;
@@ -59,7 +59,7 @@
   left: 5px;
   width: calc((100% - 10px) / 4);
   border-radius: 12px;
-  background: var(--accent-yellow);
+  background: var(--sky);
   transition: transform 0.25s var(--ease-in-out);
 }
 .tab {
@@ -137,7 +137,7 @@
 .pType {
   font-size: 12px;
   font-weight: 800;
-  color: var(--brand-blue);
+  color: var(--brand);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -183,7 +183,7 @@
 .whoTitle {
   font-size: 13px;
   font-weight: 700;
-  color: #dce4ff;
+  color: #d4f0ff;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -207,7 +207,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: var(--accent-yellow);
+  background: var(--sky);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -216,7 +216,7 @@
 .info .note {
   font-size: 13px;
   line-height: 1.45;
-  color: #e1e8ff;
+  color: #fff1ec;
   border: 1px dashed rgba(255, 255, 255, 0.5);
   border-radius: 8px;
   padding: 8px 10px;

@@ -51,11 +51,11 @@
 }
 .next {
   border: 0;
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
 }
 .next:hover {
-  background: var(--brand-blue-hover);
+  background: var(--brand-hover);
 }
 .slider {
   display: flex;
@@ -97,7 +97,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #7c95ff, #1d4ffa);
+  background: linear-gradient(135deg, #ffa98f, #fb7e5e);
   color: #fff;
   font-size: 16px;
   font-weight: 700;

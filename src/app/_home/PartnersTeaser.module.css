@@ -1,5 +1,5 @@
 .section {
-  background: var(--accent-yellow-soft);
+  background: var(--sky-50);
   color: var(--ink-900);
   padding: clamp(72px, 8.9vw, 120px) 0;
   position: relative;
@@ -52,7 +52,7 @@
   transition: background var(--dur-s);
 }
 .btn:hover {
-  background: var(--brand-blue);
+  background: var(--brand);
 }
 .scheme {
   flex: 1 1 420px;
@@ -94,7 +94,7 @@
   top: 84%;
   transform: translate(-50%, -50%) rotate(-3deg);
   background: var(--ink-900);
-  color: var(--accent-yellow);
+  color: var(--sky);
   font-weight: 800;
   font-size: clamp(16px, 1.5vw, 20px);
   padding: 8px 16px;

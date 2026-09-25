@@ -29,7 +29,7 @@
   height: 36px;
   padding: 0 14px;
   border-radius: 18px;
-  background: var(--accent-yellow);
+  background: var(--sky);
   color: var(--ink-900);
   font-size: 14px;
   font-weight: 700;
@@ -44,7 +44,7 @@
 }
 .hl {
   display: inline-block;
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
   padding: 0 0.16em 0.04em;
   border-radius: 0.2em;
@@ -63,7 +63,7 @@
   height: 62px;
   padding: 0 30px;
   border-radius: 14px;
-  background: var(--brand-blue);
+  background: var(--brand);
   color: #fff;
   font-size: 17px;
   font-weight: 800;
@@ -74,7 +74,7 @@
     transform var(--dur-s);
 }
 .cta:hover {
-  background: var(--brand-blue-hover);
+  background: var(--brand-hover);
   color: #fff;
   transform: translateY(-2px);
 }

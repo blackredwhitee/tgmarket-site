@@ -37,7 +37,7 @@
   width: 34px;
   height: 34px;
   border-radius: 10px;
-  background: var(--brand-blue);
+  background: var(--brand);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,15 +60,15 @@
   height: 44px;
   padding: 0 16px;
   border-radius: 12px;
-  border: 1.5px solid var(--brand-blue);
-  color: var(--brand-blue);
+  border: 1.5px solid var(--brand);
+  color: var(--brand);
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
   transition: background 0.15s;
 }
 .botBtn:hover {
-  background: var(--brand-blue-50);
+  background: var(--sky-50);
 }
 .cols {
   flex: 3 1 560px;
@@ -120,7 +120,7 @@
 }
 .link:hover,
 .docs a:hover {
-  color: var(--brand-blue);
+  color: var(--brand);
 }
 @media (max-width: 767px) {
   .qr {

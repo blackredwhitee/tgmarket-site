@@ -198,7 +198,7 @@ export default function Phone(props: PhoneProps) {
     <div ref={rootRef} className={props.className} aria-hidden="true"
       // isolation: слои сцены (затемнение, шторка, toast) не должны перекрывать соседние плавающие карточки
       style={{ position: "relative", isolation: "isolate", width: 300, height: 620, flex: "none", textAlign: "left", ...props.style }}>
-      <div style={{ position: "absolute", inset: 0, borderRadius: 44, background: "#0B1233", padding: 9, boxShadow: "0 40px 80px -24px rgba(11,18,51,.35),0 12px 40px rgba(29,79,250,.10)" }}>
+      <div style={{ position: "absolute", inset: 0, borderRadius: 44, background: "#0B1233", padding: 9, boxShadow: "0 40px 80px -24px rgba(11,18,51,.35),0 12px 40px rgba(251,126,94,.10)" }}>
         <div style={{ position: "relative", width: "100%", height: "100%", borderRadius: 36, overflow: "hidden", background: "linear-gradient(165deg,#D6E0F2 0%,#E4EAF6 55%,#DCE6F3 100%)" }}>
           <div style={{ position: "absolute", top: 10, left: "50%", width: 86, height: 25, marginLeft: -43, borderRadius: 20, background: "#000", zIndex: 12 }} />
           {s !== "stack" && (
@@ -216,13 +216,13 @@ export default function Phone(props: PhoneProps) {
           )}
           {(isChannel || isBot) && (
             <div style={{ position: "absolute", top: 44, left: 0, right: 0, height: 52, background: "rgba(255,255,255,.96)", display: "flex", alignItems: "center", gap: 10, padding: "0 12px", borderBottom: "1px solid #E3E7F2", zIndex: 5 }}>
-              <Svg d={ICON.chevronLeft} size={20} stroke="#1D4FFA" sw={2} />
+              <Svg d={ICON.chevronLeft} size={20} stroke="#FB7E5E" sw={2} />
               {isBot ? (
-                <div style={{ width: 34, height: 34, borderRadius: "50%", background: "#1D4FFA", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
+                <div style={{ width: 34, height: 34, borderRadius: "50%", background: "#FB7E5E", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
                   <Svg d={SEND} size={16} stroke="#fff" sw={2.2} />
                 </div>
               ) : (
-                <div style={{ width: 34, height: 34, borderRadius: "50%", background: "linear-gradient(135deg,#7C95FF,#1D4FFA)", color: "#fff", fontSize: 13, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
+                <div style={{ width: 34, height: 34, borderRadius: "50%", background: "linear-gradient(135deg,#FFA98F,#FB7E5E)", color: "#fff", fontSize: 13, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
                   {props.initials || "ПС"}
                 </div>
               )}
@@ -242,8 +242,8 @@ export default function Phone(props: PhoneProps) {
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 6, opacity: s === "pay" && (ph === 0 || ph === 6) ? 0 : 1, transform: s === "pay" && ph === 0 ? "translateY(28px)" : "none", transition: `opacity .5s ${E},transform .5s ${E}` }}>
                   <div style={{ background: "#fff", borderRadius: 14, overflow: "hidden", boxShadow: "0 1px 1px rgba(11,18,51,.06)" }}>
-                    <div style={{ height: 112, background: "linear-gradient(135deg,#EEF2FF 0%,#D5DFFF 100%)", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, color: "#1D4FFA", fontWeight: 800, fontSize: is404 ? 44 : 15 }}>
-                      {!is404 && <Svg d={props.icon || ICON.heart} size={30} stroke="#1D4FFA" sw={1.6} />}
+                    <div style={{ height: 112, background: "linear-gradient(135deg,#E6F6FF 0%,#CDEEFF 100%)", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, color: "#FB7E5E", fontWeight: 800, fontSize: is404 ? 44 : 15 }}>
+                      {!is404 && <Svg d={props.icon || ICON.heart} size={30} stroke="#FB7E5E" sw={1.6} />}
                       <span>{is404 ? "404" : props.cover || "Сессия"}</span>
                     </div>
                     <div style={{ padding: "10px 12px 8px", display: "flex", flexDirection: "column", gap: 3 }}>
@@ -256,16 +256,16 @@ export default function Phone(props: PhoneProps) {
                     </div>
                   </div>
                   <div style={{ position: "relative" }}>
-                    <div ref={ringRef} style={{ position: "absolute", inset: 0, borderRadius: 11, border: "2px solid #1D4FFA", opacity: 0, pointerEvents: "none" }} />
+                    <div ref={ringRef} style={{ position: "absolute", inset: 0, borderRadius: 11, border: "2px solid #FB7E5E", opacity: 0, pointerEvents: "none" }} />
                     <div onMouseEnter={() => is404 && set({ dodge: dodge + 1 })}
-                      style={{ height: 40, borderRadius: 11, background: "#1D4FFA", color: "#fff", fontSize: 14, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", gap: 6, transform: is404 ? `translate(${d[0]}px,${d[1]}px)` : s === "pay" && ph === 2 ? "scale(.96)" : "none", transition: `transform .18s ${E}`, cursor: "pointer" }}>
+                      style={{ height: 40, borderRadius: 11, background: "#FB7E5E", color: "#fff", fontSize: 14, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", gap: 6, transform: is404 ? `translate(${d[0]}px,${d[1]}px)` : s === "pay" && ph === 2 ? "scale(.96)" : "none", transition: `transform .18s ${E}`, cursor: "pointer" }}>
                       {is404 ? "Оплатить" : "Оплатить · " + rub(amount)}
                     </div>
                     <div style={{ position: "absolute", left: "62%", top: 6, width: 30, height: 30, borderRadius: "50%", background: "rgba(11,18,51,.28)", border: "2px solid #fff", opacity: s === "pay" && ph === 2 ? 1 : 0, transform: s === "pay" && ph === 2 ? "scale(1)" : "scale(1.4)", transition: "opacity .2s,transform .25s", pointerEvents: "none" }} />
                   </div>
                 </div>
               </div>
-              <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 48, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 600, color: "#1D4FFA", borderTop: "1px solid #E3E7F2" }}>Без звука</div>
+              <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 48, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 600, color: "#FB7E5E", borderTop: "1px solid #E3E7F2" }}>Без звука</div>
             </>
           )}
 
@@ -279,23 +279,23 @@ export default function Phone(props: PhoneProps) {
                       {["Товар", "Услуга", "Билет", "Донат"].map((l) => {
                         const on = l === "Услуга" && sel;
                         return (
-                          <div key={l} style={{ height: 32, borderRadius: 9, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12.5, fontWeight: 600, background: on ? "#1D4FFA" : "rgba(255,255,255,.75)", color: on ? "#fff" : "#1D4FFA", transition: "background .25s,color .25s" }}>{l}</div>
+                          <div key={l} style={{ height: 32, borderRadius: 9, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12.5, fontWeight: 600, background: on ? "#FB7E5E" : "rgba(255,255,255,.75)", color: on ? "#fff" : "#FB7E5E", transition: "background .25s,color .25s" }}>{l}</div>
                         );
                       })}
                     </div>
-                    <div style={{ alignSelf: "flex-end", background: "#D6E0FF", borderRadius: "14px 14px 4px 14px", padding: "8px 12px", fontSize: 13, color: "#0B1233", opacity: ph >= 1 ? 1 : 0, transform: ph >= 1 ? "none" : "translateY(10px)", transition: "opacity .3s,transform .3s" }}>Услуга</div>
+                    <div style={{ alignSelf: "flex-end", background: "#CDEEFF", borderRadius: "14px 14px 4px 14px", padding: "8px 12px", fontSize: 13, color: "#0B1233", opacity: ph >= 1 ? 1 : 0, transform: ph >= 1 ? "none" : "translateY(10px)", transition: "opacity .3s,transform .3s" }}>Услуга</div>
                     <div style={{ alignSelf: "flex-start", width: "88%", background: "#fff", borderRadius: "14px 14px 14px 4px", padding: "10px 12px", display: "flex", flexDirection: "column", gap: 8, opacity: ph >= 2 ? 1 : 0, transform: ph >= 2 ? "none" : "translateY(14px)", transition: `opacity .4s,transform .4s ${E}` }}>
-                      <div style={{ fontSize: 11.5, fontWeight: 700, color: "#1D4FFA" }}>Новая карточка · Услуга</div>
+                      <div style={{ fontSize: 11.5, fontWeight: 700, color: "#FB7E5E" }}>Новая карточка · Услуга</div>
                       {formFields.map((f) => (
                         <div key={f.label} style={{ display: "flex", flexDirection: "column", gap: 2, borderBottom: "1px solid #E3E7F2", paddingBottom: 6 }}>
                           <span style={{ fontSize: 10.5, color: "#8A92AD" }}>{f.label}</span>
                           <span style={{ fontSize: 13, color: "#0B1233", fontWeight: 600, minHeight: 18 }}>
                             {f.value}
-                            <span style={{ display: "inline-block", width: 1.5, height: 13, background: "#1D4FFA", marginLeft: 1, verticalAlign: -2, opacity: f.caret }} />
+                            <span style={{ display: "inline-block", width: 1.5, height: 13, background: "#FB7E5E", marginLeft: 1, verticalAlign: -2, opacity: f.caret }} />
                           </span>
                         </div>
                       ))}
-                      <div style={{ height: 34, borderRadius: 9, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700, background: ph >= 3 ? "#1D4FFA" : "#EEF2FF", color: ph >= 3 ? "#fff" : "#1D4FFA", transition: "background .3s,color .3s" }}>Опубликовать в канал</div>
+                      <div style={{ height: 34, borderRadius: 9, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700, background: ph >= 3 ? "#FB7E5E" : "#E6F6FF", color: ph >= 3 ? "#fff" : "#FB7E5E", transition: "background .3s,color .3s" }}>Опубликовать в канал</div>
                     </div>
                     <div style={{ alignSelf: "flex-start", background: "#fff", borderRadius: "14px 14px 14px 4px", padding: "8px 12px", fontSize: 13, color: "#0B1233", display: "flex", alignItems: "center", gap: 6, opacity: ph >= 4 ? 1 : 0, transition: "opacity .3s" }}>
                       <span style={{ width: 16, height: 16, borderRadius: "50%", background: "#18A957", display: "inline-flex", alignItems: "center", justifyContent: "center" }}><Svg d={CHECK} size={10} stroke="#fff" sw={3.5} /></span>
@@ -315,7 +315,7 @@ export default function Phone(props: PhoneProps) {
                         </span>
                       </div>
                     ))}
-                    <div style={{ alignSelf: "flex-start", background: "#EEF2FF", borderRadius: 12, padding: "8px 12px", fontSize: 12.5, color: "#0B1233", fontWeight: 600, fontVariantNumeric: "tabular-nums" }}>
+                    <div style={{ alignSelf: "flex-start", background: "#E6F6FF", borderRadius: 12, padding: "8px 12px", fontSize: 12.5, color: "#0B1233", fontWeight: 600, fontVariantNumeric: "tabular-nums" }}>
                       Сегодня: {cnt + (cnt === 1 ? " продажа" : " продажи")} · {rub(sum)}
                     </div>
                   </>
@@ -323,11 +323,11 @@ export default function Phone(props: PhoneProps) {
                 {s === "chat" &&
                   msgs.map((m, i) => (
                     <div key={i} style={{ display: "flex", flexDirection: "column", gap: 5, alignItems: m.me ? "flex-end" : "flex-start", opacity: i < n ? 1 : 0, transform: i < n ? "none" : "translateY(12px)", transition: `opacity .35s,transform .35s ${E}` }}>
-                      <div style={{ maxWidth: "86%", background: m.me ? "#D6E0FF" : "#fff", borderRadius: m.me ? "14px 14px 4px 14px" : "14px 14px 14px 4px", padding: "9px 12px", fontSize: 13, color: "#0B1233", lineHeight: 1.4, whiteSpace: "pre-line" }}>{m.text}</div>
+                      <div style={{ maxWidth: "86%", background: m.me ? "#CDEEFF" : "#fff", borderRadius: m.me ? "14px 14px 4px 14px" : "14px 14px 14px 4px", padding: "9px 12px", fontSize: 13, color: "#0B1233", lineHeight: 1.4, whiteSpace: "pre-line" }}>{m.text}</div>
                       {!!m.buttons?.length && (
                         <div style={{ display: "grid", gridTemplateColumns: `repeat(${Math.min(2, m.buttons.length)},1fr)`, gap: 5, width: "86%" }}>
                           {m.buttons.map((b) => (
-                            <div key={b} style={{ minHeight: 32, borderRadius: 9, background: "rgba(255,255,255,.7)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 600, color: "#1D4FFA", padding: "0 6px", textAlign: "center" }}>{b}</div>
+                            <div key={b} style={{ minHeight: 32, borderRadius: 9, background: "rgba(255,255,255,.7)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 600, color: "#FB7E5E", padding: "0 6px", textAlign: "center" }}>{b}</div>
                           ))}
                         </div>
                       )}
@@ -351,7 +351,7 @@ export default function Phone(props: PhoneProps) {
                 <div style={{ fontSize: 13, color: "#4A5372" }}>{title} · {channel}</div>
                 <div style={{ position: "relative", height: 56, borderTop: "1px solid #E3E7F2", marginTop: 4 }}>
                   <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", gap: 10, fontSize: 13, color: "#4A5372", opacity: ph === 3 ? 1 : 0, transition: "opacity .25s" }}>
-                    <span ref={spinRef} style={{ width: 20, height: 20, borderRadius: "50%", border: "2.5px solid #EEF2FF", borderTopColor: "#1D4FFA", flex: "none" }} />
+                    <span ref={spinRef} style={{ width: 20, height: 20, borderRadius: "50%", border: "2.5px solid #E6F6FF", borderTopColor: "#FB7E5E", flex: "none" }} />
                     Подтвердите оплату в приложении банка
                   </div>
                   <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", gap: 10, fontSize: 15, fontWeight: 700, color: "#18A957", opacity: ph === 4 ? 1 : 0, transform: ph === 4 ? "none" : "scale(.9)", transition: `opacity .25s,transform .35s ${E}` }}>
@@ -364,7 +364,7 @@ export default function Phone(props: PhoneProps) {
           )}
 
           {s === "pay" && tpos === "inside" && (
-            <div style={{ position: "absolute", top: 50, left: 8, right: 8, zIndex: 9, background: "#fff", borderRadius: 16, padding: "10px 12px", display: "flex", alignItems: "center", gap: 10, boxShadow: "0 12px 40px rgba(29,79,250,.20)", opacity: toastVis ? 1 : 0, transform: toastVis ? "none" : "translateY(-16px)", transition: `opacity .4s,transform .45s ${E}` }}>
+            <div style={{ position: "absolute", top: 50, left: 8, right: 8, zIndex: 9, background: "#fff", borderRadius: 16, padding: "10px 12px", display: "flex", alignItems: "center", gap: 10, boxShadow: "0 12px 40px rgba(251,126,94,.20)", opacity: toastVis ? 1 : 0, transform: toastVis ? "none" : "translateY(-16px)", transition: `opacity .4s,transform .45s ${E}` }}>
               <span style={{ width: 32, height: 32, borderRadius: "50%", background: "#18A957", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}><Svg d={CHECK} size={16} stroke="#fff" sw={3} /></span>
               <span style={{ display: "flex", flexDirection: "column" }}>
                 <span style={{ fontSize: 12, color: "#4A5372" }}>Оплата получена</span>
@@ -380,12 +380,12 @@ export default function Phone(props: PhoneProps) {
               <div style={{ fontSize: 13, color: "#4A5372", marginTop: -6 }}>{title}</div>
               <div style={{ fontSize: 12, color: "#8A92AD", marginTop: 8 }}>Выберите банк</div>
               {[{ c: "#DDE4F7", w: 96 }, { c: "#E4E9F4", w: 120 }, { c: "#D9E0F2", w: 80 }, { c: "#E1E6F3", w: 108 }].map((b, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, height: 48, borderRadius: 12, border: `1px solid ${i === 0 ? "#1D4FFA" : "#E3E7F2"}`, padding: "0 12px", background: i === 0 ? "#EEF2FF" : "#fff" }}>
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, height: 48, borderRadius: 12, border: `1px solid ${i === 0 ? "#FB7E5E" : "#E3E7F2"}`, padding: "0 12px", background: i === 0 ? "#E6F6FF" : "#fff" }}>
                   <span style={{ width: 28, height: 28, borderRadius: 8, background: b.c, flex: "none" }} />
                   <span style={{ height: 9, width: b.w, borderRadius: 5, background: "#E3E7F2" }} />
                 </div>
               ))}
-              <div style={{ marginTop: "auto", height: 46, borderRadius: 12, background: "#1D4FFA", color: "#fff", fontSize: 14, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>Перейти в приложение банка</div>
+              <div style={{ marginTop: "auto", height: 46, borderRadius: 12, background: "#FB7E5E", color: "#fff", fontSize: 14, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>Перейти в приложение банка</div>
             </div>
           )}
 
@@ -395,7 +395,7 @@ export default function Phone(props: PhoneProps) {
               <div style={{ fontSize: 20, fontWeight: 800, color: "#0B1233", marginTop: 8 }}>Оплата прошла</div>
               <div style={{ fontSize: 13, color: "#4A5372" }}>{priceText} · {title}</div>
               <div style={{ marginTop: 14, width: "100%", border: "1px solid #E3E7F2", borderRadius: 12, padding: 12, fontSize: 12.5, color: "#4A5372", lineHeight: 1.4 }}>Ссылка на материалы — в сообщении от бота</div>
-              <div style={{ marginTop: "auto", width: "100%", height: 46, borderRadius: 12, background: "#EEF2FF", color: "#1D4FFA", fontSize: 14, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>Вернуться в канал</div>
+              <div style={{ marginTop: "auto", width: "100%", height: 46, borderRadius: 12, background: "#E6F6FF", color: "#FB7E5E", fontSize: 14, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>Вернуться в канал</div>
             </div>
           )}
 
@@ -411,7 +411,7 @@ export default function Phone(props: PhoneProps) {
                 {saleSrc.map((x, i) => (
                   <div key={i} style={{ position: "absolute", left: 0, right: 0, top: 0, background: "rgba(255,255,255,.16)", backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)", borderRadius: 18, padding: "11px 12px", display: "flex", flexDirection: "column", gap: 3, opacity: i < n ? 1 : 0, transform: i < n ? `translateY(${(n - 1 - i) * 84}px) scale(${1 - (n - 1 - i) * 0.03})` : "translateY(-18px) scale(.96)", transition: `opacity .45s,transform .5s ${E}` }}>
                     <span style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 11.5, opacity: 0.85 }}>
-                      <span style={{ width: 18, height: 18, borderRadius: 5, background: "#1D4FFA", display: "inline-flex", alignItems: "center", justifyContent: "center" }}><Svg d={SEND} size={10} stroke="#fff" sw={2.6} /></span>
+                      <span style={{ width: 18, height: 18, borderRadius: 5, background: "#FB7E5E", display: "inline-flex", alignItems: "center", justifyContent: "center" }}><Svg d={SEND} size={10} stroke="#fff" sw={2.6} /></span>
                       TG Market Seller<span style={{ marginLeft: "auto" }}>{i === n - 1 ? "сейчас" : x[2]}</span>
                     </span>
                     <b style={{ fontSize: 14 }}>Оплата получена · +{rub(x[1])}</b>
@@ -424,7 +424,7 @@ export default function Phone(props: PhoneProps) {
         </div>
       </div>
       {s === "pay" && tpos === "right" && (
-        <div style={{ position: "absolute", left: 236, top: 150, zIndex: 10, width: 216, background: "#fff", borderRadius: 16, padding: 14, display: "flex", alignItems: "center", gap: 12, boxShadow: "0 12px 40px rgba(29,79,250,.18)", border: "1px solid #E3E7F2", opacity: toastVis ? 1 : 0, transform: toastVis ? "none" : "translateX(24px)", transition: `opacity .4s,transform .5s ${E}` }}>
+        <div style={{ position: "absolute", left: 236, top: 150, zIndex: 10, width: 216, background: "#fff", borderRadius: 16, padding: 14, display: "flex", alignItems: "center", gap: 12, boxShadow: "0 12px 40px rgba(251,126,94,.18)", border: "1px solid #E3E7F2", opacity: toastVis ? 1 : 0, transform: toastVis ? "none" : "translateX(24px)", transition: `opacity .4s,transform .5s ${E}` }}>
           <span style={{ width: 38, height: 38, borderRadius: "50%", background: "#18A957", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}><Svg d={CHECK} size={18} stroke="#fff" sw={3} /></span>
           <span style={{ display: "flex", flexDirection: "column", gap: 1 }}>
             <span style={{ fontSize: 13, color: "#4A5372", fontWeight: 500 }}>Оплата получена</span>

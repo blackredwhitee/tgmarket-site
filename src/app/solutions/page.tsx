@@ -31,7 +31,7 @@ export default function SolutionsIndex() {
               <li key={n.slug} className={s.nicheItem}>
                 <Link href={`/solutions/${n.slug}/`} className={s.nicheCard}>
                   <span className={s.nicheIcon} aria-hidden="true">
-                    <Icon d={n.icon} size={24} stroke="#FFE14A" />
+                    <Icon d={n.icon} size={24} stroke="#7BD0FF" />
                   </span>
                   <span className={s.nicheTitle}>{n.label}</span>
                   <span className={s.nicheSub}>{n.sub}</span>

@@ -2,8 +2,8 @@
   position: relative;
   background-color: var(--bg-soft);
   background-image:
-    radial-gradient(50% 55% at 8% 12%, rgba(255, 225, 74, 0.28), transparent 70%),
-    radial-gradient(45% 50% at 95% 90%, rgba(185, 202, 255, 0.55), transparent 70%);
+    radial-gradient(50% 55% at 8% 12%, rgba(123, 208, 255, 0.28), transparent 70%),
+    radial-gradient(45% 50% at 95% 90%, rgba(123, 208, 255, 0.55), transparent 70%);
   padding: clamp(72px, 8.9vw, 128px) 0;
 }
 .head {
@@ -38,7 +38,7 @@
   width: 44px;
   height: 44px;
   border-radius: 14px;
-  background: var(--brand-blue);
+  background: var(--brand);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,10 +101,10 @@
 }
 /* Подложки иллюстраций по порядку карточек */
 .ill1 {
-  background: #fff3c4;
+  background: #e6f6ff;
 }
 .ill2 {
-  background: #eef2ff;
+  background: #e6f6ff;
 }
 .ill3 {
   background: #ffe8ee;
@@ -177,7 +177,7 @@
   height: 24px;
   border-radius: 50%;
   background: var(--ink-900);
-  color: var(--accent-yellow);
+  color: var(--sky);
   font-size: 14px;
   font-weight: 800;
   display: flex;
@@ -197,7 +197,7 @@
 }
 .bar {
   height: 20px;
-  background: #d6e0ff;
+  background: #cdeeff;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -239,7 +239,7 @@
   display: block;
   width: 18%;
   height: 100%;
-  background: var(--brand-blue);
+  background: var(--brand);
 }
 .week {
   font-size: 11px;
@@ -290,7 +290,7 @@
 }
 .doc b {
   font-size: 12.5px;
-  color: var(--brand-blue);
+  color: var(--brand);
 }
 .doc span {
   height: 5px;
