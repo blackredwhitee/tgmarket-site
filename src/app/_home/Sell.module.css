@@ -21,6 +21,8 @@
   pointer-events: none;
 }
 .wrap {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: clamp(32px, 3.3vw, 48px);
@@ -277,4 +279,14 @@
   color: var(--ink-900);
   font-size: 14px;
   font-weight: 700;
+}
+
+.mascot {
+  right: 24px;
+  top: -24px;
+}
+@media (max-width: 1023px) {
+  .mascot {
+    display: none;
+  }
 }

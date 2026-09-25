@@ -10,6 +10,10 @@ import Stage from "./_home/Stage";
 import PromoteVisual from "./_home/PromoteVisual";
 import ReportVisual from "./_home/ReportVisual";
 import AuctionsDonations from "./_home/AuctionsDonations";
+import bagWow from "@/assets/mascots/bag-wow.svg";
+import bagReceipt from "@/assets/mascots/bag-receipt.svg";
+import bagGlasses from "@/assets/mascots/bag-glasses.svg";
+import bagLove from "@/assets/mascots/bag-love.svg";
 import PhoneStage from "./_home/PhoneStage";
 import Niches from "./_home/Niches";
 import Why from "./_home/Why";
@@ -49,6 +53,7 @@ export default function Home() {
       <AuctionsDonations />
       <Stage
         id="promote"
+        mascot={{ img: bagWow, pos: { right: -30, bottom: -110 }, size: 130 }}
         step={2}
         kicker="Продвигайте"
         title="Продвигайте товары и находите новых клиентов"
@@ -64,6 +69,7 @@ export default function Home() {
       />
       <Stage
         id="pay"
+        mascot={{ img: bagReceipt, pos: { right: 0, bottom: -10 }, size: 150 }}
         step={3}
         kicker="Получайте заказы и оплату"
         title="Оплата по СБП — прямо из поста"
@@ -121,6 +127,7 @@ export default function Home() {
       />
       <Stage
         id="analytics"
+        mascot={{ img: bagGlasses, pos: { left: -110, bottom: -70 }, size: 110 }}
         step={5}
         kicker="Анализируйте продажи"
         title="Вся аналитика продаж — в боте"
@@ -136,6 +143,7 @@ export default function Home() {
       />
       <Stage
         id="customers"
+        mascot={{ img: bagLove, pos: { right: 0, bottom: -10 }, size: 150 }}
         step={6}
         kicker="Возвращайте покупателей"
         title="Возвращайте покупателей и увеличивайте повторные продажи"

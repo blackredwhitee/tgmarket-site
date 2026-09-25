@@ -1,4 +1,5 @@
 import { AuctionMock, DonateMock } from "./AuctionsDonationsMocks";
+import { LiveBg } from "@/components/Life";
 import s from "./AuctionsDonations.module.css";
 
 const FLOW = ["Создайте предложение", "Запустите аукцион", "Соберите участников", "Получите оплату"];
@@ -7,7 +8,8 @@ const FLOW = ["Создайте предложение", "Запустите а�
 export default function AuctionsDonations() {
   return (
     <section id="auctions" className={s.section}>
-      <div className="container">
+      <LiveBg tone="warm" />
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
         <h2 className={s.h2} data-reveal>Аукционы и донаты — тоже в TG Market</h2>
         <div className={s.grid} data-reveal="stagger">
           <article className={`${s.card} ${s.dark}`}>

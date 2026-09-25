@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import BotLink from "@/components/BotLink";
 import Phone from "@/components/Phone";
+import wow from "@/assets/mascots/bag-wow.svg";
+import { Mascot } from "@/components/Life";
 import { Icon, ICON } from "@/components/icons";
 import s from "./not-found.module.css";
 
@@ -28,7 +30,7 @@ export default function NotFound() {
           </div>
           <span className={s.hint}>Попробуйте нажать «Оплатить» на телефоне</span>
         </div>
-        <div className={s.phone}><Phone scene="404" /></div>
+        <div className={s.phone} style={{ position: "relative" }}><Phone scene="404" /><Mascot img={wow} size={150} style={{ right: 0, bottom: 40 }} delay={600} /></div>
       </div>
     </section>
   );
