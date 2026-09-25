@@ -33,11 +33,16 @@
 .logo:hover {
   color: var(--ink-900);
 }
+.logoImg {
+  display: block;
+  height: 30px;
+  width: auto;
+}
 .logoMark {
   width: 34px;
   height: 34px;
   border-radius: 10px;
-  background: var(--brand);
+  background: var(--sky);
   display: flex;
   align-items: center;
   justify-content: center;

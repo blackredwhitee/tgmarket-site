@@ -1,6 +1,7 @@
 /** Иконки в стиле Lucide (пути из макетов). */
 export const ICON = {
   send: "M22 2 11 13M22 2l-7 20-4-9-9-4z",
+  bag: "M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0",
   arrowRight: "M5 12h14M13 5l7 7-7 7",
   arrowUpRight: "M7 17 17 7M8 7h9v9",
   check: "M20 6 9 17l-5-5",

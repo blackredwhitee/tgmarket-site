@@ -6,6 +6,7 @@ import BotLink from "./BotLink";
 import { Icon, ICON } from "./icons";
 import { NICHES } from "@/data/niches";
 import { pageParam } from "@/lib/params";
+import logo from "@/assets/logo.svg";
 import s from "./Header.module.css";
 
 const NAV = [
@@ -52,8 +53,7 @@ export default function Header() {
     <header className={`${s.header} ${small ? s.small : ""}`}>
       <div className={s.inner}>
         <Link href="/" className={s.logo} aria-label="TG Market — на главную">
-          {/* TODO: временный логотип — заменить на фирменный SVG */}
-          <span className={s.logoMark}><Icon d={ICON.send} size={17} stroke="#fff" sw={2.2} /></span>TG Market
+          <img src={logo.src} alt="TG Market" className={s.logoImg} width={204} height={30} />
         </Link>
         <nav className={s.nav} aria-label="Основное меню">
           {NAV.map((n) =>

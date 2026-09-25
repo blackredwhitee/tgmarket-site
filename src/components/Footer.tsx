@@ -3,6 +3,7 @@ import BotLink from "./BotLink";
 import Qr from "./Qr";
 import { Icon, ICON } from "./icons";
 import { NICHES } from "@/data/niches";
+import logo from "@/assets/logo.svg";
 import s from "./Footer.module.css";
 
 const COLS = [
@@ -19,7 +20,7 @@ export default function Footer() {
         <div className={s.top}>
           <div className={s.brand}>
             <Link href="/" className={s.logo}>
-              <span className={s.logoMark}><Icon d={ICON.send} size={17} stroke="#fff" sw={2.2} /></span>TG Market
+              <img src={logo.src} alt="TG Market" className={s.logoImg} width={204} height={30} />
             </Link>
             <p className={s.tagline}>Продажи и приём оплаты по СБП прямо в Telegram.</p>
             <div className={s.botRow}>

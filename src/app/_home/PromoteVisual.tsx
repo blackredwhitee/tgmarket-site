@@ -5,15 +5,15 @@ import { useInView, useReducedMotion } from "@/lib/motion";
 import s from "./Visuals.module.css";
 
 const CHANNELS = [
+  { ini: "TG", name: "Каналы TG Market", subs: "10 000", tag: "бесплатно", bg: "#7BD0FF" },
   { ini: "ПП", name: "Психология просто", subs: "48 тыс.", tag: "Психология", bg: "#FB7E5E" },
-  { ini: "КР", name: "Карьера и рост", subs: "31 тыс.", tag: "Карьера", bg: "#7BD0FF" },
+  { ini: "КР", name: "Карьера и рост", subs: "31 тыс.", tag: "Карьера", bg: "#FDB29E" },
   { ini: "ОС", name: "Осознанные деньги", subs: "22 тыс.", tag: "Финансы", bg: "#0B1233" },
-  { ini: "МВ", name: "Мамы в Telegram", subs: "67 тыс.", tag: "Семья", bg: "#FDB29E" },
 ];
 const LINK = "M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71";
 
 /**
- * Мокап продвижения: карточка товара размещается на площадках по очереди (каждые 900 мс),
+ * Мокап «Заказать рекламу» из бота: бесплатная публикация в каналах TG Market и каналы по нише, размещение по очереди (каждые 900 мс),
  * затем появляется плашка «Ссылка на оплату скопирована». Цикл ~7 с; вне экрана — пауза.
  */
 export default function PromoteVisual() {
@@ -44,8 +44,8 @@ export default function PromoteVisual() {
       </div>
       <div className={s.places}>
         <div className={s.placesHead}>
-          <b>Площадки для рекламы</b>
-          <span>подобраны по нише</span>
+          <b>Заказать рекламу</b>
+          <span>каналы по вашей нише</span>
         </div>
         {CHANNELS.map((c, i) => {
           const done = n > i;
@@ -54,7 +54,7 @@ export default function PromoteVisual() {
               <span className={s.ava} style={{ background: c.bg, color: c.bg === "#7BD0FF" || c.bg === "#FDB29E" ? "#0B1233" : "#fff" }}>{c.ini}</span>
               <span className={s.placeName}>{c.name}<small>{c.subs} подписчиков · {c.tag}</small></span>
               <span className={`${s.placeBtn} ${done ? s.placeDone : ""}`}>
-                {done ? <><Icon d={ICON.check} size={14} sw={3} />Размещено</> : "Разместить"}
+                {done ? <><Icon d={ICON.check} size={14} sw={3} />Размещено</> : i === 0 ? "Бесплатно" : "Заказать"}
               </span>
             </div>
           );

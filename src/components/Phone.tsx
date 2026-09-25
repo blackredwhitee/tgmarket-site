@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { ICON } from "./icons";
+import mark from "@/assets/logo-mark.svg";
 import { rub } from "@/lib/format";
 import { useInView } from "@/lib/motion";
 
@@ -219,8 +220,8 @@ export default function Phone(props: PhoneProps) {
             <div style={{ position: "absolute", top: 44, left: 0, right: 0, height: 52, background: "rgba(255,255,255,.96)", display: "flex", alignItems: "center", gap: 10, padding: "0 12px", borderBottom: "1px solid #E3E7F2", zIndex: 5 }}>
               <Svg d={ICON.chevronLeft} size={20} stroke="#FB7E5E" sw={2} />
               {isBot ? (
-                <div style={{ width: 34, height: 34, borderRadius: "50%", background: "#FB7E5E", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
-                  <Svg d={SEND} size={16} stroke="#fff" sw={2.2} />
+                <div style={{ width: 34, height: 34, borderRadius: "50%", background: "#7BD0FF", display: "flex", alignItems: "center", justifyContent: "center", flex: "none", overflow: "hidden" }}>
+                  <img src={mark.src} alt="" width={30} height={31} style={{ display: "block" }} />
                 </div>
               ) : (
                 <div style={{ width: 34, height: 34, borderRadius: "50%", background: "linear-gradient(135deg,#FFA98F,#FB7E5E)", color: "#fff", fontSize: 13, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
@@ -412,7 +413,7 @@ export default function Phone(props: PhoneProps) {
                 {saleSrc.map((x, i) => (
                   <div key={i} style={{ position: "absolute", left: 0, right: 0, top: 0, background: "rgba(255,255,255,.16)", backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)", borderRadius: 18, padding: "11px 12px", display: "flex", flexDirection: "column", gap: 3, opacity: i < n ? 1 : 0, transform: i < n ? `translateY(${(n - 1 - i) * 84}px) scale(${1 - (n - 1 - i) * 0.03})` : "translateY(-18px) scale(.96)", transition: `opacity .45s,transform .5s ${E}` }}>
                     <span style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 11.5, opacity: 0.85 }}>
-                      <span style={{ width: 18, height: 18, borderRadius: 5, background: "#FB7E5E", display: "inline-flex", alignItems: "center", justifyContent: "center" }}><Svg d={SEND} size={10} stroke="#fff" sw={2.6} /></span>
+                      <span style={{ width: 18, height: 18, borderRadius: 5, background: "#7BD0FF", display: "inline-flex", alignItems: "center", justifyContent: "center" }}><Svg d={ICON.bag} size={10} stroke="#fff" sw={2.6} /></span>
                       TG Market Seller<span style={{ marginLeft: "auto" }}>{i === n - 1 ? "сейчас" : x[2]}</span>
                     </span>
                     <b style={{ fontSize: 14 }}>Оплата получена · +{rub(x[1])}</b>
