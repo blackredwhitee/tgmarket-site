@@ -2,20 +2,22 @@
 import { useEffect, useRef, useState } from "react";
 import { reducedMotion, useInView } from "@/lib/motion";
 import { rub } from "@/lib/format";
+import Face, { type FaceProps } from "@/components/Face";
 import s from "./PartnerOrbit.module.css";
 
-const AVATARS: [string, string, string][] = [
-  ["ПС", "#FB7E5E", "#fff"],
-  ["КХ", "#fff", "#0B1233"],
-  ["ДП", "#7BD0FF", "#0B1233"],
-  ["ВО", "#fff", "#FB7E5E"],
-  ["ЗН", "#0B1233", "#fff"],
-  ["МК", "#E6F6FF", "#FB7E5E"],
+// Декоративные «продавцы» на орбите — иллюстрированные лица в фирменных цветах
+const FACES: FaceProps[] = [
+  { bg: "#FB7E5E", skin: "#F6D3B8", hair: "#3B2A20", shirt: "#0B1233", style: "long" },
+  { bg: "#7BD0FF", skin: "#E8B998", hair: "#1F1A17", shirt: "#FB7E5E", style: "beard" },
+  { bg: "#0B1233", skin: "#F2C4A4", hair: "#C9853F", shirt: "#7BD0FF", style: "bun" },
+  { bg: "#E6F6FF", skin: "#8D5A3B", hair: "#1F1A17", shirt: "#FB7E5E", style: "curly" },
+  { bg: "#FDB29E", skin: "#F6D3B8", hair: "#6B4A2E", shirt: "#0B1233", style: "short", glasses: true },
+  { bg: "#FFF1EC", skin: "#C98F6B", hair: "#2A1F1A", shirt: "#7BD0FF", style: "bob" },
 ];
-const SELLERS = AVATARS.map(([i, bg, fg], k) => {
+const SELLERS = FACES.map((f, k) => {
   const r = (k * 60 * Math.PI) / 180;
   // toFixed — чтобы строки совпадали на сервере и клиенте (гидратация)
-  return { i, bg, fg, x: (50 + 50 * Math.cos(r)).toFixed(3) + "%", y: (50 + 50 * Math.sin(r)).toFixed(3) + "%" };
+  return { f, k, x: (50 + 50 * Math.cos(r)).toFixed(3) + "%", y: (50 + 50 * Math.sin(r)).toFixed(3) + "%" };
 });
 
 const TURN = 60000; // 60s на оборот
@@ -104,9 +106,9 @@ export default function PartnerOrbit() {
       <div className={s.inner} />
       <div ref={orbitRef} className={s.orbit}>
         {SELLERS.map((v) => (
-          <div key={v.i} className={s.slot} style={{ left: v.x, top: v.y }}>
-            <div data-av="" className={s.avatar} style={{ background: v.bg, color: v.fg }}>
-              {v.i}
+          <div key={v.k} className={s.slot} style={{ left: v.x, top: v.y }}>
+            <div data-av="" className={s.avatar} style={{ overflow: "hidden" }}>
+              <Face {...v.f} size={120} />
             </div>
           </div>
         ))}
