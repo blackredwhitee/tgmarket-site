@@ -3,6 +3,7 @@ import { JsonLd, faqLd, meta } from "@/lib/seo";
 import Hero from "./_components/Hero";
 import PricingInteractive from "./_components/PricingInteractive";
 import PaymentFaq from "./_components/PaymentFaq";
+import Plans from "./_components/Plans";
 import { PRICING_FAQ } from "./_components/faq";
 
 // ТЗ §6.4: Title задан; description в ТЗ нет — составлен из текстов страницы. [УТОЧНИТЬ]
@@ -18,6 +19,7 @@ export default function PricingPage() {
       <JsonLd data={faqLd(PRICING_FAQ)} />
       <Hero />
       <PricingInteractive />
+      <Plans />
       <PaymentFaq items={PRICING_FAQ} />
       <FinalCTA
         title="Начните продавать с 3%"

@@ -26,7 +26,7 @@ export default function WhyCounters() {
   const items = [
     SHOW_SELLERS
       ? { val: fmt(c[0]), suffix: "+", plusOp: done ? 1 : 0, label: "селлеров используют TG Market", bg: "#FB7E5E", fg: "#fff" }
-      : { val: "0", suffix: " ₽", plusOp: 1, label: "за подключение и никакой абонентской платы", bg: "#FB7E5E", fg: "#fff" },
+      : { val: "0", suffix: " ₽", plusOp: 1, label: "за подключение и тариф СТАРТ", bg: "#FB7E5E", fg: "#fff" },
     { val: String(Math.round(c[1])), suffix: "%", plusOp: 1, label: "минимальная комиссия — дальше шкала от 10% до 5%", bg: "#7BD0FF", fg: "#0B1233" },
     { val: String(Math.round(c[2])), suffix: "", plusOp: 1, label: "инструментов продаж в боте: товары и услуги, подписки, билеты, аукционы, донаты, промокоды, платёжная ссылка, режим кассы, витрина", bg: "#0B1233", fg: "#fff" },
   ];

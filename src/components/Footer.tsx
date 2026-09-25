@@ -10,7 +10,7 @@ const COLS = [
   { title: "Продукт", links: [{ label: "Как это работает", href: "/how-it-works/" }, { label: "Тарифы", href: "/pricing/" }, { label: "FAQ", href: "/faq/" }] },
   { title: "Решения", links: NICHES.map((n) => ({ label: n.title, href: `/solutions/${n.slug}/` })) },
   { title: "Партнёрам", links: [{ label: "Партнёрская программа", href: "/partners/" }] },
-  { title: "Компания", links: [{ label: "Контакты", href: "/contacts/" }, { label: "Документы", href: "/legal/offer/" }] },
+  { title: "Компания", links: [{ label: "Контакты", href: "/contacts/" }, { label: "Документы", href: "/legal/offer/" }, { label: "Новости в Telegram", href: "https://t.me/tg_market_seller" }] },
 ];
 
 export default function Footer() {
