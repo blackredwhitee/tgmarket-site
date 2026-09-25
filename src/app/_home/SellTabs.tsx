@@ -115,7 +115,7 @@ export default function SellTabs() {
                 <ul className={s.who}>
                   {t.who.map((w) => (
                     <li key={w}>
-                      <span className={s.chk} aria-hidden="true"><Icon d={ICON.check} size={15} stroke="#0B1233" sw={3} /></span>{w}
+                      <span className={s.chk} aria-hidden="true"><Icon d={ICON.check} size={15} stroke="#fff" sw={3} /></span>{w}
                     </li>
                   ))}
                 </ul>

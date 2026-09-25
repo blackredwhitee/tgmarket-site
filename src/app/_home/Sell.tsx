@@ -10,12 +10,11 @@ const TOOLS = [
   { label: "Витрина продавца", icon: "M3 9l1.5-5h15L21 9M3 9v11h18V9M3 9h18M9 20v-6h6v6" },
 ];
 
-/** Главная · «Что продавать» (коралловая, табы) + инструменты бота. */
+/** Главная · «Что продавать» (светлая, табы) + инструменты бота. */
 export default function Sell() {
   return (
     <section id="create" className={s.section}>
       <div className={s.glow} aria-hidden="true" />
-      <div className={`bg-beams ${s.beams}`} aria-hidden="true" />
       <div className={`container ${s.wrap}`}>
         <span className={s.kicker}><b>Шаг 1</b>Создайте предложение</span>
         <h2 className={s.h2}>Продавайте то, что нужно <span className={s.yellow}>вашей аудитории</span></h2>
@@ -23,7 +22,7 @@ export default function Sell() {
         <div className={s.tools}>
           <span className={s.toolsTitle}>А ещё в боте:</span>
           {TOOLS.map((t) => (
-            <span key={t.label} className={s.tool}><Icon d={t.icon} size={18} sw={2} />{t.label}</span>
+            <span key={t.label} className={s.tool}><Icon d={t.icon} size={18} sw={2} stroke="#FB7E5E" />{t.label}</span>
           ))}
         </div>
       </div>
