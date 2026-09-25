@@ -65,7 +65,7 @@ const LOOKS: SolutionStep[] = [
 const ADVANTAGES: SolutionAdvantage[] = [
   { big: "СБП", title: "Привычная оплата", text: "Через приложение банка, без ввода карты.", bg: "#FB7E5E", fg: "#fff" },
   { big: "0", title: "переходов из канала", text: "Покупка — прямо в посте.", bg: "#7BD0FF", fg: "#0B1233" },
-  { big: "3%", title: "на 2 месяца", text: "Для первых селлеров. Дальше — ступенчатая шкала.", bg: "#0B1233", fg: "#fff" },
+  { big: "от 3%", title: "комиссия", text: "3% первым селлерам на 2 месяца, дальше — шкала от 10% до 5%.", bg: "#0B1233", fg: "#fff" },
 ];
 
 const FAQ: SolutionFaq[] = [

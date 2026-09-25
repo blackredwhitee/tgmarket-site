@@ -22,7 +22,7 @@ export default function SolutionHero({ n }: { n: Solution }) {
               <Icon d={ICON.send} size={20} sw={2.2} />
               Начать продавать
             </BotLink>
-            <span data-intro="500" className={s.heroNote}>Первым селлерам — 3% на 2 месяца · Оплата по СБП</span>
+            <span data-intro="500" className={s.heroNote}>Комиссия от 3% · Оплата по СБП</span>
           </div>
           <div data-intro="300" data-y="40" data-dur="900" className={s.heroPhone}>
             <div className={s.heroPhoneInner}>

@@ -17,7 +17,7 @@ export default function HeroB() {
             <span className={s.last} data-intro="260">без сайта<span className={s.chip}>и кассы</span></span>
           </h1>
           <div className={s.side} data-intro="400">
-            <span className={s.badge}>Первым селлерам — 3% на 2 месяца</span>
+            <span className={s.badge}>Комиссия от 3%</span>
             <p className={s.sub}>Создайте карточку товара в боте, опубликуйте её в своём канале и принимайте оплату по СБП от подписчиков.</p>
             <div className={s.actions}>
               <BotLink param="site_home" block="hero_b" className={s.cta}>

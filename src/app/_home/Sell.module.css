@@ -46,8 +46,8 @@
 .tablist {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 640px;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 760px;
   background: rgba(11, 18, 51, 0.22);
   border-radius: 16px;
   padding: 5px;
@@ -57,7 +57,7 @@
   top: 5px;
   bottom: 5px;
   left: 5px;
-  width: calc((100% - 10px) / 4);
+  width: calc((100% - 10px) / 5);
   border-radius: 12px;
   background: var(--sky);
   transition: transform 0.25s var(--ease-in-out);
@@ -221,4 +221,33 @@
   border-radius: 8px;
   padding: 8px 10px;
   align-self: flex-start;
+}
+
+.kicker {
+  align-self: flex-start;
+  margin-bottom: calc(-1 * clamp(12px, 1.6vw, 24px));
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  padding: 0 14px 0 6px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+.kicker b {
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 13px;
+  background: #fff;
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
 }

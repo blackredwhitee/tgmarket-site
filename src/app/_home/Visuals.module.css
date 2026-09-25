@@ -1,0 +1,398 @@
+/* ——— Кабинет заказов ——— */
+.dash {
+  width: 100%;
+  max-width: 540px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 20px;
+  box-shadow: 0 24px 60px rgba(11, 18, 51, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 14px;
+  color: var(--ink-900);
+}
+.dashHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dashTitle {
+  font-size: 20px;
+  font-weight: 800;
+  margin-right: auto;
+}
+.search {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: var(--bg-soft);
+  color: var(--ink-400);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.export {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.filter {
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 15px;
+  background: var(--bg-soft);
+  color: var(--ink-600);
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition:
+    background 0.25s,
+    color 0.25s;
+}
+.filterOn {
+  background: var(--ink-900);
+  color: #fff;
+}
+.period {
+  margin-left: auto;
+  font-size: 12.5px;
+  color: var(--ink-400);
+}
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.row {
+  display: grid;
+  grid-template-columns: 64px 1fr auto 86px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: var(--bg-alt);
+  transition: opacity 0.3s;
+}
+.rowNew {
+  animation: rowIn 0.6s var(--ease-out) both;
+}
+@keyframes rowIn {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+    background: var(--sky-50);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rowDim {
+  opacity: 0.28;
+}
+.num {
+  font-size: 12.5px;
+  color: var(--ink-400);
+  font-variant-numeric: tabular-nums;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item small {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-400);
+}
+.sum {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.status {
+  justify-self: end;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+.paid {
+  background: rgba(24, 169, 87, 0.12);
+  color: var(--success);
+}
+.wait {
+  background: var(--sky-50);
+  color: #1b7fb3;
+}
+.dashFoot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink-400);
+}
+.dashFoot b {
+  font-size: 18px;
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+}
+.spark {
+  margin-left: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 32px;
+}
+.spark i {
+  width: 8px;
+  border-radius: 3px;
+  background: var(--sky);
+}
+.spark i:last-child {
+  background: var(--brand);
+}
+
+/* ——— Продвижение ——— */
+.promo {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.lot {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 12px 18px 12px 12px;
+  box-shadow: var(--shadow-float);
+  transform: rotate(-2deg);
+  position: relative;
+  z-index: 2;
+}
+.lotCover {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--sky-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lotInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+  color: var(--ink-600);
+}
+.lotInfo b {
+  font-size: 15px;
+  color: var(--ink-900);
+}
+.places {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 24px 60px rgba(11, 18, 51, 0.08);
+}
+.placesHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 4px 6px;
+  font-size: 13px;
+  color: var(--ink-400);
+}
+.placesHead b {
+  font-size: 17px;
+  color: var(--ink-900);
+}
+.place {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 14px;
+  background: var(--bg-alt);
+}
+.ava {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex: none;
+}
+.placeName {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-900);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.placeName small {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-400);
+}
+.placeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.placeDone {
+  background: rgba(24, 169, 87, 0.12);
+  color: var(--success);
+}
+.linkToast {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 14px;
+  background: var(--ink-900);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.35s var(--ease-out),
+    transform 0.35s var(--ease-out);
+}
+.linkOn {
+  opacity: 1;
+  transform: none;
+}
+
+/* ——— Телефон с плавающими карточками ——— */
+.phoneStage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+}
+.phoneBlob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 420px;
+  height: 420px;
+  margin: -210px 0 0 -210px;
+  border-radius: 50%;
+  background: var(--sky);
+  opacity: 0.35;
+}
+.floatCard {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 12px 16px;
+  box-shadow: var(--shadow-float);
+  font-size: 13px;
+  color: var(--ink-600);
+  white-space: nowrap;
+}
+.floatCard b {
+  display: block;
+  font-size: 18px;
+  color: var(--ink-900);
+}
+.floatIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+@media (max-width: 767px) {
+  .dash {
+    padding: 14px;
+    border-radius: 22px;
+  }
+  .search {
+    display: none;
+  }
+  .row {
+    grid-template-columns: 1fr auto;
+  }
+  .num,
+  .sum {
+    display: none;
+  }
+  .floatCard {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rowNew {
+    animation: none;
+  }
+}

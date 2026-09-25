@@ -22,8 +22,13 @@ const TABS = [
   },
   {
     label: "Донаты", icon: ICON.gift, cover: "linear-gradient(135deg,#FFD6E0,#FFB3C6)",
-    lead: "Поддержка автора в любой сумме", exTitle: "Поддержать канал", exPrice: "Любая сумма", btn: "Поддержать",
-    who: ["Авторам каналов", "Блогерам", "Независимым проектам"],
+    lead: "Поддержка от аудитории в любой сумме — при необходимости с электронным чеком", exTitle: "Поддержать канал", exPrice: "Любая сумма", btn: "Поддержать",
+    who: ["Блогерам и авторам контента", "Сообществам", "Организаторам проектов"],
+  },
+  {
+    label: "Аукционы", icon: "m14 13-8.5 8.5a2.12 2.12 0 0 1-3-3L11 10M16 16l6-6M8 8l6-6M9 7l8 8M21 11l-8-8", cover: "linear-gradient(135deg,#FFD9CE,#FDB29E)",
+    lead: "Лоты с торгами прямо в Telegram", exTitle: "Лот: авторская картина «Север»", exPrice: "Ставка 12 400 ₽ · ещё 2 ч", btn: "Сделать ставку",
+    who: ["Эксклюзивным товарам и услугам", "Ограниченным лотам", "Благотворительным аукционам"],
   },
 ] as { label: string; icon: string; cover: string; lead: string; exTitle: string; exPrice: string; btn: string; who: string[]; note?: string }[];
 
@@ -42,14 +47,15 @@ export default function SellTabs() {
 
   useEffect(() => {
     if (lock || hover || !inView || rm) return;
-    const iv = setInterval(() => setTab((t) => (t + 1) % 4), 5000);
+    const iv = setInterval(() => setTab((t) => (t + 1) % TABS.length), 5000);
     return () => clearInterval(iv);
   }, [lock, hover, inView, rm]);
 
   const pick = (i: number) => { setTab(i); setLock(true); };
   const onKey = (e: KeyboardEvent) => {
     const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
-    const to = e.key === "Home" ? 0 : e.key === "End" ? 3 : d ? (tab + d + 4) % 4 : -1;
+    const n = TABS.length;
+    const to = e.key === "Home" ? 0 : e.key === "End" ? n - 1 : d ? (tab + d + n) % n : -1;
     if (to < 0) return;
     e.preventDefault();
     pick(to);

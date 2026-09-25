@@ -27,7 +27,7 @@ export default function FinalCTA({
           <Anim kind="drift" className={s.glow} />
           <div className={s.wrap}>
             <div className={s.text}>
-              <span className={s.badge}><Icon d={ZAP} size={16} sw={2.2} />Первым селлерам — 3% на 2 месяца</span>
+              <span className={s.badge}><Icon d={ZAP} size={16} sw={2.2} />Комиссия от 3%</span>
               <h2 className={s.h2}>{title}</h2>
               <p className={s.sub}>{sub}</p>
               <ul className={s.checks}>

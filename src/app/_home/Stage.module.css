@@ -1,0 +1,120 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(72px, 8.9vw, 128px) 0;
+}
+.white {
+  background: #fff;
+}
+.soft {
+  background: var(--bg-soft);
+}
+.sky {
+  background: var(--sky-50);
+}
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 48px 80px;
+}
+.reverse {
+  flex-direction: row-reverse;
+}
+.text {
+  flex: 1 1 440px;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 0;
+}
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  padding: 0 14px 0 6px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-900);
+}
+.white .kicker {
+  background: var(--bg-soft);
+}
+.kicker b {
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 13px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+}
+.h2 {
+  margin: 0;
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink-900);
+  text-wrap: balance;
+}
+.lead {
+  margin: 0;
+  font-size: clamp(17px, 1.39vw, 20px);
+  line-height: 1.5;
+  color: var(--ink-600);
+}
+.points {
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink-900);
+}
+.chk {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  margin-top: 0;
+}
+.note {
+  margin: 4px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-400);
+}
+.visual {
+  flex: 1 1 440px;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+@media (max-width: 767px) {
+  .reverse {
+    flex-direction: row;
+  }
+}

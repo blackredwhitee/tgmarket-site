@@ -29,7 +29,7 @@ export default function StickyMobileCTA({ param = "site_home" }: { param?: strin
       <BotLink param={param} block="sticky_mobile" className={s.btn} tabIndex={on ? 0 : -1}>
         <Icon d={ICON.send} size={18} sw={2.2} />Начать продавать
       </BotLink>
-      <span className={s.note}>Первым селлерам — 3% на 2 месяца</span>
+      <span className={s.note}>Комиссия от 3% · оплата по СБП</span>
     </div>
   );
 }

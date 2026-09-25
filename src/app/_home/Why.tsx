@@ -11,13 +11,14 @@ const ADVS: { icon: string; title: string; text: string; note?: string }[] = [
   { icon: P.layers, title: "Всё в одном боте", text: "Карточки, продажи, уведомления об оплатах и вывод денег — в @TGMarketSellerBot." },
 ];
 
-export default function Why() {
+/** compact — только счётчики (преимущества раскрыты в этапах пути продаж). */
+export default function Why({ compact = false }: { compact?: boolean }) {
   return (
     <section className={s.section}>
       <div className={`container ${s.wrap}`}>
         <h2 className={s.h2}>Почему TG Market</h2>
         <WhyCounters />
-        <div className={s.advs} data-reveal="stagger">
+        {!compact && <div className={s.advs} data-reveal="stagger">
           {ADVS.map((a) => (
             <div key={a.title} className={s.adv}>
               <span className={s.advIcon}><Icon d={a.icon} size={24} sw={1.8} stroke="#fff" /></span>
@@ -26,7 +27,7 @@ export default function Why() {
               {a.note && <span className={`todo ${s.note}`}>{a.note}</span>}
             </div>
           ))}
-        </div>
+        </div>}
       </div>
     </section>
   );

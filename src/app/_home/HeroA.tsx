@@ -17,7 +17,7 @@ export default function HeroA() {
       <div className={`container ${s.wrap}`}>
         <div className={s.text}>
           <span className={s.badge} data-intro="0" data-y="12" data-dur="400">
-            <Icon d={BOLT} size={16} sw={2.2} />Первым селлерам — 3% на 2 месяца
+            <Icon d={BOLT} size={16} sw={2.2} />Комиссия от 3%
           </span>
           <h1 className={s.h1}>
             <span className={s.line} data-intro="100">Продавайте прямо</span>

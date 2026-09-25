@@ -45,7 +45,7 @@ export default function HeroAVisual() {
       <div className={s.stage}>
         <div className={s.floats} aria-hidden="true">
           <div ref={f1} className={s.f1}>
-            <div className={s.sticker}><b>3%</b><span>на 2 месяца</span></div>
+            <div className={s.sticker}><b>3%</b><span>комиссия от</span></div>
           </div>
           <div ref={f2} className={s.f2}>
             <div className={s.order}>
