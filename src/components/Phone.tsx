@@ -7,7 +7,8 @@ import { useInView } from "@/lib/motion";
 /** Мокап Telegram — порт design/Phone.dc.html со всеми сценами. Декоративный (aria-hidden). */
 
 export type PhoneScene = "pay" | "post" | "form" | "paid" | "chat" | "sbp" | "done" | "stack" | "404";
-export type ChatMsg = { me?: boolean; text: string; buttons?: string[] };
+/** cols — колонок в клавиатуре бота (по умолчанию до 2); title — жирная первая строка сообщения. */
+export type ChatMsg = { me?: boolean; title?: string; text: string; buttons?: string[]; cols?: number };
 
 export type PhoneProps = {
   scene?: PhoneScene;
@@ -323,9 +324,9 @@ export default function Phone(props: PhoneProps) {
                 {s === "chat" &&
                   msgs.map((m, i) => (
                     <div key={i} style={{ display: "flex", flexDirection: "column", gap: 5, alignItems: m.me ? "flex-end" : "flex-start", opacity: i < n ? 1 : 0, transform: i < n ? "none" : "translateY(12px)", transition: `opacity .35s,transform .35s ${E}` }}>
-                      <div style={{ maxWidth: "86%", background: m.me ? "#CDEEFF" : "#fff", borderRadius: m.me ? "14px 14px 4px 14px" : "14px 14px 14px 4px", padding: "9px 12px", fontSize: 13, color: "#0B1233", lineHeight: 1.4, whiteSpace: "pre-line" }}>{m.text}</div>
+                      <div style={{ maxWidth: "86%", background: m.me ? "#CDEEFF" : "#fff", borderRadius: m.me ? "14px 14px 4px 14px" : "14px 14px 14px 4px", padding: "9px 12px", fontSize: 13, color: "#0B1233", lineHeight: 1.4, whiteSpace: "pre-line" }}>{m.title && <b style={{ display: "block", marginBottom: 2 }}>{m.title}</b>}{m.text}</div>
                       {!!m.buttons?.length && (
-                        <div style={{ display: "grid", gridTemplateColumns: `repeat(${Math.min(2, m.buttons.length)},1fr)`, gap: 5, width: "86%" }}>
+                        <div style={{ display: "grid", gridTemplateColumns: `repeat(${m.cols ?? Math.min(2, m.buttons.length)},1fr)`, gap: 5, width: "86%" }}>
                           {m.buttons.map((b) => (
                             <div key={b} style={{ minHeight: 32, borderRadius: 9, background: "rgba(255,255,255,.7)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 600, color: "#FB7E5E", padding: "0 6px", textAlign: "center" }}>{b}</div>
                           ))}

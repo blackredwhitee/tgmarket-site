@@ -1,0 +1,254 @@
+.section {
+  background: #fff;
+  padding: clamp(72px, 8.9vw, 128px) 0;
+}
+.h2 {
+  margin: 0 0 clamp(32px, 4vw, 56px);
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink-900);
+  text-wrap: balance;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr));
+  gap: 20px;
+}
+.card {
+  border-radius: 32px;
+  padding: clamp(24px, 3vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+.dark {
+  background: var(--ink-900);
+  color: #fff;
+}
+.light {
+  background: var(--sky-50);
+  color: var(--ink-900);
+}
+.kicker {
+  align-self: flex-start;
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 16px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+}
+.h3 {
+  margin: 0;
+  font-size: clamp(24px, 2.2vw, 32px);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.dark .p {
+  color: #c3cae3;
+}
+.light .p {
+  color: var(--ink-600);
+}
+.flow {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.flow li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+}
+.flow b {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--sky);
+  color: var(--ink-900);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+/* Лот аукциона */
+.lot,
+.donate {
+  margin-top: auto;
+  background: #fff;
+  color: var(--ink-900);
+  border-radius: 22px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 16px 40px rgba(11, 18, 51, 0.18);
+}
+.lotTop,
+.donHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.lotIcon,
+.donIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.donIcon {
+  background: var(--ink-900);
+}
+.lotName {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: 700;
+  min-width: 0;
+}
+.lotName small {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-400);
+  font-variant-numeric: tabular-nums;
+}
+.bidRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--bg-alt);
+}
+.bidLabel {
+  font-size: 13px;
+  color: var(--ink-400);
+}
+.bid {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.bidder {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--success);
+  animation: bidIn 0.5s var(--ease-out) both;
+}
+@keyframes bidIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.lotBtn,
+.donBtn {
+  height: 46px;
+  border-radius: 12px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Донат */
+.amounts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.amount {
+  height: 40px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-600);
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    color 0.25s;
+}
+.amountOn {
+  background: var(--sky);
+  border-color: var(--sky);
+  color: var(--ink-900);
+}
+.receipt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-900);
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 0.35s var(--ease-out),
+    transform 0.35s var(--ease-out);
+}
+.receiptOn {
+  opacity: 1;
+  transform: none;
+}
+.ok {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+@media (max-width: 480px) {
+  .flow {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bidder {
+    animation: none;
+  }
+}

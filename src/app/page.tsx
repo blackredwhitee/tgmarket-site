@@ -8,7 +8,8 @@ import Journey from "./_home/Journey";
 import Sell from "./_home/Sell";
 import Stage from "./_home/Stage";
 import PromoteVisual from "./_home/PromoteVisual";
-import OrdersVisual from "./_home/OrdersVisual";
+import ReportVisual from "./_home/ReportVisual";
+import AuctionsDonations from "./_home/AuctionsDonations";
 import PhoneStage from "./_home/PhoneStage";
 import Niches from "./_home/Niches";
 import Why from "./_home/Why";
@@ -31,11 +32,12 @@ const HERO_VARIANT: "a" | "b" = "a";
 
 const RECEIPT = "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8";
 const CLOCK = "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 6v6l4 2";
+const FILE = "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M12 18v-6M9 15l3 3 3-3";
 const MAIL = "M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM22 6l-10 7L2 6";
 
 /**
  * Главная построена по пути продаж: создал предложение → продвинул → получил заказ и оплату →
- * управляешь заказами → возвращаешь покупателей. Каждый этап — отдельный блок со своим фоном.
+ * управляешь заказами → смотришь аналитику → возвращаешь покупателей. Каждый этап — отдельный блок со своим фоном.
  */
 export default function Home() {
   return (
@@ -44,6 +46,7 @@ export default function Home() {
       {HERO_VARIANT === "a" ? <HeroA /> : <HeroB />}
       <Journey />
       <Sell />
+      <AuctionsDonations />
       <Stage
         id="promote"
         step={2}
@@ -56,6 +59,7 @@ export default function Home() {
           "Делитесь готовыми карточками и платёжными ссылками",
           "Привлекайте новую аудиторию прямо из Telegram",
         ]}
+        tone="soft"
         visual={<PromoteVisual />}
       />
       <Stage
@@ -70,7 +74,6 @@ export default function Home() {
           "Для ИП и юрлиц чеки формируются автоматически и уходят в ОФД",
           "Выплаты — до 3 рабочих дней по СБП или на расчётный счёт",
         ]}
-        tone="soft"
         reverse
         visual={
           <PhoneStage
@@ -86,19 +89,54 @@ export default function Home() {
         id="orders"
         step={4}
         kicker="Управляйте заказами"
-        title="Все заказы — под контролем"
-        lead="Не нужно собирать информацию вручную из Telegram, таблиц и банковских операций — данные о продажах в одном месте."
+        title="Все заказы — под контролем, прямо в боте"
+        lead="Не нужно собирать информацию вручную из Telegram, таблиц и банковских операций — все заказы в меню бота."
         points={[
-          "Просматривайте все заказы, фильтруйте и ищите нужные покупки",
-          "Отслеживайте оплаты и получайте уведомления о новых заказах",
-          "Анализируйте продажи",
-          "Выгружайте данные о заказах за любой период",
+          "Оплаченные, готовые к оплате и незавершённые заказы — отдельными списками",
+          "Выберите период или смотрите все заказы сразу",
+          "Выгружайте заказы в файл",
+          "Настройте уведомления о новых заказах",
         ]}
-        visual={<OrdersVisual />}
+        tone="soft"
+        visual={
+          <PhoneStage
+            phone={{
+              scene: "chat",
+              msgs: [
+                { me: true, text: "Заказы" },
+                {
+                  title: "🛒 Меню заказов",
+                  text: "Для управления заказами используйте кнопки",
+                  cols: 1,
+                  buttons: ["✅ Оплаченные (17)", "💳 Готовые к оплате (25)", "📋 Незавершённые заказы (161)", "🧾 Выгрузка всех заказов", "🔔 Настроить уведомления", "📈 Статистика продаж"],
+                },
+              ],
+            }}
+            cards={[
+              { icon: ICON.check, iconBg: "#18A957", label: "Новый заказ оплачен", value: "+3\u00a0500 ₽", pos: { right: -16, top: 150 }, rot: 0 },
+              { icon: FILE, iconBg: "#FB7E5E", label: "Выгрузка готова", value: "orders.xlsx", pos: { left: -40, top: 500 }, rot: 0 },
+            ]}
+          />
+        }
+      />
+      <Stage
+        id="analytics"
+        step={5}
+        kicker="Анализируйте продажи"
+        title="Вся аналитика продаж — в боте"
+        lead="Центр отчётности TG Market собирает данные о продажах за вас."
+        points={[
+          "Мгновенная сводка по продажам за любой период",
+          "Автоматическая рассылка отчётов — ежедневно или еженедельно",
+          "Статистика продаж: заказы, выручка, средний чек",
+          "Отчёты приходят прямо в Telegram — не нужно заходить в отдельный кабинет",
+        ]}
+        reverse
+        visual={<ReportVisual />}
       />
       <Stage
         id="customers"
-        step={5}
+        step={6}
         kicker="Возвращайте покупателей"
         title="Возвращайте покупателей и увеличивайте повторные продажи"
         lead="Работайте с клиентами не только в момент покупки — используйте клиентскую базу для коммуникации."
