@@ -5,7 +5,7 @@ import { useInView, useReducedMotion } from "@/lib/motion";
 import s from "./HeroB.module.css";
 
 const FLOW = [
-  { kicker: "Карточка", title: "Создайте в боте", text: "Товар, услуга, билет или донат — за пару минут.", cls: s.cBlue, kind: "bot" },
+  { kicker: "Карточка", title: "Создайте в боте", text: "Товар, услуга, подписка, билет, аукцион или донат — за пару минут.", cls: s.cBlue, kind: "bot" },
   { kicker: "Канал", title: "Опубликуйте", text: "Пост с кнопкой оплаты — в вашем канале.", cls: s.cLight, kind: "post" },
   { kicker: "Оплата", title: "Получите деньги", text: "Подписчик платит по СБП прямо из поста.", cls: s.cYellow, kind: "paid" },
 ] as const;

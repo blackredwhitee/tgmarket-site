@@ -309,11 +309,17 @@
 
 /* ——— Телефон с плавающими карточками ——— */
 .phoneStage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+.phoneCol {
   position: relative;
   display: flex;
   justify-content: center;
-  width: 100%;
-  max-width: 480px;
+  flex: none;
 }
 .phoneBlob {
   position: absolute;
@@ -326,9 +332,17 @@
   background: var(--sky);
   opacity: 0.35;
 }
-.floatCard {
-  position: absolute;
+.cardsCol {
+  position: relative;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+.cardsCol > :nth-child(2) {
+  margin-left: 24px;
+}
+.floatCard {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -363,7 +377,14 @@
   .repFile {
     display: none;
   }
-  .floatCard {
+  .cardsCol {
+    display: none;
+  }
+}
+
+/* Узкий десктоп: для колонки карточек не хватает места */
+@media (max-width: 1180px) {
+  .cardsCol {
     display: none;
   }
 }

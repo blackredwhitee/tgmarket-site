@@ -6,7 +6,7 @@ import { SELLERS, SHOW_SELLERS } from "@/lib/config";
 import s from "./Why.module.css";
 
 // Первая карточка: число селлеров (пока черновик) либо факт «0 ₽ за подключение»
-const TO = [SHOW_SELLERS ? SELLERS.value : 0, 3, 4];
+const TO = [SHOW_SELLERS ? SELLERS.value : 0, 3, 9];
 
 /** Карточки-счётчики: числа считаются от 0 за 800ms при появлении, «+» проявляется после счёта. */
 export default function WhyCounters() {
@@ -28,9 +28,9 @@ export default function WhyCounters() {
       ? { val: fmt(c[0]), suffix: "+", plusOp: done ? 1 : 0, label: "селлеров используют TG Market", bg: "#FB7E5E", fg: "#fff" }
       : { val: "0", suffix: " ₽", plusOp: 1, label: "за подключение и никакой абонентской платы", bg: "#FB7E5E", fg: "#fff" },
     { val: String(Math.round(c[1])), suffix: "%", plusOp: 1, label: "минимальная комиссия — дальше шкала от 10% до 5%", bg: "#7BD0FF", fg: "#0B1233" },
-    { val: String(Math.round(c[2])), suffix: "", plusOp: 1, label: "типа карточек: товар, услуга, билет, донат", bg: "#0B1233", fg: "#fff" },
+    { val: String(Math.round(c[2])), suffix: "", plusOp: 1, label: "инструментов продаж в боте: товары и услуги, подписки, билеты, аукционы, донаты, промокоды, платёжная ссылка, режим кассы, витрина", bg: "#0B1233", fg: "#fff" },
   ];
-  const finals = [SHOW_SELLERS ? SELLERS.label : "0 ₽", "3%", "4"];
+  const finals = [SHOW_SELLERS ? SELLERS.label : "0 ₽", "3%", "9"];
 
   return (
     <div ref={ref} className={s.counters}>

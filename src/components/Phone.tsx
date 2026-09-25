@@ -277,8 +277,8 @@ export default function Phone(props: PhoneProps) {
                 {s === "form" && (
                   <>
                     <div style={{ alignSelf: "flex-start", maxWidth: "88%", background: "#fff", borderRadius: "14px 14px 14px 4px", padding: "9px 12px", fontSize: 13, color: "#0B1233", lineHeight: 1.4 }}>Какую карточку создаём?</div>
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 5, maxWidth: "88%" }}>
-                      {["Товар", "Услуга", "Билет", "Донат"].map((l) => {
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 5, maxWidth: "92%" }}>
+                      {["Товар", "Услуга", "Подписка", "Билет", "Аукцион", "Донат"].map((l) => {
                         const on = l === "Услуга" && sel;
                         return (
                           <div key={l} style={{ height: 32, borderRadius: 9, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12.5, fontWeight: 600, background: on ? "#FB7E5E" : "rgba(255,255,255,.75)", color: on ? "#fff" : "#FB7E5E", transition: "background .25s,color .25s" }}>{l}</div>

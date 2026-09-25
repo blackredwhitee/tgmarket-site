@@ -5,7 +5,7 @@ import { reducedMotion, useInView, useReducedMotion } from "@/lib/motion";
 import s from "./Steps.module.css";
 
 const STEPS: { title: string; text: string; scene: PhoneScene }[] = [
-  { title: "Создайте карточку", text: "Товар, услуга, билет или донат — в боте, без кода и дизайнера.", scene: "form" },
+  { title: "Создайте карточку", text: "Товар, услуга, подписка, билет, аукцион или донат — в боте, без кода и дизайнера.", scene: "form" },
   { title: "Опубликуйте в канале", text: "Карточка с кнопкой оплаты появляется в вашем канале.", scene: "post" },
   { title: "Принимайте оплату", text: "Подписчики оплачивают по СБП прямо из поста, а вы видите каждую продажу в боте.", scene: "paid" },
 ];
