@@ -233,3 +233,8 @@ html[data-hide-todo] .todo {
 html[data-hide-todo] .todo-inline {
   display: none;
 }
+
+/* Фото людей обрезаются по верхней части, чтобы не срезать голову (object-fit: cover кадрирует по центру) */
+img {
+  object-position: center 22%;
+}

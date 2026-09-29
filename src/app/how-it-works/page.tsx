@@ -80,7 +80,6 @@ export default function HowItWorksPage() {
                 }
                 media={
                   <>
-                    <div className={s.blob} aria-hidden="true" style={{ borderRadius: BLOB_R[i % 3], background: BLOBS[i], transform: `rotate(${odd ? -8 : 6}deg)` }} />
                     <div className={s.phoneWrap}><Phone scene={st.scene} msgs={st.msgs} /></div>
                   </>
                 }

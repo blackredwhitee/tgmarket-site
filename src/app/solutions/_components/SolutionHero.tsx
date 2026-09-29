@@ -15,7 +15,6 @@ const PHOTO: Record<string, { src: string }> = { psychologists, experts, infopro
 export default function SolutionHero({ n }: { n: Solution }) {
   return (
     <section className={s.hero}>
-      <div className={s.heroPhoto} aria-hidden="true">{PHOTO[n.slug] && <img src={PHOTO[n.slug].src} alt="" />}</div>
       <div className="container">
         <div className={s.heroRow}>
           <div className={s.heroText}>
@@ -32,6 +31,8 @@ export default function SolutionHero({ n }: { n: Solution }) {
             <span data-intro="500" className={s.heroNote}>Комиссия от 3% · Оплата по СБП</span>
           </div>
           <div data-intro="300" data-y="40" data-dur="900" className={s.heroPhone}>
+            {/* Фото ниши — слева от телефона, телефон заходит на него только краем */}
+            <div className={s.heroPhoto} aria-hidden="true">{PHOTO[n.slug] && <img src={PHOTO[n.slug].src} alt="" />}</div>
             <div className={s.heroPhoneInner}>
               <HeroPhone n={n} />
             </div>

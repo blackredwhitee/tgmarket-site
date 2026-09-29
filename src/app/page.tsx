@@ -72,7 +72,6 @@ export default function Home() {
       />
       <Stage
         id="pay"
-        photo={pPay}
         step={3}
         kicker="Получайте заказы и оплату"
         title="Оплата по СБП — прямо из поста"
@@ -86,6 +85,7 @@ export default function Home() {
         reverse
         visual={
           <PhoneStage
+            photo={pPay}
             phone={{ scene: "paid" }}
             cards={[
               { icon: RECEIPT, iconBg: "#FB7E5E", label: "Чек отправлен", value: "в ОФД", pos: { left: -8, top: 150 }, rot: 0 },
@@ -96,7 +96,6 @@ export default function Home() {
       />
       <Stage
         id="orders"
-        photo={pOrders}
         step={4}
         kicker="Управляйте заказами"
         title="Все заказы — под контролем, прямо в боте"
@@ -110,6 +109,7 @@ export default function Home() {
         tone="soft"
         visual={
           <PhoneStage
+            photo={pOrders}
             phone={{
               scene: "chat",
               msgs: [
@@ -148,7 +148,6 @@ export default function Home() {
       />
       <Stage
         id="customers"
-        photo={pCustomers}
         step={6}
         kicker="Возвращайте покупателей"
         title="Возвращайте покупателей и увеличивайте повторные продажи"
@@ -164,6 +163,7 @@ export default function Home() {
         reverse
         visual={
           <PhoneStage
+            photo={pCustomers}
             phone={{
               scene: "chat",
               msgs: [

@@ -1,17 +1,15 @@
 "use client";
 import Phone from "@/components/Phone";
-import { useIsMobile } from "@/lib/motion";
 import type { Solution } from "@/data/solutions";
 import { phonePhotos } from "./photos";
 
-/** Телефон сцены `pay` в hero: toast справа на desktop, внутри экрана на mobile. */
+/** Телефон сцены `pay` в hero; toast — внутри экрана, чтобы не обрезался и не закрывал фото рядом. */
 export default function HeroPhone({ n }: { n: Solution }) {
-  const mobile = useIsMobile();
   const p = n.phone;
   return (
     <Phone
       scene="pay"
-      toast={mobile ? "inside" : "right"}
+      toast="inside"
       channel={p.channel}
       initials={p.initials}
       subs={p.subs}

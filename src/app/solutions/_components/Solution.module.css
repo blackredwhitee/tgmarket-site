@@ -58,28 +58,6 @@
   height: 620px;
   background: var(--brand);
 }
-.heroPhoto {
-  position: absolute;
-  right: -60px;
-  top: 60px;
-  width: 620px;
-  height: 560px;
-  border-radius: 48px;
-  overflow: hidden;
-  box-shadow: 0 30px 80px -24px rgba(11, 18, 51, 0.35);
-}
-.heroPhoto img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.heroPhoto::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(230, 246, 255, 0.55), rgba(230, 246, 255, 0) 45%);
-}
 .circleYellow {
   right: 480px;
   top: 40px;
@@ -139,14 +117,33 @@
   font-weight: 600;
 }
 .heroPhone {
+  position: relative;
   flex: 1 1 360px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   height: 640px;
   overflow: hidden;
 }
 .heroPhoneInner {
+  position: relative;
+  z-index: 1;
   padding-top: 8px;
+}
+.heroPhoto {
+  position: absolute;
+  left: 0;
+  top: 56px;
+  width: 220px;
+  height: 380px;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 30px 70px -24px rgba(11, 18, 51, 0.35);
+}
+.heroPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ---------- Знакомо? ---------- */
@@ -546,9 +543,12 @@
   }
 }
 
-/* Фото ниши — только на широком экране, чтобы не лечь под текст */
-@media (max-width: 1023px) {
+/* Фото ниши — только когда рядом с телефоном хватает места */
+@media (max-width: 1180px) {
   .heroPhoto {
     display: none;
+  }
+  .heroPhone {
+    justify-content: center;
   }
 }

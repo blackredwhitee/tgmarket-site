@@ -51,7 +51,6 @@ export default function StepsClient({ heading, more }: { heading: ReactNode; mor
         {more}
       </div>
       <div className={s.visual} aria-hidden="true">
-        <div className={s.circle} />
         <div className={s.sun} />
         <div className={s.phones}>
           {STEPS.map((st, i) => (

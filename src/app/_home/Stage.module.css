@@ -147,27 +147,28 @@
   right: -40px;
 }
 /* Коллаж: большое фото справа, мокап поверх слева снизу */
+/* Коллаж: фото справа сверху, карточка-мокап слева и ниже — заходит только на нижний левый угол фото, лицо видно */
 .collage {
   justify-content: flex-start;
-  align-items: flex-end;
-  min-height: 600px;
+  align-items: flex-start;
+  padding-top: 230px;
 }
 .collage > :global(*):last-child {
-  max-width: 420px;
+  max-width: 380px;
   justify-content: flex-start;
 }
 .photoBig {
   top: 0;
   right: 0;
-  width: 70%;
-  height: 440px;
+  width: 56%;
+  height: 420px;
 }
 @media (max-width: 1180px) {
   .photo {
     display: none;
   }
   .collage {
-    min-height: 0;
+    padding-top: 0;
     justify-content: center;
   }
   .collage > :global(*):last-child {

@@ -165,15 +165,17 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
-  height: 560px;
+  align-items: flex-end;
+  align-self: stretch;
+  min-height: 560px;
 }
 /* Фото продавца слева от телефона — видно целиком, телефон лишь слегка заходит на край */
 .sun {
   position: absolute;
   left: 0;
-  top: 40px;
+  top: 8px;
   width: 260px;
-  height: 400px;
+  height: 420px;
   border-radius: 32px;
   overflow: hidden;
   border: 4px solid rgba(255, 255, 255, 0.5);
@@ -194,7 +196,7 @@
 .f1 {
   position: absolute;
   left: 120px;
-  top: 460px;
+  top: 400px;
   z-index: 3;
 }
 .f2 {
@@ -263,6 +265,9 @@
   .visual {
     flex-basis: 420px;
     justify-content: center;
+    align-items: flex-start;
+    align-self: auto;
+    height: 560px;
   }
   .f1 {
     left: -40px;
