@@ -38,49 +38,65 @@
   color: var(--ink-600);
 }
 .steps {
+  position: relative;
   margin: 0;
   padding: 0;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
-  counter-reset: s;
+  gap: 14px;
+}
+/* соединительная линия за карточками */
+.steps::before {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 44px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand), var(--sky));
+  opacity: 0.35;
 }
 .steps li {
   position: relative;
   display: flex;
 }
-/* стрелка-связка между шагами */
-.steps li:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: -10px;
-  top: 34px;
-  width: 8px;
-  height: 8px;
-  border-top: 2px solid var(--brand);
-  border-right: 2px solid var(--brand);
-  transform: rotate(45deg);
-  z-index: 1;
-}
 .step {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   padding: 20px;
-  border-radius: 22px;
-  background: var(--bg-soft);
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(11, 18, 51, 0.04), 0 18px 40px -24px rgba(11, 18, 51, 0.18);
   text-decoration: none;
   transition:
-    background 0.2s,
-    transform 0.2s var(--ease-out);
+    border-color 0.2s,
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out);
+}
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #fff1ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .num {
-  font-size: 13px;
+  font-size: 28px;
   font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--brand);
+  letter-spacing: -0.03em;
+  color: #e3e7f2;
 }
 .title {
   font-size: 17px;
@@ -94,15 +110,16 @@
 }
 @media (hover: hover) and (pointer: fine) {
   .step:hover {
-    background: var(--sky-50);
+    border-color: var(--brand);
     transform: translateY(-4px);
+    box-shadow: 0 1px 2px rgba(11, 18, 51, 0.04), 0 24px 50px -24px rgba(251, 126, 94, 0.45);
   }
 }
 @media (max-width: 1023px) {
   .steps {
     grid-template-columns: repeat(3, 1fr);
   }
-  .steps li::after {
+  .steps::before {
     display: none;
   }
 }
@@ -120,13 +137,4 @@
 .inner {
   position: relative;
   z-index: 1;
-}
-.mascot {
-  right: 24px;
-  top: -40px;
-}
-@media (max-width: 1023px) {
-  .mascot {
-    display: none;
-  }
 }

@@ -26,13 +26,12 @@
   gap: 16px;
   min-width: 0;
 }
-.dark {
-  background: var(--ink-900);
-  color: #fff;
-}
+.dark,
 .light {
-  background: var(--sky-50);
+  background: #fff;
   color: var(--ink-900);
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(11, 18, 51, 0.04), 0 30px 80px -30px rgba(11, 18, 51, 0.16);
 }
 .kicker {
   align-self: flex-start;
@@ -61,7 +60,7 @@
   line-height: 1.6;
 }
 .dark .p {
-  color: #c3cae3;
+  color: var(--ink-600);
 }
 .light .p {
   color: var(--ink-600);
@@ -82,14 +81,14 @@
   font-weight: 600;
   padding: 10px 12px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--bg-soft);
 }
 .flow b {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--sky);
-  color: var(--ink-900);
+  background: var(--brand);
+  color: #fff;
   font-size: 12px;
   display: flex;
   align-items: center;
@@ -101,14 +100,15 @@
 .lot,
 .donate {
   margin-top: auto;
-  background: #fff;
+  background: var(--bg-soft);
   color: var(--ink-900);
   border-radius: 22px;
   padding: 18px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  box-shadow: 0 16px 40px rgba(11, 18, 51, 0.18);
+  box-shadow: none;
+  border: 1px solid var(--line);
 }
 .lotTop,
 .donHead {

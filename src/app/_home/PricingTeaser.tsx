@@ -6,6 +6,8 @@ import s from "./PricingTeaser.module.css";
 
 /** Ступеньки шкалы (декоративные): высоты из макета, первая — жёлтая «3%». */
 const LADDER = ["92%", "78%", "64%", "50%", "38%"];
+const LABELS = ["3%", "10%", "8%", "7%", "5%"];
+const COLORS = ["#FB7E5E", "#0B1233", "#3B4466", "#7BD0FF", "#CDEEFF"];
 
 /** spaced — отступ сверху, когда перед тизером нет блока «Сравнение» (в макете отступ даёт он). */
 export default function PricingTeaser({ spaced = false }: { spaced?: boolean }) {
@@ -13,7 +15,6 @@ export default function PricingTeaser({ spaced = false }: { spaced?: boolean }) 
     <section className={`${s.section} ${spaced ? s.spaced : ""}`}>
       <div className="container">
         <PricingCard>
-          <div className="bg-beams" aria-hidden="true" style={{ position: "absolute", inset: 0 }} />
           <div className={s.text}>
             <h2 className={s.h2}>Платите, только когда продаёте</h2>
             <div className={s.accent}>
@@ -30,8 +31,8 @@ export default function PricingTeaser({ spaced = false }: { spaced?: boolean }) 
           <div className={s.bars} aria-hidden="true">
             {LADDER.map((h, i) => (
               <div key={h} data-bar className={s.bar}
-                style={{ height: h, background: i === 0 ? "#7BD0FF" : `rgba(255,255,255,${(0.32 - i * 0.05).toFixed(2)})` }}>
-                {i === 0 ? "3%" : ""}
+                style={{ height: h, background: COLORS[i], color: i < 3 ? "#fff" : "#0B1233" }}>
+                {LABELS[i]}
               </div>
             ))}
           </div>
