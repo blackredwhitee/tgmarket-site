@@ -2,13 +2,13 @@ import type { Solution } from "@/data/solutions";
 import TodoText from "./TodoText";
 import s from "./Solution.module.css";
 
-/** «Знакомо?» — тёмная секция с болями ниши. */
+/** «Знакомо?» — светлая секция с болями ниши: белые карточки, как во всём сайте. */
 export default function Pains({ n }: { n: Solution }) {
   return (
-    <section className={`${s.section} ${s.dark}`}>
+    <section className={`${s.section} ${s.soft}`}>
       <div className={`container ${s.stack}`}>
         <div className={s.headRow}>
-          <h2 className={s.h2}>Знакомо?</h2>
+          <h2 className={`${s.h2} ${s.ink}`}>Знакомо?</h2>
           {n.painDraft && (
             <span className={`todo ${s.draft}`}>[УТОЧНИТЬ] Черновик — тексты боли утверждает копирайтер</span>
           )}

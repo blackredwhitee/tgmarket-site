@@ -7,8 +7,8 @@ export default function Advantages({ n }: { n: Solution }) {
     <section className={s.section}>
       <div className={`container ${s.grid3}`}>
         {n.advantages.map((a) => (
-          <div key={a.big} className={s.adv} style={{ background: a.bg, color: a.fg }}>
-            <b className={s.advBig}>{a.big}</b>
+          <div key={a.big} className={s.adv}>
+            <b className={s.advBig} style={{ color: a.bg === "#7BD0FF" ? "var(--sky-600)" : a.bg }}>{a.big}</b>
             <span className={s.advTitle}>{a.title}</span>
             <span className={s.advText}>{a.text}</span>
           </div>

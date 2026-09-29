@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { onVisible, reducedMotion } from "@/lib/motion";
+import { reducedMotion } from "@/lib/motion";
 import s from "./Life.module.css";
 
 /**
@@ -8,24 +8,10 @@ import s from "./Life.module.css";
  * Всё декоративное (aria-hidden), только transform/opacity, при reduced-motion — статично.
  */
 
-/** Два мягких пятна (голубое и коралловое), медленно дрейфующих за содержимым секции. */
-export function LiveBg({ tone = "default" }: { tone?: "default" | "warm" | "cool" }) {
-  const a = useRef<HTMLDivElement>(null);
-  const b = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (reducedMotion()) return;
-    const list = [
-      a.current?.animate([{ transform: "translate(0,0) scale(1)" }, { transform: "translate(120px,60px) scale(1.15)" }, { transform: "translate(0,0) scale(1)" }], { duration: 22000, iterations: Infinity, easing: "ease-in-out" }),
-      b.current?.animate([{ transform: "translate(0,0) scale(1)" }, { transform: "translate(-140px,-50px) scale(1.1)" }, { transform: "translate(0,0) scale(1)" }], { duration: 26000, delay: -9000, iterations: Infinity, easing: "ease-in-out" }),
-    ];
-    return () => list.forEach((x) => x?.cancel());
-  }, []);
-  return (
-    <div className={`${s.bg} ${s[tone]}`} aria-hidden="true">
-      <div ref={a} className={s.blobA} />
-      <div ref={b} className={s.blobB} />
-    </div>
-  );
+/** Раньше — дрейфующие цветные пятна за секцией. Отключено: размытые пятна удешевляют дизайн. */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function LiveBg(_props: { tone?: "default" | "warm" | "cool" }) {
+  return null;
 }
 
 /**

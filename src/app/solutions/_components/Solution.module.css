@@ -171,8 +171,9 @@
 }
 .painCard {
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(11, 18, 51, 0.04), 0 16px 40px -24px rgba(11, 18, 51, 0.18);
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -180,18 +181,23 @@
   min-height: 220px;
 }
 .painNum {
-  font-size: 56px;
-  line-height: 0.8;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #fff1ec;
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
   font-weight: 800;
-  color: var(--sky);
-  letter-spacing: -0.04em;
 }
 .painText {
   margin: auto 0 0;
-  font-size: clamp(19px, 1.6vw, 23px);
-  line-height: 1.35;
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.4;
   font-weight: 600;
-  color: #fff;
+  color: var(--ink-900);
 }
 
 /* ---------- Как это выглядит ---------- */
@@ -209,16 +215,16 @@
   height: 640px;
   overflow: hidden;
 }
-.blob {
+.panel {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 440px;
-  height: 440px;
-  margin: -220px 0 0 -220px;
-  border-radius: 38% 62% 55% 45%;
-  background: var(--sky);
-  transform: rotate(-10deg);
+  width: 420px;
+  height: 480px;
+  margin: -240px 0 0 -210px;
+  border-radius: 40px;
+  background: var(--sky-50);
+  border: 1px solid var(--line);
 }
 .looksPhoneInner {
   position: relative;
@@ -278,31 +284,34 @@
 }
 .exCard {
   border-radius: 28px;
-  padding: 20px;
+  padding: 12px 12px 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(11, 18, 51, 0.04), 0 16px 40px -24px rgba(11, 18, 51, 0.18);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  transform: none;
-  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  gap: 4px;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s;
 }
 @media (hover: hover) and (pointer: fine) {
   .exCard:hover {
-    transform: rotate(0deg) translateY(-4px);
+    transform: translateY(-4px);
   }
 }
-.exInner {
-  background: #fff;
+.exCover {
+  height: 200px;
   border-radius: 18px;
   overflow: hidden;
+  background: var(--sky-50);
 }
-.exCover {
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.exCover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .exMeta {
-  padding: 14px 16px;
+  padding: 14px 8px 12px;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -321,8 +330,9 @@
 }
 .exBtn {
   height: 46px;
+  margin: 0 4px;
   border-radius: 12px;
-  background: var(--ink-900);
+  background: var(--brand);
   color: #fff;
   font-size: 15px;
   font-weight: 700;
@@ -335,6 +345,10 @@
 .adv {
   border-radius: 28px;
   padding: 32px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(11, 18, 51, 0.04), 0 16px 40px -24px rgba(11, 18, 51, 0.18);
+  color: var(--ink-900);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -354,7 +368,7 @@
 .advText {
   font-size: 15.5px;
   line-height: 1.55;
-  opacity: 0.88;
+  color: var(--ink-600);
 }
 
 /* ---------- FAQ ---------- */

@@ -1,9 +1,7 @@
 .section {
   position: relative;
   background-color: var(--bg-soft);
-  background-image:
-    radial-gradient(50% 55% at 8% 12%, rgba(123, 208, 255, 0.28), transparent 70%),
-    radial-gradient(45% 50% at 95% 90%, rgba(123, 208, 255, 0.55), transparent 70%);
+  background-image: none;
   padding: clamp(72px, 8.9vw, 128px) 0;
 }
 .head {

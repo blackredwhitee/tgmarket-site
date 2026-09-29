@@ -126,12 +126,9 @@ button {
   padding: 0 clamp(16px, 2vw, 24px);
 }
 
-/* Фоны секций (v2): мягкие пятна для светлых, световые лучи для синих/тёмных */
+/* Фоны секций: светлые — ровные (без пятен), синие/тёмные — световые лучи */
 .bg-mesh-light {
-  background-image:
-    radial-gradient(55% 60% at 12% 18%, rgba(123, 208, 255, 0.55), transparent 70%),
-    radial-gradient(35% 45% at 88% 88%, rgba(123, 208, 255, 0.22), transparent 70%),
-    radial-gradient(30% 35% at 70% 10%, rgba(251, 126, 94, 0.14), transparent 70%);
+  background-image: none;
 }
 .bg-beams {
   background-image:

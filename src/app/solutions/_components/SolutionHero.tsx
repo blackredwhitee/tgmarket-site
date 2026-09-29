@@ -16,7 +16,6 @@ export default function SolutionHero({ n }: { n: Solution }) {
   return (
     <section className={s.hero}>
       <div className={s.heroPhoto} aria-hidden="true">{PHOTO[n.slug] && <img src={PHOTO[n.slug].src} alt="" />}</div>
-      <div className={s.circleYellow} aria-hidden="true" />
       <div className="container">
         <div className={s.heroRow}>
           <div className={s.heroText}>

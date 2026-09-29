@@ -2,6 +2,9 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { ICON } from "./icons";
 import mark from "@/assets/logo-mark.svg";
+import avDefault from "@/assets/photos/sol/av-psychologists.jpg";
+import coverDefault from "@/assets/photos/sol/psychologists-1.jpg";
+import postDefault from "@/assets/photos/sol/psychologists-2.jpg";
 import { rub } from "@/lib/format";
 import { useInView } from "@/lib/motion";
 
@@ -24,6 +27,10 @@ export type PhoneProps = {
   amount?: number;
   cover?: string;
   icon?: string;
+  /** Фото-аватар канала, обложка карточки и фото в предыдущем посте */
+  avatar?: string;
+  coverImg?: string;
+  postImg?: string;
   product2?: string;
   amount2?: number;
   sales?: [string, number, string][];
@@ -224,9 +231,7 @@ export default function Phone(props: PhoneProps) {
                   <img src={mark.src} alt="" width={30} height={31} style={{ display: "block" }} />
                 </div>
               ) : (
-                <div style={{ width: 34, height: 34, borderRadius: "50%", background: "linear-gradient(135deg,#FFA98F,#FB7E5E)", color: "#fff", fontSize: 13, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
-                  {props.initials || "ПС"}
-                </div>
+                <img src={props.avatar || avDefault.src} alt="" width={34} height={34} style={{ width: 34, height: 34, borderRadius: "50%", objectFit: "cover", flex: "none", display: "block" }} />
               )}
               <div style={{ display: "flex", flexDirection: "column", minWidth: 0, flex: 1 }}>
                 <div style={{ fontSize: 14, fontWeight: 700, color: "#0B1233", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{isBot ? "TG Market Seller" : channel}</div>
@@ -238,15 +243,22 @@ export default function Phone(props: PhoneProps) {
           {isChannel && (
             <>
               <div style={{ position: "absolute", top: 96, bottom: 48, left: 0, right: 0, padding: 10, display: "flex", flexDirection: "column", justifyContent: "flex-end", gap: 8, overflow: "hidden" }}>
-                <div style={{ background: "#fff", borderRadius: 14, padding: "10px 12px 8px", fontSize: 13, lineHeight: 1.45, color: "#0B1233", boxShadow: "0 1px 1px rgba(11,18,51,.06)" }}>
+                <div style={{ background: "#fff", borderRadius: 14, overflow: "hidden", fontSize: 13, lineHeight: 1.45, color: "#0B1233", boxShadow: "0 1px 1px rgba(11,18,51,.06)", flex: "none" }}>
+                  <img src={props.postImg || postDefault.src} alt="" style={{ display: "block", width: "100%", height: 150, objectFit: "cover" }} />
+                  <div style={{ padding: "8px 12px 8px" }}>
                   {props.prePost || "Открыла запись на октябрь. Оплатить консультацию можно прямо здесь, в канале."}
                   <div style={{ textAlign: "right", fontSize: 10.5, color: "#8A92AD", marginTop: 2 }}>2,4K · 11:20</div>
+                  </div>
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 6, opacity: s === "pay" && (ph === 0 || ph === 6) ? 0 : 1, transform: s === "pay" && ph === 0 ? "translateY(28px)" : "none", transition: `opacity .5s ${E},transform .5s ${E}` }}>
                   <div style={{ background: "#fff", borderRadius: 14, overflow: "hidden", boxShadow: "0 1px 1px rgba(11,18,51,.06)" }}>
-                    <div style={{ height: 112, background: "linear-gradient(135deg,#E6F6FF 0%,#CDEEFF 100%)", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, color: "#FB7E5E", fontWeight: 800, fontSize: is404 ? 44 : 15 }}>
-                      {!is404 && <Svg d={props.icon || ICON.heart} size={30} stroke="#FB7E5E" sw={1.6} />}
-                      <span>{is404 ? "404" : props.cover || "Сессия"}</span>
+                    <div style={{ position: "relative", height: 124, background: is404 ? "linear-gradient(135deg,#E6F6FF 0%,#CDEEFF 100%)" : "#E6F6FF", display: "flex", alignItems: "center", justifyContent: "center", color: "#FB7E5E", fontWeight: 800, fontSize: 44 }}>
+                      {is404 ? "404" : (
+                        <>
+                          <img src={props.coverImg || coverDefault.src} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+                          <span style={{ position: "absolute", left: 10, bottom: 10, height: 24, padding: "0 10px", borderRadius: 12, background: "rgba(255,255,255,.94)", color: "#0B1233", fontSize: 12, fontWeight: 700, display: "flex", alignItems: "center" }}>{props.cover || "Сессия"}</span>
+                        </>
+                      )}
                     </div>
                     <div style={{ padding: "10px 12px 8px", display: "flex", flexDirection: "column", gap: 3 }}>
                       <div style={{ fontSize: 14.5, fontWeight: 700, color: "#0B1233", lineHeight: 1.3 }}>{title}</div>

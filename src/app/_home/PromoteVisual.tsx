@@ -2,13 +2,18 @@
 import { useEffect, useState } from "react";
 import { Icon, ICON } from "@/components/icons";
 import { useInView, useReducedMotion } from "@/lib/motion";
+import mark from "@/assets/logo-mark.svg";
+import lot from "@/assets/photos/sol/psychologists-1.jpg";
+import f1 from "@/assets/photos/sol/av-psychologists.jpg";
+import f2 from "@/assets/photos/sol/av-experts.jpg";
+import f3 from "@/assets/photos/sol/av-infoproducts.jpg";
 import s from "./Visuals.module.css";
 
 const CHANNELS = [
-  { ini: "TG", name: "Каналы TG Market", subs: "10 000", tag: "бесплатно", bg: "#7BD0FF" },
-  { ini: "ПП", name: "Психология просто", subs: "48 тыс.", tag: "Психология", bg: "#FB7E5E" },
-  { ini: "КР", name: "Карьера и рост", subs: "31 тыс.", tag: "Карьера", bg: "#FDB29E" },
-  { ini: "ОС", name: "Осознанные деньги", subs: "22 тыс.", tag: "Финансы", bg: "#0B1233" },
+  { img: mark.src, name: "Каналы TG Market", subs: "10 000", tag: "бесплатно", logo: true },
+  { img: f1.src, name: "Психология просто", subs: "48 тыс.", tag: "Психология" },
+  { img: f2.src, name: "Карьера и рост", subs: "31 тыс.", tag: "Карьера" },
+  { img: f3.src, name: "Осознанные деньги", subs: "22 тыс.", tag: "Финансы" },
 ];
 const LINK = "M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71";
 
@@ -36,7 +41,7 @@ export default function PromoteVisual() {
   return (
     <div ref={ref} className={s.promo} aria-hidden="true">
       <div className={s.lot}>
-        <div className={s.lotCover}><Icon d={ICON.heart} size={28} stroke="#FB7E5E" sw={1.8} /></div>
+        <div className={s.lotCover}><img src={lot.src} alt="" loading="lazy" /></div>
         <div className={s.lotInfo}>
           <b>Консультация, 60 минут</b>
           <span>3 500 ₽ · оплата по СБП</span>
@@ -51,7 +56,7 @@ export default function PromoteVisual() {
           const done = n > i;
           return (
             <div key={c.name} className={s.place}>
-              <span className={s.ava} style={{ background: c.bg, color: c.bg === "#7BD0FF" || c.bg === "#FDB29E" ? "#0B1233" : "#fff" }}>{c.ini}</span>
+              <span className={`${s.ava} ${c.logo ? s.avaLogo : ""}`}><img src={c.img} alt="" loading="lazy" /></span>
               <span className={s.placeName}>{c.name}<small>{c.subs} подписчиков · {c.tag}</small></span>
               <span className={`${s.placeBtn} ${done ? s.placeDone : ""}`}>
                 {done ? <><Icon d={ICON.check} size={14} sw={3} />Размещено</> : i === 0 ? "Бесплатно" : "Заказать"}

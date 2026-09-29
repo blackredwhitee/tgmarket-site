@@ -1,15 +1,16 @@
 import Phone from "@/components/Phone";
 import type { Solution } from "@/data/solutions";
+import { phonePhotos } from "./photos";
 import s from "./Solution.module.css";
 
-/** «Как это выглядит в вашем канале» — телефон `post` на жёлтой капле + 3 пояснения. */
+/** «Как это выглядит в вашем канале» — телефон `post` на светлой подложке + 3 пояснения. */
 export default function Looks({ n }: { n: Solution }) {
   const p = n.phone;
   return (
     <section className={s.section}>
       <div className={`container ${s.looksRow}`}>
         <div className={s.looksPhone}>
-          <div className={s.blob} aria-hidden="true" />
+          <div className={s.panel} aria-hidden="true" />
           <div className={s.looksPhoneInner}>
             <Phone
               scene="post"
@@ -20,8 +21,8 @@ export default function Looks({ n }: { n: Solution }) {
               product={p.product2}
               desc={p.desc2}
               amount={p.amount2}
-              cover={p.cover}
-              icon={n.icon}
+              cover={n.cardType}
+              {...phonePhotos(n.slug, true)}
             />
           </div>
         </div>

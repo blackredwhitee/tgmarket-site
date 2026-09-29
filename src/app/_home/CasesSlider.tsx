@@ -21,6 +21,8 @@ export type Case = {
   /** Фон и цвет инициалов аватарки */
   avatar: string;
   avatarFg: string;
+  /** Фото автора канала (стоковое) — вместо инициалов */
+  face?: { src: string };
 };
 
 /** Инициалы канала для аватарки в стиле Telegram: «Спокойная голова» → «СГ». */
@@ -55,7 +57,11 @@ export default function CasesSlider({ cases }: { cases: Case[] }) {
               <svg width="40" height="40" viewBox="0 0 24 24" fill={c.quoteFill} aria-hidden="true"><path d={P.quote} /></svg>
               <p className={s.quote}>{c.quote}</p>
               <div className={s.author}>
-                <span className={s.avatar} style={{ background: c.avatar, color: c.avatarFg }} aria-hidden="true">{initials(c.name)}</span>
+                {c.face ? (
+                  <img className={s.avatar} src={c.face.src} alt="" loading="lazy" width={48} height={48} style={{ objectFit: "cover" }} />
+                ) : (
+                  <span className={s.avatar} style={{ background: c.avatar, color: c.avatarFg }} aria-hidden="true">{initials(c.name)}</span>
+                )}
                 <span className={s.who}>
                   <b className={s.name}>{c.href ? <a href={c.href} target="_blank" rel="noopener" style={{ color: "inherit" }}>{c.name}</a> : c.name}</b>
                   <span className={s.niche}>{c.niche}</span>

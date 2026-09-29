@@ -2,6 +2,7 @@
 import Phone from "@/components/Phone";
 import { useIsMobile } from "@/lib/motion";
 import type { Solution } from "@/data/solutions";
+import { phonePhotos } from "./photos";
 
 /** Телефон сцены `pay` в hero: toast справа на desktop, внутри экрана на mobile. */
 export default function HeroPhone({ n }: { n: Solution }) {
@@ -19,7 +20,7 @@ export default function HeroPhone({ n }: { n: Solution }) {
       desc={p.desc}
       amount={p.amount}
       cover={p.cover}
-      icon={n.icon}
+      {...phonePhotos(n.slug)}
     />
   );
 }

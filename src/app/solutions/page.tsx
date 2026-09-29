@@ -17,8 +17,6 @@ export default function SolutionsIndex() {
     <>
       <JsonLd data={breadcrumbLd([{ name: "Главная", path: "/" }, { name: "Решения", path: "/solutions/" }])} />
       <section className={s.indexHero}>
-        <div className={s.circleBlue} aria-hidden="true" />
-        <div className={s.circleYellow} aria-hidden="true" />
         <div className="container">
           <div className={s.indexHead}>
             <h1 data-intro="0" className={s.h1}>Решения для вашей ниши</h1>
