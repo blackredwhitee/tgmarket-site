@@ -311,3 +311,12 @@
     display: none;
   }
 }
+
+/* Мобайл: обе кнопки на всю ширину, одинаковые */
+@media (max-width: 767px) {
+  .cta,
+  .ctaSec {
+    flex-basis: 100%;
+    max-width: none;
+  }
+}

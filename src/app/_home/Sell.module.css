@@ -310,3 +310,22 @@
     display: none;
   }
 }
+
+/* Мобайл: 5 вкладок не помещаются в строку — переносим 3 + 2, активная подсвечивается фоном */
+@media (max-width: 767px) {
+  .tablist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .tab {
+    flex: 1 1 30%;
+    height: 44px;
+  }
+  .tabOn {
+    background: var(--brand);
+  }
+  .indicator {
+    display: none;
+  }
+}

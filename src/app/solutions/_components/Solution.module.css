@@ -552,3 +552,16 @@
     justify-content: center;
   }
 }
+
+/* Мобайл: карточки без пустой высоты, подложка за телефоном не обрезается по краям */
+@media (max-width: 767px) {
+  .painCard,
+  .adv {
+    min-height: 0;
+    padding: 24px;
+    gap: 16px;
+  }
+  .panel {
+    display: none;
+  }
+}

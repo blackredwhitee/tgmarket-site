@@ -415,9 +415,35 @@
   }
 }
 
-/* Узкий десктоп: для колонки карточек не хватает места */
+/* Узкий десктоп и мобайл: карточки прячем, фото (если есть) — широкой карточкой над телефоном */
 @media (max-width: 1180px) {
   .cardsCol {
     display: none;
+  }
+  .phoneStage:has(.withPhoto) {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .cardsCol.withPhoto {
+    display: block;
+  }
+  .withPhoto .floatCard {
+    display: none;
+  }
+  .sidePhoto {
+    width: 100%;
+    max-width: 560px;
+    height: 260px;
+    margin: 0 auto;
+    border-radius: 28px;
+  }
+}
+
+/* Мобайл: заголовок «Заказать рекламу» и подпись — в две строки */
+@media (max-width: 767px) {
+  .placesHead {
+    flex-direction: column;
+    gap: 2px;
   }
 }

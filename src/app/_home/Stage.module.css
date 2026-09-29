@@ -164,8 +164,21 @@
   height: 420px;
 }
 @media (max-width: 1180px) {
+  /* Узко: фото — широкой карточкой над макетом, ничего его не перекрывает */
+  .visual:has(.photo) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
   .photo {
-    display: none;
+    position: relative !important;
+    top: auto;
+    right: auto;
+    width: 100%;
+    max-width: 560px;
+    height: 260px;
+    margin: 0 auto;
+    border-radius: 28px;
   }
   .collage {
     padding-top: 0;
