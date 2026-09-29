@@ -3,6 +3,7 @@ import { Icon } from "@/components/icons";
 import HomeFaqList from "./HomeFaqList";
 import { HOME_FAQ } from "./faq";
 import { P } from "./paths";
+import support from "@/assets/photos/support.jpg";
 import s from "./HomeFaq.module.css";
 
 export default function HomeFaq() {
@@ -16,6 +17,10 @@ export default function HomeFaq() {
           </Link>
           <div className={s.support}>
             <span className={s.qMark} aria-hidden="true">?</span>
+            <div className={s.agent}>
+              <img src={support.src} alt="" loading="lazy" />
+              <span>Поддержка TG Market<small><i />на связи в Telegram</small></span>
+            </div>
             <div className={s.bubIn}>А если у меня ИП, а не самозанятость?</div>
             <div className={s.bubOut}>Подходит — ИП и юрлица тоже продают</div>
             <b className={s.supTitle}>Не нашли ответ?</b>

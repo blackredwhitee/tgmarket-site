@@ -1,5 +1,5 @@
 import { Icon, ICON } from "@/components/icons";
-import { Depth, LiveBg, Mascot } from "@/components/Life";
+import { Depth, LiveBg } from "@/components/Life";
 import s from "./Stage.module.css";
 
 type Props = {
@@ -13,12 +13,14 @@ type Props = {
   visual: React.ReactNode;
   tone?: "white" | "soft" | "sky";
   reverse?: boolean;
-  /** Маскот-пакетик у иллюстрации: картинка, позиция относительно визуала, ширина */
-  mascot?: { img: { src: string; width: number; height: number }; pos: React.CSSProperties; size?: number };
+  /** Фото человека, выглядывающее из-за мокапа (стоковое) */
+  photo?: { src: string };
+  /** side — фото выглядывает справа из-за телефона; collage — большое фото, карточка-мокап поверх слева снизу */
+  photoLayout?: "side" | "collage";
 };
 
 /** Этап пути продаж на главной: номер шага, заголовок, текст, список и иллюстрация (чередуются стороны и фон). */
-export default function Stage({ id, step, kicker, title, lead, points, note, visual, tone = "white", reverse, mascot }: Props) {
+export default function Stage({ id, step, kicker, title, lead, points, note, visual, tone = "white", reverse, photo, photoLayout = "side" }: Props) {
   return (
     <section id={id} className={`${s.section} ${s[tone]}`}>
       <LiveBg tone={reverse ? "warm" : "default"} />
@@ -37,9 +39,13 @@ export default function Stage({ id, step, kicker, title, lead, points, note, vis
           </ul>
           {note && <p className={s.note}>{note}</p>}
         </div>
-        <div className={s.visual}>
+        <div className={`${s.visual} ${photo && photoLayout === "collage" ? s.collage : ""}`}>
+          {photo && (
+            <div className={`${s.photo} ${photoLayout === "collage" ? s.photoBig : s.photoRight}`} aria-hidden="true">
+              <img src={photo.src} alt="" loading="lazy" />
+            </div>
+          )}
           <Depth>{visual}</Depth>
-          {mascot && <Mascot img={mascot.img} size={mascot.size ?? 150} style={mascot.pos} delay={200} className={s.mascot} />}
         </div>
       </div>
     </section>

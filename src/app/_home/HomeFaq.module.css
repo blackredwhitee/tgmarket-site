@@ -194,3 +194,38 @@
   line-height: 1.6;
   max-width: 640px;
 }
+
+.agent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink-900);
+}
+.agent img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 6px 16px rgba(11, 18, 51, 0.12);
+}
+.agent span {
+  display: flex;
+  flex-direction: column;
+}
+.agent small {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-400);
+}
+.agent i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+}

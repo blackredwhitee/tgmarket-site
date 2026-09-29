@@ -1,7 +1,6 @@
 import { Icon } from "@/components/icons";
 import SellTabs from "./SellTabs";
-import box from "@/assets/mascots/bag-box.svg";
-import { LiveBg, Mascot } from "@/components/Life";
+import { LiveBg } from "@/components/Life";
 import s from "./Sell.module.css";
 
 const TOOLS = [
@@ -18,7 +17,6 @@ export default function Sell() {
     <section id="create" className={s.section}>
       <LiveBg tone="cool" />
       <div className={`container ${s.wrap}`}>
-        <Mascot img={box} size={170} className={s.mascot} />
         <span className={s.kicker}><b>Шаг 1</b>Создайте предложение</span>
         <h2 className={s.h2}>Продавайте то, что нужно <span className={s.yellow}>вашей аудитории</span></h2>
         <SellTabs />

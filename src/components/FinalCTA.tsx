@@ -3,6 +3,7 @@ import Phone from "./Phone";
 import Qr from "./Qr";
 import Anim from "./FinalCTAAnim";
 import { Icon, ICON } from "./icons";
+import ctaPhoto from "@/assets/photos/cta.jpg";
 import s from "./FinalCTA.module.css";
 
 type Props = { title?: string; sub?: string; cta?: string; param?: string };
@@ -44,7 +45,7 @@ export default function FinalCTA({
               </div>
             </div>
             <div className={s.visual}>
-              <div className={s.sun} aria-hidden="true" />
+              <div className={s.sun} aria-hidden="true"><img src={ctaPhoto.src} alt="" loading="lazy" /></div>
               <div className={s.phone}><Phone scene="paid" /></div>
               <Anim kind="bob" dur={5600} phase={0} className={s.f1}>
                 <div className={s.paidCard}>

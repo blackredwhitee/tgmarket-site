@@ -169,12 +169,20 @@
 .sun {
   position: absolute;
   left: 50%;
-  top: 40px;
-  width: 260px;
-  height: 260px;
-  margin-left: -40px;
-  border-radius: 50%;
-  background: var(--sky);
+  top: 30px;
+  width: 280px;
+  height: 360px;
+  margin-left: -10px;
+  border-radius: 32px;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 30px 70px -20px rgba(11, 18, 51, 0.4);
+}
+.sun img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .phone {
   position: relative;

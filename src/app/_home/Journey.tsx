@@ -1,5 +1,4 @@
-import hi from "@/assets/mascots/bag-hi.svg";
-import { LiveBg, Mascot } from "@/components/Life";
+import { LiveBg } from "@/components/Life";
 import s from "./Journey.module.css";
 
 const STEPS = [
@@ -17,7 +16,6 @@ export default function Journey() {
     <section className={s.section}>
       <LiveBg />
       <div className={`container ${s.inner}`}>
-        <Mascot img={hi} size={130} className={s.mascot} />
         <div className={s.head} data-reveal>
           <h2 className={s.h2}>Не просто приём платежей — <span className={s.hl}>весь путь продажи</span></h2>
           <p className={s.lead}>От первой карточки до повторной покупки — в одном боте.</p>

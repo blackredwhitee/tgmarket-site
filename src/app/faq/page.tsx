@@ -3,6 +3,7 @@ import FinalCTA from "@/components/FinalCTA";
 import { FAQ } from "@/data/faq";
 import { JsonLd, breadcrumbLd, faqLd, meta } from "@/lib/seo";
 import FaqExplorer from "./_components/FaqExplorer";
+import support from "@/assets/photos/support.jpg";
 import s from "./page.module.css";
 
 const PATH = "/faq/";
@@ -22,6 +23,7 @@ export default function FaqPage() {
         title={<>Вопросы <span className={s.hl}>и ответы</span></>}
         after={
           <div className={s.help}>
+            <img className={s.helpPhoto} src={support.src} alt="" loading="lazy" />
             <div className={s.helpText}>
               <b className={s.helpTitle}>Не нашли ответ?</b>
               <span className={s.helpSub}>

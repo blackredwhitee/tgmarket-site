@@ -2,18 +2,16 @@
 import { useEffect, useRef, useState } from "react";
 import { reducedMotion, useInView } from "@/lib/motion";
 import { rub } from "@/lib/format";
-import Face, { type FaceProps } from "@/components/Face";
+import psychologist from "@/assets/photos/psychologist.jpg";
+import fitness from "@/assets/photos/fitness.jpg";
+import florist from "@/assets/photos/florist.jpg";
+import blogger from "@/assets/photos/blogger.jpg";
+import photographer from "@/assets/photos/photographer.jpg";
+import tutor from "@/assets/photos/tutor.jpg";
 import s from "./PartnerOrbit.module.css";
 
-// Декоративные «продавцы» на орбите — иллюстрированные лица в фирменных цветах
-const FACES: FaceProps[] = [
-  { bg: "#FB7E5E", skin: "#F6D3B8", hair: "#3B2A20", shirt: "#0B1233", style: "long" },
-  { bg: "#7BD0FF", skin: "#E8B998", hair: "#1F1A17", shirt: "#FB7E5E", style: "beard" },
-  { bg: "#0B1233", skin: "#F2C4A4", hair: "#C9853F", shirt: "#7BD0FF", style: "bun" },
-  { bg: "#E6F6FF", skin: "#8D5A3B", hair: "#1F1A17", shirt: "#FB7E5E", style: "curly" },
-  { bg: "#FDB29E", skin: "#F6D3B8", hair: "#6B4A2E", shirt: "#0B1233", style: "short", glasses: true },
-  { bg: "#FFF1EC", skin: "#C98F6B", hair: "#2A1F1A", shirt: "#7BD0FF", style: "bob" },
-];
+// «Продавцы» на орбите — стоковые фото (Unsplash License)
+const FACES: { src: string }[] = [psychologist, fitness, florist, blogger, photographer, tutor];
 const SELLERS = FACES.map((f, k) => {
   const r = (k * 60 * Math.PI) / 180;
   // toFixed — чтобы строки совпадали на сервере и клиенте (гидратация)
@@ -108,7 +106,7 @@ export default function PartnerOrbit() {
         {SELLERS.map((v) => (
           <div key={v.k} className={s.slot} style={{ left: v.x, top: v.y }}>
             <div data-av="" className={s.avatar} style={{ overflow: "hidden" }}>
-              <Face {...v.f} size={120} />
+              <img src={v.f.src} alt="" loading="lazy" />
             </div>
           </div>
         ))}

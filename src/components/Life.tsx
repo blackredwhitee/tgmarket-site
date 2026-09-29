@@ -4,41 +4,9 @@ import { onVisible, reducedMotion } from "@/lib/motion";
 import s from "./Life.module.css";
 
 /**
- * «Жизнь» для блоков сайта: маскоты, дрейфующие фоновые пятна, наклон за курсором и параллакс.
+ * «Жизнь» для блоков сайта: дрейфующие фоновые пятна, наклон за курсором и параллакс.
  * Всё декоративное (aria-hidden), только transform/opacity, при reduced-motion — статично.
  */
-
-type Src = { src: string; width: number; height: number };
-
-/** Маскот-пакетик: «выпрыгивает» при появлении, затем мягко покачивается; на hover подпрыгивает. */
-export function Mascot({ img, size = 150, className, style, delay = 0 }: { img: Src; size?: number; className?: string; style?: React.CSSProperties; delay?: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || reducedMotion() || !el.animate) return;
-    const anims: Animation[] = [];
-    const off = onVisible(el, () => {
-      anims.push(el.animate(
-        [{ opacity: 0, transform: "translateY(30px) scale(.7)" }, { opacity: 1, transform: "translateY(-6px) scale(1.04)", offset: 0.7 }, { opacity: 1, transform: "none" }],
-        { duration: 700, delay, easing: "cubic-bezier(.22,1,.36,1)", fill: "backwards" },
-      ));
-      const inner = el.firstElementChild as HTMLElement | null;
-      if (inner) anims.push(inner.animate(
-        [{ transform: "translateY(0)" }, { transform: "translateY(-10px)" }, { transform: "translateY(0)" }],
-        { duration: 3600, delay: delay + 700, iterations: Infinity, easing: "ease-in-out" },
-      ));
-    }, 0.3);
-    return () => { off(); anims.forEach((a) => a.cancel()); };
-  }, [delay]);
-  const h = Math.round((size * img.height) / img.width);
-  return (
-    <div ref={ref} className={`${s.mascot} ${className ?? ""}`} style={style} aria-hidden="true">
-      <div className={s.mascotInner}>
-        <img src={img.src} alt="" width={size} height={h} draggable={false} />
-      </div>
-    </div>
-  );
-}
 
 /** Два мягких пятна (голубое и коралловое), медленно дрейфующих за содержимым секции. */
 export function LiveBg({ tone = "default" }: { tone?: "default" | "warm" | "cool" }) {

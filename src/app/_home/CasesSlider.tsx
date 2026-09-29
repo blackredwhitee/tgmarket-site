@@ -8,6 +8,8 @@ import s from "./Cases.module.css";
 export type Case = {
   /** Черновик: в продакшн-сборке не выводится */
   draft?: boolean;
+  /** Фото ниши (контекст, без лиц) */
+  cover?: { src: string };
   niche: string;
   name: string;
   quote: string;
@@ -49,6 +51,7 @@ export default function CasesSlider({ cases }: { cases: Case[] }) {
         <div ref={ref} className={s.slider} role="region" aria-label="Кейсы селлеров" tabIndex={0}>
           {cases.map((c, i) => (
             <div key={i} className={s.card} style={{ background: c.bg, color: c.fg }}>
+              {c.cover && <div className={s.cover}><img src={c.cover.src} alt="" loading="lazy" /></div>}
               <svg width="40" height="40" viewBox="0 0 24 24" fill={c.quoteFill} aria-hidden="true"><path d={P.quote} /></svg>
               <p className={s.quote}>{c.quote}</p>
               <div className={s.author}>

@@ -142,3 +142,24 @@
   color: inherit;
   opacity: 0.6;
 }
+
+.card {
+  overflow: hidden;
+}
+.cover {
+  margin: -28px -28px 0;
+  height: 150px;
+  overflow: hidden;
+}
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .cover img {
+    transform: scale(1.06);
+  }
+}

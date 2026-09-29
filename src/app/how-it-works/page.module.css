@@ -2,7 +2,11 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: #0b1233;
+  /* Фото продавца за работой (сток Unsplash) под тёмным слоем */
+  background:
+    linear-gradient(180deg, rgba(11, 18, 51, 0.78), rgba(11, 18, 51, 0.94)),
+    url("../../assets/photos/how-hero.jpg") center / cover no-repeat,
+    #0b1233;
   color: #fff;
   padding: clamp(56px, 7.2vw, 104px) 0 clamp(56px, 6.7vw, 96px);
 }

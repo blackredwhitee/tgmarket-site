@@ -72,3 +72,7 @@
   white-space: nowrap;
   transform: none;
 }
+
+.stack {
+  margin-top: 8px;
+}

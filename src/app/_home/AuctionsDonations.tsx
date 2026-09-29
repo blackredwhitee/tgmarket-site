@@ -1,5 +1,7 @@
 import { AuctionMock, DonateMock } from "./AuctionsDonationsMocks";
 import { LiveBg } from "@/components/Life";
+import auction from "@/assets/photos/auction.jpg";
+import donate from "@/assets/photos/donate.jpg";
 import s from "./AuctionsDonations.module.css";
 
 const FLOW = ["Создайте предложение", "Запустите аукцион", "Соберите участников", "Получите оплату"];
@@ -13,6 +15,7 @@ export default function AuctionsDonations() {
         <h2 className={s.h2} data-reveal>Аукционы и донаты — тоже в TG Market</h2>
         <div className={s.grid} data-reveal="stagger">
           <article className={`${s.card} ${s.dark}`}>
+            <div className={s.cover} aria-hidden="true"><img src={auction.src} alt="" loading="lazy" /></div>
             <span className={s.kicker}>Аукционы</span>
             <h3 className={s.h3}>Проводите аукционы прямо в Telegram</h3>
             <p className={s.p}>
@@ -27,6 +30,7 @@ export default function AuctionsDonations() {
             <AuctionMock />
           </article>
           <article className={`${s.card} ${s.light}`}>
+            <div className={s.cover} aria-hidden="true"><img src={donate.src} alt="" loading="lazy" /></div>
             <span className={s.kicker}>Донаты</span>
             <h3 className={s.h3}>Принимайте поддержку от аудитории</h3>
             <p className={s.p}>

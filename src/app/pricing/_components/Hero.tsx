@@ -1,4 +1,5 @@
 import BotLink from "@/components/BotLink";
+import SellerStack from "@/components/SellerStack";
 import { Icon, ICON } from "@/components/icons";
 import HeroCounter from "./HeroCounter";
 import t from "./todo.module.css";
@@ -18,6 +19,7 @@ export default function Hero() {
             <Icon d={ICON.send} size={20} sw={2.2} />
             Начать с 3%
           </BotLink>
+          <SellerStack tone="dark" className={s.stack} />
         </div>
         <div data-intro="200" data-y="40" className={s.big}>
           <HeroCounter className={s.pct} />

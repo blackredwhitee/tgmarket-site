@@ -2,12 +2,20 @@ import BotLink from "@/components/BotLink";
 import { Icon, ICON } from "@/components/icons";
 import type { Solution } from "@/data/solutions";
 import HeroPhone from "./HeroPhone";
+import psychologists from "@/assets/photos/n-psychologists.jpg";
+import experts from "@/assets/photos/n-experts.jpg";
+import infoproducts from "@/assets/photos/n-infoproducts.jpg";
+import events from "@/assets/photos/n-events.jpg";
+import donations from "@/assets/photos/n-donations.jpg";
 import s from "./Solution.module.css";
+
+/** Фото ниши за телефоном (стоковые, Unsplash License) */
+const PHOTO: Record<string, { src: string }> = { psychologists, experts, infoproducts, events, donations };
 
 export default function SolutionHero({ n }: { n: Solution }) {
   return (
     <section className={s.hero}>
-      <div className={s.circleBlue} aria-hidden="true" />
+      <div className={s.heroPhoto} aria-hidden="true">{PHOTO[n.slug] && <img src={PHOTO[n.slug].src} alt="" />}</div>
       <div className={s.circleYellow} aria-hidden="true" />
       <div className="container">
         <div className={s.heroRow}>

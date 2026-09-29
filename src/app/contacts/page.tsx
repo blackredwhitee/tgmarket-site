@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Icon, ICON } from "@/components/icons";
 import { JsonLd, breadcrumbLd, meta } from "@/lib/seo";
+import support from "@/assets/photos/support.jpg";
 import s from "./page.module.css";
 
 const PATH = "/contacts/";
@@ -70,7 +71,9 @@ export default function ContactsPage() {
           <div className={s.cards} data-reveal="stagger">
             {CARDS.map((c) => (
               <article key={c.id} id={c.id} className={`${s.card} ${s[c.tone]}`}>
-                <span className={s.icon} aria-hidden="true"><Icon d={c.icon} size={26} sw={2} /></span>
+                {c.id === "support"
+                  ? <img className={s.agent} src={support.src} alt="" loading="lazy" />
+                  : <span className={s.icon} aria-hidden="true"><Icon d={c.icon} size={26} sw={2} /></span>}
                 <h2 className={s.cardTitle}>{c.title}</h2>
                 <p className={s.cardText}>{c.text}</p>
                 <a href={c.contact.href} target="_blank" rel="noopener" className={s.cardContact}>{c.contact.label}</a>
