@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
   background: #fff;
-  padding: clamp(72px, 8.9vw, 128px) 0 clamp(56px, 6vw, 88px);
+  padding: clamp(40px, 4vw, 56px) 0 clamp(56px, 6vw, 88px);
 }
 .head {
   display: flex;
