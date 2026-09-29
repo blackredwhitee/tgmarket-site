@@ -5,6 +5,7 @@ import { JsonLd, faqLd, meta } from "@/lib/seo";
 import HeroA from "./_home/HeroA";
 import HeroB from "./_home/HeroB";
 import Journey from "./_home/Journey";
+import SellersWall from "./_home/SellersWall";
 import Sell from "./_home/Sell";
 import Stage from "./_home/Stage";
 import PromoteVisual from "./_home/PromoteVisual";
@@ -16,7 +17,6 @@ import bagGlasses from "@/assets/mascots/bag-glasses.svg";
 import bagLove from "@/assets/mascots/bag-love.svg";
 import PhoneStage from "./_home/PhoneStage";
 import Niches from "./_home/Niches";
-import Why from "./_home/Why";
 import Compare from "./_home/Compare";
 import PricingTeaser from "./_home/PricingTeaser";
 import Cases from "./_home/Cases";
@@ -48,6 +48,7 @@ export default function Home() {
     <>
       <JsonLd data={faqLd(HOME_FAQ)} />
       {HERO_VARIANT === "a" ? <HeroA /> : <HeroB />}
+      <SellersWall />
       <Journey />
       <Sell />
       <AuctionsDonations />
@@ -176,7 +177,6 @@ export default function Home() {
           />
         }
       />
-      <Why compact />
       <Niches />
       {SHOW_COMPARE && <Compare />}
       <PricingTeaser spaced={!SHOW_COMPARE} />

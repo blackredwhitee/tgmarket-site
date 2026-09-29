@@ -16,31 +16,56 @@
 }
 .card,
 .card:hover {
-  color: var(--fg);
+  color: #fff;
 }
 .card {
   flex: 1 1 var(--basis);
-  min-height: 240px;
+  min-height: 320px;
   border-radius: 28px;
-  padding: 28px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
-  background: var(--bg);
+  background: var(--ink-900);
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 1px 2px rgba(11, 18, 51, 0.06), 0 18px 40px rgba(11, 18, 51, 0.14);
   transition: transform 0.25s var(--ease-out);
+}
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  transition: transform 0.8s var(--ease-out);
+}
+/* затемнение снизу для читаемости текста */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(11, 18, 51, 0.05) 30%, rgba(11, 18, 51, 0.82));
 }
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     transform: translateY(-4px);
   }
+  .card:hover .photo {
+    transform: scale(1.06);
+  }
 }
 .icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,6 +91,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  background: var(--brand);
   display: flex;
   align-items: center;
   justify-content: center;

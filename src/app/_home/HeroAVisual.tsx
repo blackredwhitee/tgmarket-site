@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Phone from "@/components/Phone";
 import { float, tween, useInView, useIsMobile } from "@/lib/motion";
 import { rub } from "@/lib/format";
+import heroPhoto from "@/assets/photos/hero.jpg";
 import s from "./HeroA.module.css";
 
 const BARS = [30, 45, 38, 60, 52, 70];
@@ -43,6 +44,8 @@ export default function HeroAVisual() {
   return (
     <div ref={ref} className={s.visual} data-intro="300" data-y="40" data-dur="900">
       <div className={s.stage}>
+        {/* Фото продавца за телефоном (стоковое, Unsplash License) */}
+        <div className={s.photo} aria-hidden="true"><img src={heroPhoto.src} alt="" width={900} height={1100} /></div>
         <div className={s.floats} aria-hidden="true">
           <div ref={f1} className={s.f1}>
             <div className={s.sticker}><b>3%</b><span>комиссия от</span></div>
