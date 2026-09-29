@@ -2,7 +2,7 @@
   padding: 0 0 clamp(72px, 8.9vw, 128px);
 }
 .spaced {
-  padding-top: clamp(72px, 8.9vw, 128px);
+  padding-top: clamp(24px, 3vw, 40px);
 }
 .card {
   position: relative;
