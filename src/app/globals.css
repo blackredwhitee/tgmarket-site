@@ -238,3 +238,8 @@ html[data-hide-todo] .todo-inline {
 img {
   object-position: center 22%;
 }
+
+/* Пока фото грузится — мягкая подложка вместо белой пустоты */
+img[loading="lazy"] {
+  background: linear-gradient(135deg, #eef1f7, #e3e8f2);
+}
