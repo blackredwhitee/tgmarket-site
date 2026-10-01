@@ -193,7 +193,6 @@ span.note {
 }
 .buyerPhone {
   height: 620px;
-  overflow: hidden;
 }
 .buyerCap {
   display: flex;
@@ -223,7 +222,7 @@ span.note {
 }
 @media (max-width: 767px) {
   .buyerPhone {
-    height: 520px;
+    height: 620px;
   }
 }
 

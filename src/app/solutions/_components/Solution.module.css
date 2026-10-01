@@ -121,8 +121,7 @@
   flex: 1 1 360px;
   display: flex;
   justify-content: flex-end;
-  height: 640px;
-  overflow: hidden;
+  padding-bottom: 48px;
 }
 .heroPhoneInner {
   position: relative;
@@ -209,8 +208,6 @@
   display: flex;
   justify-content: center;
   position: relative;
-  height: 640px;
-  overflow: hidden;
 }
 .panel {
   position: absolute;
@@ -537,9 +534,8 @@
 
 /* ---------- Mobile (макет 360) ---------- */
 @media (max-width: 767px) {
-  .heroPhone,
-  .looksPhone {
-    height: 440px;
+  .heroPhone {
+    padding-bottom: 32px;
   }
 }
 

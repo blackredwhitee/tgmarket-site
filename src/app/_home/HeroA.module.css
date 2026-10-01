@@ -304,8 +304,7 @@
 
 @media (max-width: 767px) {
   .visual {
-    height: 440px;
-    overflow: hidden;
+    height: auto;
   }
   .floats {
     display: none;

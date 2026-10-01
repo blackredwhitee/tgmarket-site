@@ -8,7 +8,7 @@
   border-radius: clamp(28px, 2.8vw, 40px);
   background: linear-gradient(135deg, #ff9c80 0%, #fb7e5e 45%, #ec6a4a 100%);
   color: #fff;
-  padding: clamp(28px, 4.4vw, 64px) clamp(20px, 4.4vw, 64px) 0;
+  padding: clamp(28px, 4.4vw, 64px) clamp(20px, 4.4vw, 64px);
   box-shadow: 0 30px 80px -20px rgba(251, 126, 94, 0.45);
 }
 .beams {
@@ -58,7 +58,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
-  padding-bottom: clamp(28px, 4.4vw, 64px);
+  padding-bottom: 0;
   min-width: 0;
 }
 .badge {
@@ -167,7 +167,7 @@
   justify-content: flex-end;
   align-items: flex-end;
   align-self: stretch;
-  min-height: 560px;
+  min-height: 620px;
 }
 /* Фото продавца слева от телефона — видно целиком, телефон лишь слегка заходит на край */
 .sun {
@@ -191,7 +191,6 @@
   position: relative;
   transform: none;
   transform-origin: bottom center;
-  margin-top: 24px;
 }
 .f1 {
   position: absolute;
@@ -267,7 +266,7 @@
     justify-content: center;
     align-items: flex-start;
     align-self: auto;
-    height: 560px;
+    height: 620px;
   }
   .f1 {
     left: -40px;

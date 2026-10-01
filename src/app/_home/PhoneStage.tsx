@@ -18,7 +18,7 @@ export default function PhoneStage({ phone, cards, photo }: { phone: PhoneProps;
   return (
     <div className={s.phoneStage} aria-hidden="true">
       <div className={s.phoneCol}>
-        <div style={{ position: "relative", height: 560, overflow: "hidden" }}>
+        <div style={{ position: "relative" }}>
           <Phone {...phone} />
         </div>
       </div>

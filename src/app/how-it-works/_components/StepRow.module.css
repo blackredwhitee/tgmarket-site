@@ -21,12 +21,11 @@
   position: relative;
   display: flex;
   justify-content: center;
-  height: 640px;
-  overflow: hidden;
+  min-height: 640px;
 }
 @media (max-width: 767px) {
   .media {
-    height: 500px;
+    min-height: 0;
   }
 }
 
