@@ -1,5 +1,6 @@
 import { LiveBg } from "@/components/Life";
 import { Icon } from "@/components/icons";
+import { P } from "./paths";
 import s from "./Journey.module.css";
 
 const STEPS = [
@@ -31,6 +32,7 @@ export default function Journey() {
                 </span>
                 <b className={s.title}>{st.title}</b>
                 <span className={s.sub}>{st.sub}</span>
+                <span className={s.go}>Подробнее<Icon d={P.arrowR} size={16} sw={2.2} /></span>
               </a>
             </li>
           ))}

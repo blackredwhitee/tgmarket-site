@@ -4,10 +4,14 @@ import PricingCard from "./PricingCard";
 import { P } from "./paths";
 import s from "./PricingTeaser.module.css";
 
-/** Ступеньки шкалы (декоративные): высоты из макета, первая — жёлтая «3%». */
-const LADDER = ["92%", "78%", "64%", "50%", "38%"];
-const LABELS = ["3%", "10%", "8%", "7%", "5%"];
-const COLORS = ["#FB7E5E", "#0B1233", "#3B4466", "#7BD0FF", "#CDEEFF"];
+/** Шкала комиссии с подписями оборота: без столбцов, чтобы «3%» не выглядели больше «10%». */
+const ROWS = [
+  { range: "Первые 2 месяца", note: "для первых селлеров", rate: "3%", hl: true },
+  { range: "до 150 тыс. ₽", note: "оборот в месяц", rate: "10%" },
+  { range: "150–350 тыс. ₽", note: "оборот в месяц", rate: "8%" },
+  { range: "350–650 тыс. ₽", note: "оборот в месяц", rate: "7%" },
+  { range: "от 650 тыс. ₽", note: "оборот в месяц", rate: "5%" },
+];
 
 /** spaced — отступ сверху, когда перед тизером нет блока «Сравнение» (в макете отступ даёт он). */
 export default function PricingTeaser({ spaced = false }: { spaced?: boolean }) {
@@ -28,13 +32,15 @@ export default function PricingTeaser({ spaced = false }: { spaced?: boolean }) 
               Посмотреть тарифы<Icon d={P.arrowR} size={18} sw={2.2} />
             </Link>
           </div>
-          <div className={s.bars} aria-hidden="true">
-            {LADDER.map((h, i) => (
-              <div key={h} data-bar className={s.bar}
-                style={{ height: h, background: COLORS[i], color: i < 3 ? "#fff" : "#0B1233" }}>
-                {LABELS[i]}
+          <div className={s.ladder}>
+            <div className={s.ladderHead}><span>Оборот</span><span>Комиссия</span></div>
+            {ROWS.map((r) => (
+              <div key={r.range} data-row className={`${s.row} ${r.hl ? s.rowHl : ""}`}>
+                <span className={s.rowRange}>{r.range}<small>{r.note}</small></span>
+                <b className={s.rowRate}>{r.rate}</b>
               </div>
             ))}
+            <p className={s.ladderNote}>Чем больше оборот — тем ниже процент</p>
           </div>
         </PricingCard>
       </div>

@@ -10,7 +10,6 @@ import Sell from "./_home/Sell";
 import Stage from "./_home/Stage";
 import PromoteVisual from "./_home/PromoteVisual";
 import ReportVisual from "./_home/ReportVisual";
-import AuctionsDonations from "./_home/AuctionsDonations";
 import pPromote from "@/assets/photos/s-promote.jpg";
 import pPay from "@/assets/photos/s-pay.jpg";
 import pOrders from "@/assets/photos/s-orders.jpg";
@@ -52,7 +51,6 @@ export default function Home() {
       <SellersWall />
       <Journey />
       <Sell />
-      <AuctionsDonations />
       <Stage
         id="promote"
         photo={pPromote}

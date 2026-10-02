@@ -44,142 +44,158 @@
 .tabsWrap {
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 20px;
 }
+/* Вкладки-чипы: на узком экране — горизонтальная прокрутка */
 .tablist {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  max-width: 760px;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 5px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin: 0 calc(-1 * var(--gutter, 0px));
+  padding: 2px 0;
 }
-.indicator {
-  position: absolute;
-  top: 5px;
-  bottom: 5px;
-  left: 5px;
-  width: calc((100% - 10px) / 5);
-  border-radius: 12px;
-  background: var(--brand);
-  transition: transform 0.25s var(--ease-in-out);
+.tablist::-webkit-scrollbar {
+  display: none;
 }
 .tab {
-  position: relative;
-  height: 48px;
-  border: 0;
-  border-radius: 12px;
-  background: transparent;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 18px;
+  border-radius: 23px;
+  border: 1px solid var(--line);
+  background: #fff;
   font-family: inherit;
-  font-size: clamp(14px, 1.1vw, 16px);
+  font-size: 15px;
   font-weight: 700;
-  color: var(--ink-600);
+  color: var(--ink-900);
   cursor: pointer;
-  transition: color 0.25s;
-  min-width: 0;
-  padding: 0 4px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
-.tabOn {
+.tab svg {
+  color: var(--brand);
+}
+.tab:hover {
+  border-color: var(--brand);
+}
+.tabOn,
+.tabOn:hover {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+.tabOn svg {
   color: #fff;
 }
 .tab:focus-visible {
-  outline-color: var(--brand);
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }
 
-.panels {
+/* Панель-галерея */
+.gallery {
   display: grid;
-}
-.panel {
-  grid-area: 1 / 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px 72px;
-  align-items: center;
-  min-width: 0;
-  opacity: 0;
-  transform: translateY(12px);
-  pointer-events: none;
-  transition:
-    opacity 0.35s var(--ease-out),
-    transform 0.35s var(--ease-out);
-}
-.panelOn {
-  opacity: 1;
-  transform: none;
-  pointer-events: auto;
-}
-
-.preview {
-  flex: 0 1 380px;
-  min-width: 0;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   background: #fff;
   border: 1px solid var(--line);
-  box-shadow: 0 1px 2px rgba(11, 18, 51, 0.04), 0 24px 60px rgba(11, 18, 51, 0.08);
-  border-radius: 28px;
-  padding: 22px;
-  transform: none;
-}
-.pCard {
-  background: #fff;
-  border-radius: 18px;
+  border-radius: 32px;
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(11, 18, 51, 0.3);
+  box-shadow: 0 1px 2px rgba(11, 18, 51, 0.04), 0 30px 70px -30px rgba(11, 18, 51, 0.22);
+  animation: galleryIn 0.45s var(--ease-out);
 }
-.pCover {
+@keyframes galleryIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.media {
   position: relative;
-  height: 170px;
-  overflow: hidden;
+  min-height: 480px;
 }
-.pCover img {
+.mediaImg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  animation: mediaIn 0.7s var(--ease-out);
 }
-.pBadge {
+@keyframes mediaIn {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: none;
+  }
+}
+.media::after {
+  content: "";
   position: absolute;
-  left: 12px;
-  top: 12px;
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: var(--brand);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 14px rgba(251, 126, 94, 0.35);
+  inset: 45% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(11, 18, 51, 0.45));
+  pointer-events: none;
 }
-.pInfo {
-  padding: 14px 16px;
+.overlay {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1;
+  max-width: 340px;
+  animation: overlayIn 0.5s 0.12s var(--ease-out) backwards;
+}
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.exCard {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding: 16px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 20px 50px -16px rgba(11, 18, 51, 0.45);
 }
-.pType {
+.exType {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 12px;
   font-weight: 800;
-  color: var(--brand);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  color: var(--brand);
 }
-.pTitle {
+.exTitle {
   font-size: 17px;
-  color: var(--ink-900);
   line-height: 1.3;
+  color: var(--ink-900);
 }
-.pPrice {
+.exPrice {
   font-size: 20px;
   font-weight: 800;
   color: var(--ink-900);
-  margin-top: 4px;
 }
-.pBtn {
-  margin-top: 10px;
-  height: 46px;
+.exBtn {
+  margin-top: 8px;
+  height: 44px;
   border-radius: 12px;
-  background: var(--ink-900);
+  background: var(--brand);
   color: #fff;
   font-size: 15px;
   font-weight: 700;
@@ -189,21 +205,37 @@
 }
 
 .info {
-  flex: 1 1 360px;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
+  padding: clamp(28px, 3.3vw, 48px);
+  animation: overlayIn 0.5s 0.06s var(--ease-out) backwards;
+}
+.count {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--ink-400);
+  font-variant-numeric: tabular-nums;
 }
 .h3 {
   margin: 0;
-  font-size: clamp(22px, 2vw, 30px);
-  line-height: 1.25;
-  font-weight: 700;
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1.15;
+  font-weight: 800;
   color: var(--ink-900);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.text {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink-600);
 }
 .whoTitle {
+  margin-top: 4px;
   font-size: 13px;
   font-weight: 700;
   color: var(--ink-400);
@@ -213,7 +245,7 @@
 .who {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -221,14 +253,14 @@
 .who li {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 18px;
+  gap: 12px;
+  font-size: 16px;
   color: var(--ink-900);
   font-weight: 500;
 }
 .chk {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: var(--brand);
   display: flex;
@@ -236,14 +268,39 @@
   justify-content: center;
   flex: none;
 }
-.info .note {
-  font-size: 13px;
-  line-height: 1.45;
+.nav {
+  margin-top: auto;
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.navBtn:hover {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+}
+.navHint {
+  font-size: 14px;
   color: var(--ink-400);
-  border: 1px dashed #c9cfe0;
-  border-radius: 8px;
-  padding: 8px 10px;
-  align-self: flex-start;
+}
+.more {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink-600);
 }
 
 .kicker {
@@ -275,32 +332,6 @@
   align-items: center;
 }
 
-.tools {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
-.toolsTitle {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--ink-900);
-  margin-right: 4px;
-}
-.tool {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 40px;
-  padding: 0 14px;
-  border-radius: 20px;
-  background: #fff;
-  border: 1px solid var(--line);
-  color: var(--ink-900);
-  font-size: 14px;
-  font-weight: 700;
-}
-
 .mascot {
   right: 24px;
   top: -24px;
@@ -311,21 +342,47 @@
   }
 }
 
-/* Мобайл: 5 вкладок не помещаются в строку — переносим 3 + 2, активная подсвечивается фоном */
+/* Узко: панель в колонку — фото сверху, описание снизу */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .media {
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    max-height: 520px;
+  }
+}
 @media (max-width: 767px) {
   .tablist {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
+    margin: 0 -16px;
+    padding: 2px 16px;
   }
   .tab {
-    flex: 1 1 30%;
-    height: 44px;
+    height: 42px;
+    padding: 0 14px;
+    font-size: 14px;
   }
-  .tabOn {
-    background: var(--brand);
+  .gallery {
+    border-radius: 24px;
   }
-  .indicator {
-    display: none;
+  .overlay {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+  .info {
+    padding: 22px 20px 24px;
+  }
+  .text {
+    font-size: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery,
+  .mediaImg,
+  .overlay,
+  .info {
+    animation: none;
   }
 }

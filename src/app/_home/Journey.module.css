@@ -108,7 +108,24 @@
   line-height: 1.45;
   color: var(--ink-600);
 }
+/* Явный признак ссылки: «Подробнее →» внизу карточки */
+.go {
+  margin-top: auto;
+  padding-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--brand);
+}
+.go svg {
+  transition: transform 0.2s var(--ease-out);
+}
 @media (hover: hover) and (pointer: fine) {
+  .step:hover .go svg {
+    transform: translateX(4px);
+  }
   .step:hover {
     border-color: var(--brand);
     transform: translateY(-4px);
@@ -123,14 +140,48 @@
     display: none;
   }
 }
+/* Мобайл: компактный список-ссылки — иконка, текст и стрелка справа */
 @media (max-width: 640px) {
   .steps {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 380px) {
-  .steps {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 44px 1fr 24px;
+    grid-template-areas: "icon title go" "icon sub go";
+    align-items: center;
+    column-gap: 14px;
+    row-gap: 2px;
+    padding: 14px 16px;
+    border-radius: 18px;
+  }
+  .top {
+    grid-area: icon;
+    margin: 0;
+  }
+  .icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+  .num {
+    display: none;
+  }
+  .title {
+    grid-area: title;
+    font-size: 16px;
+  }
+  .sub {
+    grid-area: sub;
+    font-size: 13.5px;
+  }
+  .go {
+    grid-area: go;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    justify-content: flex-end;
   }
 }
 
