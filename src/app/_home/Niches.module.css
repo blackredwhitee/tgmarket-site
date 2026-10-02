@@ -1,5 +1,6 @@
+/* сверху меньше: предыдущий блок (шаг 6) тоже белый, иначе двойной отступ */
 .section {
-  padding: clamp(72px, 8.9vw, 128px) 0;
+  padding: clamp(16px, 2vw, 32px) 0 clamp(72px, 8.9vw, 128px);
 }
 .h2 {
   margin: 0 0 clamp(32px, 4.4vw, 56px);

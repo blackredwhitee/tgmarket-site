@@ -65,11 +65,11 @@ export default function Home() {
           "Бесплатная публикация в каналах TG Market на аудиторию 10 000 человек",
           "Партнёрская реклама и история рекламных кампаний",
         ]}
-        tone="soft"
         visual={<PromoteVisual />}
       />
       <Stage
         id="pay"
+        tone="soft"
         step={3}
         kicker="Получайте заказы и оплату"
         title="Оплата по СБП — прямо из поста"
@@ -104,7 +104,6 @@ export default function Home() {
           "Выгружайте заказы в файл",
           "Настройте уведомления о новых заказах",
         ]}
-        tone="soft"
         visual={
           <PhoneStage
             photo={pOrders}
@@ -129,6 +128,7 @@ export default function Home() {
       />
       <Stage
         id="analytics"
+        tone="soft"
         photo={pAnalytics}
         photoLayout="collage"
         step={5}
@@ -157,7 +157,6 @@ export default function Home() {
           "Напоминайте об оплате и встречах",
           "Возвращайте клиентов к повторным покупкам",
         ]}
-        tone="soft"
         reverse
         visual={
           <PhoneStage
