@@ -186,8 +186,9 @@ button {
   font-weight: 700;
 }
 .btn-secondary:hover {
-  border-color: var(--brand);
-  color: var(--brand);
+  background: var(--bg-soft);
+  border-color: #cfd5e4;
+  color: var(--ink-900);
 }
 .btn-yellow {
   background: var(--sky);

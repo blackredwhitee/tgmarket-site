@@ -65,15 +65,16 @@
   height: 44px;
   padding: 0 16px;
   border-radius: 12px;
-  border: 1.5px solid var(--brand);
-  color: var(--brand);
+  background: var(--brand);
+  color: #fff;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   transition: background 0.15s;
 }
 .botBtn:hover {
-  background: var(--sky-50);
+  background: var(--brand-hover);
+  color: #fff;
 }
 .cols {
   flex: 3 1 560px;
