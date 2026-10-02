@@ -25,7 +25,7 @@ export default function Footer() {
             <p className={s.tagline}>Продажи и приём оплаты по СБП прямо в Telegram.</p>
             <div className={s.botRow}>
               <BotLink param="site_home" block="footer" className={s.botBtn}><Icon d={ICON.send} size={16} />Открыть бота</BotLink>
-              <div className={s.qr}><Qr size={72} pad={7} radius={12} border="1px solid #E3E7F2" /></div>
+              <div className={s.qr}><Qr size={104} pad={8} radius={14} border="1px solid #E3E7F2" /></div>
             </div>
           </div>
           <div className={s.cols}>

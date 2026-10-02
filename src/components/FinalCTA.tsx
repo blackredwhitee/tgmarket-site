@@ -39,7 +39,7 @@ export default function FinalCTA({
               <div className={s.actions}>
                 <BotLink param={param} block="final_cta" className={s.btn}><Icon d={ICON.send} size={20} sw={2.2} />{cta}</BotLink>
                 <div className={s.qr}>
-                  <Qr param={param} size={64} pad={6} radius={12} />
+                  <Qr param={param} size={132} pad={10} radius={16} />
                   <span>Откройте бота с телефона</span>
                 </div>
               </div>
