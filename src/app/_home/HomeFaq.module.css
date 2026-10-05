@@ -229,3 +229,10 @@
   border-radius: 50%;
   background: var(--success);
 }
+
+/* Узко: карточка поддержки на всю ширину, как вопросы */
+@media (max-width: 900px) {
+  .support {
+    max-width: none;
+  }
+}
