@@ -13,7 +13,7 @@ const NODES = [
 
 /**
  * Схема «Вы → Селлер → Продажи». При появлении линии прорисовываются (stroke-dashoffset, 700ms, stagger 250ms),
- * через 1s по обратной дуге под подписями один раз пробегает монетка «₽» (SMIL animateMotion, 1.6s) к «Вы» и исчезает.
+ * через 1s по обратной дуге под подписями бежит монетка «₽» от «Продажи» к «Вы» — по кругу, с паузой (SMIL animateMotion, цикл 3.2s).
  */
 export default function PartnersScheme() {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,8 +32,6 @@ export default function PartnersScheme() {
       t = setTimeout(() => {
         setCoinOn(true);
         try { coin.current?.beginElement(); } catch {}
-        // Монетка исчезает, дойдя до «Вы», чтобы не закрывать подпись
-        t = setTimeout(() => setCoinOn(false), 1700);
       }, 1000);
     });
     return () => { off(); clearTimeout(t); };
@@ -49,8 +47,8 @@ export default function PartnersScheme() {
         <g style={{ visibility: coinOn ? "visible" : "hidden" }}>
           <circle r="14" fill="#FB7E5E" stroke="#0B1233" strokeWidth="3" />
           <text y="5" textAnchor="middle" fontSize="13" fontWeight="800" fill="#fff" fontFamily="inherit">₽</text>
-          <animateMotion ref={coin} dur="1.6s" begin="indefinite" fill="freeze" keyPoints="0;1" keyTimes="0;1"
-            calcMode="spline" keySplines="0.22 1 0.36 1">
+          <animateMotion ref={coin} dur="3.2s" begin="indefinite" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.55;1"
+            calcMode="spline" keySplines="0.22 1 0.36 1;0 0 1 1">
             <mpath href="#tgm-coin-path" />
           </animateMotion>
         </g>
