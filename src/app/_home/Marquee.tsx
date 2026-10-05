@@ -11,7 +11,7 @@ export default function Marquee() {
   return (
     <div ref={ref} className={s.marquee}>
       <p className="sr-only">Для психологов, коучей, экспертов, наставников, авторов гайдов, организаторов событий и блогеров.</p>
-      <div className={s.track} style={{ animationPlayState: inView ? "running" : "paused" }} aria-hidden="true">
+      <div data-marquee className={s.track} style={{ animationPlayState: inView ? "running" : "paused" }} aria-hidden="true">
         {[...ITEMS, ...ITEMS].map((m, i) => (
           <span key={i} className={s.mItem}>
             {m}

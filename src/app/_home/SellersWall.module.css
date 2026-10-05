@@ -60,8 +60,10 @@
   animation-direction: reverse;
   animation-duration: 70s;
 }
-.rows:hover .track {
-  animation-play-state: paused;
+@media (hover: hover) and (pointer: fine) {
+  .rows:hover .track {
+    animation-play-state: paused;
+  }
 }
 @keyframes marquee {
   from {
@@ -176,8 +178,12 @@
     border-radius: 18px;
   }
 }
+/* При «уменьшении движения» лента не останавливается, а идёт заметно медленнее */
 @media (prefers-reduced-motion: reduce) {
   .track {
-    animation: none;
+    animation-duration: 140s;
+  }
+  .rev {
+    animation-duration: 160s;
   }
 }

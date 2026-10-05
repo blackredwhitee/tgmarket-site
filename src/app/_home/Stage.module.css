@@ -176,9 +176,14 @@
     right: auto;
     width: 100%;
     max-width: 560px;
-    height: 260px;
+    height: 300px;
     margin: 0 auto;
     border-radius: 28px;
+  }
+  /* Карточка-мокап заходит на низ фото — одна композиция, а не два блока подряд */
+  .visual:has(.photo) > :global(*):last-child {
+    margin-top: -110px;
+    padding: 0 12px;
   }
   .collage {
     padding-top: 0;

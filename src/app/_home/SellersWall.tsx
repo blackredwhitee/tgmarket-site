@@ -49,7 +49,7 @@ function Row({ cards, reverse }: { cards: Card[]; reverse?: boolean }) {
   const all = [...cards, ...cards];
   return (
     <div className={s.row} aria-hidden="true">
-      <div className={`${s.track} ${reverse ? s.rev : ""}`}>
+      <div data-marquee className={`${s.track} ${reverse ? s.rev : ""}`}>
         {all.map((c, i) => (
           <figure key={i} className={s.card}>
             <img src={c.img.src} alt="" loading="lazy" width={220} height={280} />

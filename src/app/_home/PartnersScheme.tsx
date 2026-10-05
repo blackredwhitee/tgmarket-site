@@ -6,9 +6,9 @@ import { P } from "./paths";
 import s from "./PartnersTeaser.module.css";
 
 const NODES = [
-  { label: "Вы", icon: P.user, x: "13.5%", y: "30%", bg: "#FB7E5E", fg: "#fff" },
-  { label: "Селлер", icon: P.users, x: "50%", y: "30%", bg: "#fff", fg: "#0B1233" },
-  { label: "Продажи", icon: P.trend, x: "86.5%", y: "30%", bg: "#fff", fg: "#0B1233" },
+  { label: "Вы", icon: P.user, x: "13.5%", y: "28.125%", bg: "#FB7E5E", fg: "#fff" },
+  { label: "Селлер", icon: P.users, x: "50%", y: "28.125%", bg: "#fff", fg: "#0B1233" },
+  { label: "Продажи", icon: P.trend, x: "86.5%", y: "28.125%", bg: "#fff", fg: "#0B1233" },
 ];
 
 /**
@@ -39,10 +39,10 @@ export default function PartnersScheme() {
 
   return (
     <div ref={ref} className={s.scheme} aria-hidden="true">
-      <svg viewBox="0 0 520 300" width="100%" height="100%" className={s.svg}>
+      <svg viewBox="0 0 520 320" width="100%" height="100%" className={s.svg}>
         <path data-line d="M70 90 H250" stroke="#0B1233" strokeWidth="3" fill="none" strokeDasharray="180" strokeDashoffset="0" />
         <path data-line d="M270 90 H450" stroke="#0B1233" strokeWidth="3" fill="none" strokeDasharray="180" strokeDashoffset="0" />
-        <path id="tgm-coin-path" data-line d="M450 158 C450 292 70 292 70 158" stroke="#0B1233" strokeWidth="3" fill="none" strokeDasharray="8 8" />
+        <path id="tgm-coin-path" data-line d="M450 172 C450 262 70 262 70 172" stroke="#0B1233" strokeWidth="3" fill="none" strokeDasharray="8 8" />
         {/* До старта монетка скрыта (в прототипе она висела в точке 0,0 svg) */}
         <g style={{ visibility: coinOn ? "visible" : "hidden" }}>
           <circle r="14" fill="#FB7E5E" stroke="#0B1233" strokeWidth="3" />

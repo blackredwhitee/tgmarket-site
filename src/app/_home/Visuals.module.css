@@ -420,23 +420,49 @@
   .cardsCol {
     display: none;
   }
+  /* Узко: одна композиция — фото слева, телефон справа заходит на его край (а не фото и телефон столбиком) */
   .phoneStage:has(.withPhoto) {
-    flex-direction: column-reverse;
-    align-items: stretch;
-    gap: 16px;
+    --ps: 1;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 560px;
+    margin: 0 auto;
+    min-height: calc(620px * var(--ps) + 24px);
+  }
+  .phoneStage:has(.withPhoto) .phoneCol {
+    position: relative;
+    z-index: 1;
+    width: calc(300px * var(--ps));
+    height: calc(620px * var(--ps));
+  }
+  .phoneStage:has(.withPhoto) .phoneCol > div {
+    transform: scale(var(--ps));
+    transform-origin: top left;
   }
   .cardsCol.withPhoto {
     display: block;
+    position: absolute;
+    left: 0;
+    top: 48px;
+    width: 58%;
+    z-index: 0;
   }
   .withPhoto .floatCard {
     display: none;
   }
   .sidePhoto {
     width: 100%;
-    max-width: 560px;
-    height: 260px;
-    margin: 0 auto;
+    height: calc(440px * var(--ps));
     border-radius: 28px;
+  }
+}
+@media (max-width: 767px) {
+  .phoneStage:has(.withPhoto) {
+    --ps: 0.76;
+  }
+  .sidePhoto {
+    border-radius: 22px;
   }
 }
 
